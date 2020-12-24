@@ -1,15 +1,46 @@
 {
-  "name": "transparenta-2021",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "10.0.4",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
-  }
+	"name": "transparenta-2021",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.1.0",
+		"next": "10.0.4",
+		"postcss": "^8.2.1",
+		"react": "17.0.1",
+		"react-dom": "17.0.1",
+		"tailwindcss": "^2.0.2"
+	},
+	"prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": true,
+		"singleQuote": true,
+		"trailingComma": "none",
+		"overrides": [
+			{
+				"files": ".scss",
+				"options": {
+					"parser": "scss",
+					"singleQuote": true,
+					"tabWidth": 4,
+					"useTabs": true
+				}
+			},
+			{
+				"files": ".js",
+				"options": {
+					"parser": "babel",
+					"singleQuote": true,
+					"tabWidth": 4,
+					"useTabs": true,
+					"semi": true
+				}
+			}
+		]
+	}
 }
