@@ -1,65 +1,55 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styled from 'styled-components';
+
+const NecesidadSection = styled.section`
+	height: calc(100vh - 106px);
+`;
+
+const AniTopRight = styled.img`
+	transform: translateX(15%);
+`;
+const AniBottomRight = styled.img`
+	transform: translate(-50%, 50%);
+`;
+const AniTopLeft = styled.img`
+	transform: translate(80px, 80px);
+`;
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	return (
+		<>
+			<Head>
+				<title>Transparenta</title>
+			</Head>
+			<main className="w-screen relative">
+				<AniTopRight
+					src="/animations/animation-right-top.svg"
+					alt="Fake animation"
+					className="top-0 right-0 absolute"
+					width="600"
+				/>
+				<AniBottomRight
+					src="/animations/animation-right-bottom.svg"
+					alt="Fake animation"
+					className="bottom-0 right-0 absolute"
+					width="250"
+				/>
+				<AniTopLeft
+					src="/animations/animation-left-top.svg"
+					alt="Fake animation"
+					className="top-0 left-0 absolute"
+					width="200"
+				/>
+				<NecesidadSection className="necesidad container mx-auto h-screen w-full flex flex-col items-center justify-center">
+					<h1 className="text-xl md:text-3xl lg:text-5xl text-main font-bold w-full md:w-10/12  lg:w-6/12">
+						Una necesidad actual
+					</h1>
+					<p className="text-black text-lg md:text-xl lg:text-3xl mt-4 font-bold w-full md:w-10/12  lg:w-6/12">
+						Comunica de manera innovadora e inteligente los datos
+						que más le importan a tu comunidad.{' '}
+					</p>
+				</NecesidadSection>
+			</main>
+		</>
+	);
 }
