@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="691px" height="226px" viewBox="0 0 691 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(2.000000, 2.000000)">
+            <g id="about-one" fill-rule="nonzero" stroke="#484D51" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                <polygon id="Rectangle_1" fill="#484D51" points="50.843 0 580.587 0 580.587 221.521 50.843 221.521"></polygon>
+                <polygon id="Rectangle_18" fill="#89A4A9" points="0 48.868 218.118 48.868 218.118 160.385 0 160.385"></polygon>
+                <circle id="Ellipse_3" fill="#F2F2F2" cx="469.071" cy="96.647" r="55.759"></circle>
+                <polygon id="Rectangle_22" fill="#F2F2F2" points="50.843 48.868 218.119 48.868 218.119 160.385 50.843 160.385"></polygon>
+            </g>
+            <rect id="Rectangle" x="0" y="0" width="689" height="222"></rect>
+        </g>
+    </g>
+</svg>

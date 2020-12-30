@@ -29,7 +29,7 @@ function Nav() {
 						<a>Servicios</a>
 					</Link>
 				</li>
-				<li className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer relative transparenta-btn-toblack">
+				<li className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out">
 					Obtén Transparenta
 				</li>
 			</ul>

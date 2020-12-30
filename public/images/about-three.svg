@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="689px" height="282px" viewBox="0 0 689 282" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(0.000000, 2.000000)">
+            <g id="about-three" transform="translate(51.000000, 0.000000)" fill-rule="nonzero" stroke="#484D51" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                <polygon id="Rectangle_2" fill="#484D51" points="0 0 529.744 0 529.744 221.521 0 221.521"></polygon>
+                <polygon id="Rectangle_19" fill="#F2F2F2" points="362.469 69.115 473.986 69.115 473.986 180.632 362.469 180.632"></polygon>
+                <circle id="Ellipse_4" fill="#F2F2F2" cx="96.093" cy="221.521" r="55.759"></circle>
+                <path d="M40.333,221.521 C40.333,252.315455 65.2975452,277.279 96.092,277.279 C126.886064,277.279 151.85,252.315064 151.85,221.521 L40.333,221.521 Z" id="Path_5" fill="#89A4A9"></path>
+            </g>
+            <rect id="Rectangle-Copy-2" x="0" y="0" width="689" height="278"></rect>
+        </g>
+    </g>
+</svg>

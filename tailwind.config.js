@@ -6,6 +6,10 @@ module.exports = {
 			sans: ['Montserrat', 'Arial', 'sans-serif']
 		},
 		extend: {
+			boxShadow: {
+				transparenta: '15px 15px 0 0 rgba(72, 77, 81, 1)',
+				transparentaSmall: '8px 8px 0 0 rgba(72, 77, 81, 1)'
+			},
 			colors: {
 				black: '#484d51',
 				main: '#89A4A9',
