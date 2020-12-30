@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="441px" height="517px" viewBox="0 0 441 517" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(2.000000, 2.000000)" fill-rule="nonzero" stroke="#484D51" stroke-width="4">
+            <g id="activa-3-topB" transform="translate(159.000000, 77.000000)" fill="#89A4A9">
+                <polygon id="Path" transform="translate(138.515500, 30.563000) rotate(-90.000000) translate(-138.515500, -30.563000) " points="107.9525 -107.9525 169.0785 -107.9525 169.0785 169.0785 107.9525 169.0785"></polygon>
+            </g>
+            <g id="activa-3-bg" fill="#484D51">
+                <polygon id="Path" transform="translate(158.344500, 256.231500) rotate(-90.000000) translate(-158.344500, -256.231500) " points="-97.887 97.887 414.576 97.887 414.576 414.576 -97.887 414.576"></polygon>
+            </g>
+            <g id="activa-3-bottom" transform="translate(157.000000, 77.000000)" fill="#F2F2F2">
+                <polygon id="Path" transform="translate(79.896000, 30.563000) rotate(90.000000) translate(-79.896000, -30.563000) " points="49.333 -49.333 110.459 -49.333 110.459 110.459 49.333 110.459"></polygon>
+            </g>
+            <g id="activa-3-middle" transform="translate(114.000000, 376.000000)" fill="#F2F2F2">
+                <polygon id="Path" transform="translate(80.099500, 30.563000) rotate(90.000000) translate(-80.099500, -30.563000) " points="49.5365 -49.5375 110.6625 -49.5375 110.6625 110.6635 49.5365 110.6635"></polygon>
+            </g>
+            <g id="activa-3-topA" transform="translate(57.000000, 225.000000)" fill="#F2F2F2">
+                <polygon id="Path" transform="translate(84.989500, 30.563000) rotate(-90.000000) translate(-84.989500, -30.563000) " points="54.4265 -54.4265 115.5525 -54.4265 115.5525 115.5525 54.4265 115.5525"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
