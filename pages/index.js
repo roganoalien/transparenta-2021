@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const data = [
 	{
@@ -128,7 +129,12 @@ export default function Home() {
 			<Head>
 				<title>Transparenta</title>
 			</Head>
-			<section className="necesidad-section w-screen relative">
+			<motion.section
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className="necesidad-section w-screen relative"
+			>
 				<AniTopRight
 					src="/animations/animation-right-top.svg"
 					alt="Fake animation"
@@ -162,7 +168,7 @@ export default function Home() {
 						que más le importan a tu comunidad.{' '}
 					</p>
 				</NecesidadSection>
-			</section>
+			</motion.section>
 			<section className="about-section w-screen container mx-auto min-h-screen flex items-start justify-center pt-56 pb-20">
 				<article className="section-container w-full  md:w-10/12 flex flex-wrap items-start justify-center">
 					<div className="left-side w-full md:w-6/12">

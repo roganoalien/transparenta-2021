@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="225.976" height="225.976" viewBox="0 0 225.976 225.976">
+    <defs>
+        <style>
+            .cls-2,.cls-3{stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px}.cls-2{fill:#89a4a9}.cls-3{fill:#f2f2f2}
+        </style>
+    </defs>
+    <g id="Group_81" transform="translate(-1039.226 -5149.922)">
+        <path id="Rectangle_101" fill="#484d51" stroke="#484d51" stroke-linecap="round" stroke-linejoin="round" stroke-width="4px" d="M0 0H141.326V141.326H0z" transform="translate(1081.551 5192.248)"/>
+        <path id="Rectangle_102" d="M0 0H90.487V39.468H0z" class="cls-2" transform="translate(1172.715 5215.287)"/>
+        <path id="Rectangle_103" d="M0 0H90.487V39.468H0z" class="cls-2" transform="rotate(-90 3173.424 2068.986)"/>
+        <path id="Rectangle_104" d="M0 0H90.487V39.468H0z" class="cls-2" transform="rotate(-90 3267.211 2106.687)"/>
+        <path id="Rectangle_105" d="M0 0H50.162V39.468H0z" class="cls-3" transform="translate(1172.715 5215.287)"/>
+        <path id="Rectangle_106" d="M0 0H50.162V39.468H0z" class="cls-3" transform="rotate(-90 3173.424 2068.986)"/>
+        <path id="Rectangle_107" d="M0 0H50.162V39.468H0z" class="cls-3" transform="rotate(-90 3247.049 2086.524)"/>
+        <path id="Rectangle_108" d="M0 0H90.487V39.468H0z" class="cls-2" transform="rotate(180 565.856 2655.344)"/>
+        <path id="Rectangle_109" d="M0 0H50.162V39.468H0z" class="cls-3" transform="rotate(180 565.856 2655.344)"/>
+    </g>
+</svg>
