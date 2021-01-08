@@ -138,7 +138,7 @@ export default function Home() {
 				<AniTopRight
 					src="/animations/animation-right-top.svg"
 					alt="Fake animation"
-					className="top-0 right-0 absolute"
+					className="top-0 right-0 absolute hidden lg:block"
 					width="600"
 				/>
 				<AniBottomRight
@@ -150,7 +150,7 @@ export default function Home() {
 				<AniTopLeft
 					src="/animations/animation-left-top.svg"
 					alt="Fake animation"
-					className="top-0 left-0 absolute"
+					className="top-0 left-0 absolute hidden lg:block"
 					width="200"
 				/>
 				<AniBottomLeft
@@ -159,11 +159,11 @@ export default function Home() {
 					className="bottom-0 left-0 absolute"
 					width="100"
 				/>
-				<NecesidadSection className="container mx-auto h-screen flex flex-col items-center justify-center">
-					<h1 className="text-xl md:text-3xl lg:text-5xl text-main font-bold w-full md:w-10/12  lg:w-6/12">
+				<NecesidadSection className="container mx-auto h-auto lg:h-screen flex flex-col items-center justify-start lg:justify-center relative z-50">
+					<h1 className="text-xl md:text-3xl lg:text-5xl text-main font-bold w-full lg:w-7/12 xl:w-6/12">
 						Una necesidad actual
 					</h1>
-					<p className="text-black text-lg md:text-xl lg:text-3xl mt-4 font-bold w-full md:w-10/12  lg:w-6/12">
+					<p className="text-black text-lg md:text-xl lg:text-3xl mt-4 font-bold w-full lg:w-7/12 xl:w-6/12">
 						Comunica de manera innovadora e inteligente los datos
 						que más le importan a tu comunidad.{' '}
 					</p>
