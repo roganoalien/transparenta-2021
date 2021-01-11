@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="22.5" viewBox="0 0 27.5 22.5">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px}
+        </style>
+    </defs>
+    <g id="Group_50" transform="translate(-328.75 -18.75)">
+        <g id="Group_4" transform="translate(2522.981)">
+            <path id="Line_1" d="M0 0L25 0" class="cls-1" transform="translate(-2192.981 20)"/>
+            <path id="Line_2" d="M0 0L25 0" class="cls-1" transform="translate(-2192.981 30)"/>
+            <path id="Line_3" d="M0 0L25 0" class="cls-1" transform="translate(-2192.981 40)"/>
+        </g>
+    </g>
+</svg>

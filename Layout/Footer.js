@@ -11,14 +11,14 @@ const Transparenta = styled.button`
 function Footer() {
 	return (
 		<>
-			<section className="container mx-auto transparenta-btn flex items-center justify-center mb-36">
-				<button className="text-black text-4xl font-bold border-2 border-black py-4 px-10 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none">
+			<section className="container mx-auto transparenta-btn flex items-center justify-center mb-20 lg:mb-36">
+				<button className="text-black text-2xl lg:text-4xl font-bold border-2 border-black py-2 lg:py-4 px-10 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none">
 					Obtén Transparenta
 				</button>
 			</section>
-			<footer className="w-full flex items-start justify-center bg-main py-12 px-20">
-				<div className="w-1/3 flex flex-col items-center justify-start">
-					<div className="w-auto">
+			<footer className="w-full flex items-start justify-center flex-wrap bg-main py-12 px-10 lg:px-20">
+				<div className="w-full lg:w-1/3 flex flex-col items-center justify-start">
+					<div className="w-full lg:w-auto mb-10 lg:mb-0">
 						<h4 className="font-bold text-white text-lg text-left">
 							Contacto
 						</h4>
@@ -45,7 +45,7 @@ function Footer() {
 						</ul>
 					</div>
 				</div>
-				<ul className="w-1/3 flex items-center justify-center self-stretch">
+				<ul className="w-full lg:w-1/3 flex items-center justify-start lg:justify-center self-stretch mb-10 lg:mb-0">
 					<li className="mr-4">
 						<a
 							href="#instagram"
@@ -89,7 +89,7 @@ function Footer() {
 						</a>
 					</li>
 				</ul>
-				<div className="w-1/3 flex items-center justify-center">
+				<div className="w-full lg:w-1/3 flex items-center justify-start lg:justify-center">
 					<div className="w-auto h-full">
 						<h4 className="font-bold text-white text-lg mb-4">
 							Idioma

@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import SwiperCore, { Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+SwiperCore.use([Pagination]);
 
 const data = [
 	{
@@ -38,6 +42,9 @@ const data = [
 
 const NecesidadSection = styled.article`
 	height: calc(100vh - 106px);
+	@media (max-width: 1023px) {
+		height: auto;
+	}
 `;
 
 const AniTopRight = styled.img`
@@ -108,6 +115,14 @@ const BtnShadow = styled.button`
 
 export default function Home() {
 	const [position, setPosition] = useState(0);
+	const [width, setWidth] = useState(null);
+
+	useEffect(() => {
+		setWidth(window.innerWidth);
+		const handleResize = () => setWidth(window.innerWidth);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	const changeClient = (up) => {
 		if (up) {
@@ -133,7 +148,7 @@ export default function Home() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="necesidad-section w-screen relative"
+				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
 			>
 				<AniTopRight
 					src="/animations/animation-right-top.svg"
@@ -144,7 +159,7 @@ export default function Home() {
 				<AniBottomRight
 					src="/animations/animation-right-bottom.svg"
 					alt="Fake animation"
-					className="bottom-0 right-0 absolute"
+					className="bottom-0 right-0 absolute hidden lg:block"
 					width="250"
 				/>
 				<AniTopLeft
@@ -156,26 +171,40 @@ export default function Home() {
 				<AniBottomLeft
 					src="/animations/animation-left-bottom.svg"
 					alt="Fake animation"
-					className="bottom-0 left-0 absolute"
+					className="bottom-0 left-0 absolute hidden lg:block"
 					width="100"
 				/>
-				<NecesidadSection className="container mx-auto h-auto lg:h-screen flex flex-col items-center justify-start lg:justify-center relative z-50">
-					<h1 className="text-xl md:text-3xl lg:text-5xl text-main font-bold w-full lg:w-7/12 xl:w-6/12">
+				<NecesidadSection className="container mx-auto h-auto lg:h-screen flex flex-col items-center justify-start lg:justify-center relative z-50 mt-90x2 lg:mt-0">
+					<h1 className="text-4xl lg:text-5xl text-main font-bold w-full lg:w-7/12 xl:w-6/12">
 						Una necesidad actual
 					</h1>
-					<p className="text-black text-lg md:text-xl lg:text-3xl mt-4 font-bold w-full lg:w-7/12 xl:w-6/12">
+					<p className="text-black text-2xl lg:text-3xl mt-4 font-semibold lg:font-bold w-full lg:w-7/12 xl:w-6/12">
 						Comunica de manera innovadora e inteligente los datos
 						que más le importan a tu comunidad.{' '}
 					</p>
+					<div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
+						<img
+							src="/animations/animation-left-bottom.svg"
+							alt="Fake animation"
+							width="60px"
+							height="auto"
+						/>
+						<img
+							src="/animations/animation-right-bottom.svg"
+							alt="Fake animation"
+							width="200px"
+							height="auto"
+						/>
+					</div>
 				</NecesidadSection>
 			</motion.section>
-			<section className="about-section w-screen container mx-auto min-h-screen flex items-start justify-center pt-56 pb-20">
+			<section className="about-section w-screen container mx-auto min-h-screen flex items-start justify-center pt-16 lg:pt-56 pb-4 lg:pb-20 px-35 lg:px-0">
 				<article className="section-container w-full  md:w-10/12 flex flex-wrap items-start justify-center">
-					<div className="left-side w-full md:w-6/12">
-						<h2 className="text-xl lg:text-3xl font-bold text-main">
+					<div className="left-side w-full lg:w-6/12">
+						<h2 className="text-2xl lg:text-3xl font-bold text-main">
 							Lo que hacemos
 						</h2>
-						<p className="text-black mt-8 pr-10">
+						<p className="text-black mt-4 lg:mt-8 pr-0 lg:pr-10 font-medium">
 							Construimos plataformas de transparencia que buscan
 							abrir las líneas de comunicación entre
 							organizaciones de todo tipo y comunidad, a través de
@@ -183,10 +212,15 @@ export default function Home() {
 							consultorías de transparencia ajustadas a la
 							operación de las organizaciones.
 						</p>
-						<h2 className="text-xl lg:text-3xl font-bold text-main mt-28">
+						<img
+							className="block lg:hidden my-10"
+							src="/images/about-one.svg"
+							alt="About 1"
+						/>
+						<h2 className="text-2xl lg:text-3xl font-bold text-main mt-20">
 							¿Por qué Transparenta?
 						</h2>
-						<p className="text-black mt-8 pr-10">
+						<p className="text-black mt-4 lg:mt-8 pr-0 lg:pr-10 font-medium">
 							Generar un entorno de confianza alrededor del acceso
 							y divulgación de la información. Buscamos ayudar a
 							nuestros clientes a ofrecer mayor certeza y
@@ -197,8 +231,13 @@ export default function Home() {
 							grupos y transparentándolos con el contexto
 							adecuado.
 						</p>
+						<img
+							src="/images/about-three.svg"
+							alt="About 3"
+							className="block lg:hidden my-10"
+						/>
 					</div>
-					<div className="right-side w-full md:w-6/12 px-10 pt-16">
+					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:block">
 						<img
 							className="mb-10"
 							src="/images/about-one.svg"
@@ -213,7 +252,7 @@ export default function Home() {
 					</div>
 				</article>
 			</section>
-			<section className="just-animations relative h-52">
+			<section className="just-animations relative h-52 hidden lg:block">
 				<JaLeft
 					src="/animations/jaleft.svg"
 					alt="Fake animation"
@@ -227,27 +266,74 @@ export default function Home() {
 					width="100"
 				/>
 			</section>
-			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-20 pb-10">
-				<h2 className="text-xl lg:text-3xl font-bold text-main w-full">
+			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-10 px-35 lg:px-0">
+				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
 					Clientes
 				</h2>
-				<div className="the-clients flex items-center justify-center w-full">
-					<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-						<img src="/clients/cliente-1.png" alt="Cliente 01" />
+				{width > 1024 ? (
+					<div className="the-clients flex items-center justify-center w-full">
+						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
+							<img
+								src="/clients/cliente-1.png"
+								alt="Cliente 01"
+							/>
+						</div>
+						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
+							<img
+								src="/clients/cliente-2.png"
+								alt="Cliente 02"
+							/>
+						</div>
+						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
+							<img
+								src="/clients/cliente-3.png"
+								alt="Cliente 03"
+							/>
+						</div>
+						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
+							<img
+								src="/clients/cliente-4.png"
+								alt="Cliente 04"
+							/>
+						</div>
 					</div>
-					<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-						<img src="/clients/cliente-2.png" alt="Cliente 02" />
-					</div>
-					<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-						<img src="/clients/cliente-3.png" alt="Cliente 03" />
-					</div>
-					<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-						<img src="/clients/cliente-4.png" alt="Cliente 04" />
-					</div>
-				</div>
+				) : (
+					// <div className="w-full flex items-center justify-content"></div>
+					<Swiper
+						className="w-full -mt-10"
+						spaceBetween={0}
+						slidesPerView={1}
+						pagination={{ clickable: true }}
+					>
+						<SwiperSlide className="flex items-start justify-center">
+							<img
+								src="/clients/cliente-1.png"
+								alt="Cliente 01"
+							/>
+						</SwiperSlide>
+						<SwiperSlide className="flex items-start justify-center">
+							<img
+								src="/clients/cliente-2.png"
+								alt="Cliente 02"
+							/>
+						</SwiperSlide>
+						<SwiperSlide className="flex items-start justify-center">
+							<img
+								src="/clients/cliente-3.png"
+								alt="Cliente 03"
+							/>
+						</SwiperSlide>
+						<SwiperSlide className="flex items-start justify-center">
+							<img
+								src="/clients/cliente-4.png"
+								alt="Cliente 04"
+							/>
+						</SwiperSlide>
+					</Swiper>
+				)}
 			</section>
-			<section className="people w-screen container mx-auto flex items-center justify-center pb-40">
-				<article className="w-full md:w-10/12 lg:w-9/12 flex items-stretch justify-center">
+			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40">
+				<article className="w-full md:w-10/12 lg:w-9/12 flex flex-wrap items-stretch justify-center">
 					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative">
 						<h3 className="text-black font-bold text-xl">
 							{data[position].name}
@@ -281,7 +367,7 @@ export default function Home() {
 							</BtnShadow>
 						</PeopleBtnHolder>
 					</div>
-					<div className="w-full md:w-6/12 pl-10 pt-14">
+					<div className="w-full md:w-6/12 pl-10 pt-32 lg:pt-14">
 						<FaceHolder className="relative">
 							<FaceCircles
 								src="/animations/client-circle.svg"

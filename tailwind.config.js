@@ -18,7 +18,13 @@ module.exports = {
 			fontFamily: {
 				sans: ['Mon']
 			},
+			margin: {
+				90: '50px',
+				'90x2': '100px'
+			},
 			padding: {
+				'20px': '20px',
+				half: '15px',
 				35: '35px'
 			}
 		}
