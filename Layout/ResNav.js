@@ -133,7 +133,7 @@ function ResNav() {
 					>
 						<ul className="pointer-events-auto">
 							<li
-								className="font-bold uppercase hover:text-main text-center mb-4"
+								className="font-bold uppercase hover:text-main text-center mb-6 text-xl"
 								onClick={() => handleMenu(true)}
 							>
 								<ActiveLink
@@ -144,7 +144,7 @@ function ResNav() {
 								</ActiveLink>
 							</li>
 							<li
-								className="font-bold uppercase hover:text-main text-center mb-4"
+								className="font-bold uppercase hover:text-main text-center mb-6 text-xl"
 								onClick={() => handleMenu(true)}
 							>
 								<ActiveLink
@@ -155,7 +155,7 @@ function ResNav() {
 								</ActiveLink>
 							</li>
 							<li
-								className="font-bold uppercase hover:text-main text-center mb-4"
+								className="font-bold uppercase hover:text-main text-center mb-6 text-xl"
 								onClick={() => handleMenu(true)}
 							>
 								<ActiveLink
@@ -166,7 +166,7 @@ function ResNav() {
 								</ActiveLink>
 							</li>
 							<li
-								className="font-bold uppercase hover:text-main text-center mb-4"
+								className="font-bold uppercase hover:text-main text-center mb-6 text-xl"
 								onClick={() => handleMenu(true)}
 							>
 								<ActiveLink
@@ -175,6 +175,53 @@ function ResNav() {
 								>
 									<a>Servicios</a>
 								</ActiveLink>
+							</li>
+							<li className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out text-center">
+								Obtén Transparenta
+							</li>
+						</ul>
+						<ul className="social absolute left-1/2 bottom-5 transform -translate-x-1/2 flex items-center justify-center w-full">
+							<li className="mr-4">
+								<a
+									href="#instagram"
+									className="border-2 border-black flex items-center p-2 hover:opacity-50"
+								>
+									<Image
+										src="/instagram-black.svg"
+										alt="Instagram"
+										layout="intrinsic"
+										height="18px"
+										width="18px"
+									/>
+								</a>
+							</li>
+							<li className="mr-4">
+								<a
+									href="#twitter"
+									className="border-2 border-black flex items-center p-2 hover:opacity-50"
+								>
+									<Image
+										src="/twitter-black.svg"
+										alt="Twitter"
+										layout="intrinsic"
+										height="18px"
+										width="18px"
+									/>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#facebook"
+									className="border-2 border-black flex items-center p-2 hover:opacity-50"
+								>
+									<Image
+										src="/facebook-black.svg"
+										alt="Facebook"
+										layout="intrinsic"
+										height="18px"
+										width="18px"
+									/>
+								</a>
 							</li>
 						</ul>
 					</motion.div>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="212.579" height="110.941" viewBox="0 0 212.579 110.941">
+    <defs>
+        <style>
+            .cls-1{fill:#f2f2f2;stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px}
+        </style>
+    </defs>
+    <g id="Group_47" transform="translate(-78.46 -666.821)">
+        <path id="Rectángulo_21" d="M0 0H165.977V64.339H0z" class="cls-1" transform="translate(123.813 668.071)"/>
+        <path id="Rectángulo_22" d="M0 0H41.96V64.339H0z" class="cls-1" transform="translate(247.829 668.071)"/>
+        <circle id="Elipse_3" cx="44.103" cy="44.103" r="44.103" fill="#484d51" stroke="#484d51" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5px" transform="translate(79.71 688.306)"/>
+        <path id="Trazado_64" d="M-1909.128 732.408h-44.1v-44.1a44.1 44.1 0 0 1 44.1 44.1z" class="cls-1" transform="translate(2077.046)"/>
+    </g>
+</svg>

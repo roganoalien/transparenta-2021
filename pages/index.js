@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import SwiperCore, { Pagination } from 'swiper';
+import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay, Pagination]);
 
 const data = [
 	{
@@ -71,24 +71,39 @@ const FaceHolder = styled.div`
 	background-repeat: no-repeat !important;
 	height: 250px;
 	width: 190px;
+	@media (max-width: 1023px) {
+		position: relative;
+	}
 `;
 const FaceImage = styled.img`
+	object-fit: cover;
 	height: 200px;
-	width: 100%;
+	width: 190px;
 	z-index: -1;
 `;
 const FaceLines = styled.img`
 	height: 50px;
-	width: 100%;
+	width: 190px;
 `;
 const FaceCircles = styled.img`
 	transform: translate(55%, -55%);
 	z-index: 10;
+	@media (max-width: 1023px) {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translate(50%, -50%);
+	}
 `;
 const PeopleBtnHolder = styled.div`
 	bottom: 0px;
 	right: 60px;
 	position: absolute;
+	@media (max-width: 1023px) {
+		bottom: -120px;
+		right: 50%;
+		transform: translate(50%, 0);
+	}
 `;
 const BtnShadow = styled.button`
 	background: #f2f2f2;
@@ -266,7 +281,7 @@ export default function Home() {
 					width="100"
 				/>
 			</section>
-			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-10 px-35 lg:px-0">
+			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
 				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
 					Clientes
 				</h2>
@@ -303,6 +318,10 @@ export default function Home() {
 						className="w-full -mt-10"
 						spaceBetween={0}
 						slidesPerView={1}
+						autoplay={{
+							delay: 3000,
+							disableOnInteraction: false
+						}}
 						pagination={{ clickable: true }}
 					>
 						<SwiperSlide className="flex items-start justify-center">
@@ -332,22 +351,22 @@ export default function Home() {
 					</Swiper>
 				)}
 			</section>
-			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40">
+			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-0">
 				<article className="w-full md:w-10/12 lg:w-9/12 flex flex-wrap items-stretch justify-center">
-					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative">
-						<h3 className="text-black font-bold text-xl">
+					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
+						<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
 							{data[position].name}
 						</h3>
-						<p className="text-main font-bold text-sm">
+						<p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
 							{data[position].client}
 						</p>
-						<p className="text-black mt-5 italic pr-16">
+						<p className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16">
 							"{data[position].description}"
 						</p>
-						<PeopleBtnHolder className="switchClients flex items-center justify-center">
+						<PeopleBtnHolder className="switchClients flex items-center justify-center flex-wrap">
 							<BtnShadow
 								onClick={() => changeClient(false)}
-								className="border-2 border-black py-1 px-2 mr-4 bg-white hover:bg-main"
+								className="border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 bg-white hover:bg-main"
 							>
 								<img
 									src="/arrow-l.svg"
@@ -357,7 +376,7 @@ export default function Home() {
 							</BtnShadow>
 							<BtnShadow
 								onClick={() => changeClient(true)}
-								className="border-2 border-black py-1 px-2 bg-white hover:bg-main transition duration-150 ease-in-out"
+								className="border-2 border-black py-3 lg:py-1 px-4 lg:px-2 bg-white hover:bg-main transition duration-150 ease-in-out"
 							>
 								<img
 									src="/arrow-r.svg"
@@ -365,23 +384,45 @@ export default function Home() {
 									width="8"
 								/>
 							</BtnShadow>
+							<div className="w-full flex lg:hidden items-center justify-center mt-5">
+								{data.map((item, index) => (
+									<div
+										className={`border-2 border-black h-4 w-4 ${
+											index === data.length - 1
+												? 'mr-0'
+												: 'mr-4'
+										} ${
+											index === position
+												? 'bg-black'
+												: 'bg-transparent'
+										}`}
+										key={`activePeople-${index}`}
+									></div>
+								))}
+							</div>
 						</PeopleBtnHolder>
 					</div>
-					<div className="w-full md:w-6/12 pl-10 pt-32 lg:pt-14">
+					<div className="w-full md:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center lg:block mb-10 lg:mb-0">
 						<FaceHolder className="relative">
 							<FaceCircles
 								src="/animations/client-circle.svg"
 								alt="Face Circle"
+								width="190"
+								height="auto"
 							/>
 							<FaceImage
 								className="object-cover left-0 top-0 absolute border-2 border-black"
 								src={data[position].img}
 								alt="Nombre persona"
+								width="190"
+								height="auto"
 							/>
 							<FaceLines
 								className="absolute left-0 bottom-0 border-l-2 border-r-2 border-b-2 border-black object-cover"
 								src="/animations/client-lines.svg"
 								alt="Lines"
+								width="190"
+								height="auto"
 							/>
 						</FaceHolder>
 					</div>
