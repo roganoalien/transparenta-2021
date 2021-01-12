@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210.218" height="130.39" viewBox="0 0 210.218 130.39">
+    <defs>
+        <style>
+            .cls-2{stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px;fill:#f2f2f2}
+        </style>
+    </defs>
+    <g id="Group_59" transform="translate(-79.775 -1475.73)">
+        <path id="Rectangle_75" fill="#484d51" stroke="#484d51" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5px" d="M0 0H89.7V89.7H0z" transform="rotate(135 -175.024 830.156)"/>
+        <path id="Rectangle_76" d="M0 0H142.798V31.125H0z" class="cls-2" transform="rotate(180 111.911 795.866)"/>
+        <path id="Path_12" d="M-800.848 1591.732h-11.646l-31.125-31.125h42.771z" class="cls-2" transform="translate(1024.671)"/>
+        <path id="Rectangle_77" d="M0 0H31.125V46.718H0z" class="cls-2" transform="rotate(90 -716.432 844.175)"/>
+    </g>
+</svg>
