@@ -30,6 +30,22 @@ a {
 	background: #484d51;
 }
 
+.the-product-holder {
+	height: 500px !important;
+	overflow-y: visible !important;
+}
+
+.the-product-holder .swiper-pagination {
+	bottom: 0px !important;
+}
+
+.the-license {
+	height: 430px !important;
+}
+.the-license .swiper-pagination {
+	bottom: 0px !important;
+}
+
 /* .transparenta-btn-toblack:after {
 	background: #484d51;
 	content: '';

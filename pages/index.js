@@ -318,6 +318,9 @@ export default function Home() {
 						className="w-full -mt-10"
 						spaceBetween={0}
 						slidesPerView={1}
+						centeredSlides={true}
+						grabCursor={true}
+						longSwipes={false}
 						autoplay={{
 							delay: 3000,
 							disableOnInteraction: false

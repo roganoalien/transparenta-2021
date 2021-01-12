@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256.65" height="146.271" viewBox="0 0 256.65 146.271">
+    <defs>
+        <style>
+            .cls-2,.cls-3{stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px}.cls-2{fill:#89a4a9}.cls-3{fill:#f2f2f2}
+        </style>
+    </defs>
+    <g id="Group_55" transform="translate(-62.12 -1716.391)">
+        <path id="Rectangle_45" fill="#484d51" stroke="#484d51" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5px" d="M0 0H97.781V97.781H0z" transform="rotate(-90 970.776 844.646)"/>
+        <path id="Rectangle_46" d="M0 0H79.17V79.17H0z" class="cls-2" transform="rotate(-45 2210.667 825.337)"/>
+        <path id="Path_8" d="M-1429.332 1755.191l49.723 49.723-10.508 10.508h-39.215z" class="cls-3" transform="translate(1555.462)"/>
+        <path id="Rectangle_47" d="M0 0H24.874V116.583H0z" class="cls-3" transform="rotate(-90 980.91 779.972)"/>
+        <path id="Rectangle_48" d="M0 0H24.874V22.974H0z" class="cls-3" transform="rotate(-90 980.91 779.972)"/>
+        <path id="Rectangle_49" d="M0 0H24.874V38.462H0z" class="cls-2" transform="rotate(-90 1019.97 740.913)"/>
+    </g>
+</svg>
