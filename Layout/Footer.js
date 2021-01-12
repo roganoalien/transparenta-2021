@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import Image from 'next/image';
+import { TransparentaContext } from '../globalState';
 import styled from 'styled-components';
 
 const Transparenta = styled.button`
@@ -9,10 +11,19 @@ const Transparenta = styled.button`
 `;
 
 function Footer() {
+	const { transOpen, setTransOpen } = useContext(TransparentaContext);
+
+	const handleTransparenta = () => {
+		setTransOpen(!transOpen);
+	};
+
 	return (
 		<>
 			<section className="container mx-auto transparenta-btn flex items-center justify-center mb-20 lg:mb-36">
-				<button className="text-black text-2xl lg:text-4xl font-bold border-2 border-black py-2 lg:py-4 px-10 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none">
+				<button
+					onClick={handleTransparenta}
+					className="text-black text-2xl lg:text-4xl font-bold border-2 border-black py-2 lg:py-4 px-10 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none"
+				>
 					Obtén Transparenta
 				</button>
 			</section>

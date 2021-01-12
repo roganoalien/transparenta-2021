@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Image from 'next/image';
 import ActiveLink from '../components/ActiveLink';
+import { TransparentaContext } from '../globalState';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Formik } from 'formik';
 
@@ -49,8 +50,9 @@ const menuVariants = {
 };
 
 function ResNav() {
+	const { transOpen, setTransOpen } = useContext(TransparentaContext);
 	const [open, setOpen] = useState(false);
-	const [contact, setContact] = useState(false);
+	// const [contact, setContact] = useState(false);
 
 	const handleMenu = (isInside) => {
 		setTimeout(
@@ -63,12 +65,13 @@ function ResNav() {
 	};
 
 	const handleContact = () => {
-		if (contact) {
+		if (transOpen) {
 			noScroll.off();
 		} else {
 			noScroll.on();
 		}
-		setContact(!contact);
+		// setContact(!contact);
+		setTransOpen(!transOpen);
 	};
 
 	return (
@@ -88,7 +91,7 @@ function ResNav() {
 					onClick={() =>
 						open
 							? handleMenu(false)
-							: contact
+							: transOpen
 							? handleContact()
 							: handleMenu()
 					}
@@ -97,7 +100,7 @@ function ResNav() {
 					}}
 				>
 					<AnimatePresence exitBeforeEnter>
-						{open || contact ? (
+						{open || transOpen ? (
 							<motion.div
 								key="isOpen-menu"
 								variants={iconVariants}
@@ -249,7 +252,7 @@ function ResNav() {
 							</ul>
 						</motion.div>
 					)}
-					{contact && (
+					{transOpen && (
 						<motion.div
 							key="contact-opened"
 							initial="init"

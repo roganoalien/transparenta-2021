@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ActiveLink from '../components/ActiveLink';
+import { TransparentaContext } from '../globalState';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Formik } from 'formik';
 
@@ -27,10 +28,10 @@ const menuVariants = {
 };
 
 function Nav() {
-	const [transparenta, setTransparenta] = useState(false);
+	const { transOpen, setTransOpen } = useContext(TransparentaContext);
 
 	const handleTransparenta = () => {
-		setTransparenta(!transparenta);
+		setTransOpen(!transOpen);
 	};
 
 	return (
@@ -83,7 +84,7 @@ function Nav() {
 				</ul>
 			</nav>
 			<AnimatePresence exitBeforeEnter>
-				{transparenta && (
+				{transOpen && (
 					<motion.div
 						key="contact-opened"
 						initial="init"
