@@ -4,6 +4,16 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Lottie from 'lottie-react';
+
+// LOTTIES
+import one_right from '../animations/home/01_r.json';
+import one_left from '../animations/home/01_l.json';
+import two_left from '../animations/home/02_l.json';
+import two_right from '../animations/home/02_r.json';
+import three_m from '../animations/home/03_m.json';
+import four_left from '../animations/home/04_l.json';
+import four_right from '../animations/home/04_r.json';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -47,23 +57,41 @@ const NecesidadSection = styled.article`
 	}
 `;
 
-const AniTopRight = styled.img`
+// const AniTopRight = styled.img`
+// 	transform: translateX(15%);
+// `;
+const AniTopRightContainer = styled.div`
 	transform: translateX(15%);
 `;
-const AniBottomRight = styled.img`
-	transform: translate(-50%, 50%);
+// const AniBottomRight = styled.img`
+// 	transform: translate(-50%, 50%);
+// `;
+const AniBottomRightContainer = styled.div`
+	transform: translate(-23%, 50%);
 `;
-const AniTopLeft = styled.img`
-	transform: translate(80px, 80px);
+// const AniTopLeft = styled.img`
+// 	transform: translate(80px, 80px);
+// `;
+const AniTopLeftContainer = styled.div`
+	transform: translate(10px, -10px);
 `;
-const AniBottomLeft = styled.img`
-	transform: translate(300%, 80px);
+// const AniBottomLeft = styled.img`
+// 	transform: translate(300%, 80px);
+// `;
+const AniBottomLeftContainer = styled.div`
+	transform: translate(105%, 160px);
 `;
-const JaLeft = styled.img`
-	transform: translate(-2px, -50%);
+// const JaLeft = styled.img`
+// 	transform: translate(-2px, -50%);
+// `;
+const JaLeftContainer = styled.div`
+	transform: translate(-7%, -50%);
 `;
-const JaRight = styled.img`
-	transform: translate(-50%, -50%);
+// const JaRight = styled.img`
+// 	transform: translate(-50%, -50%);
+// `;
+const JaRightContainer = styled.div`
+	transform: translate(-5%, -50%);
 `;
 
 const FaceHolder = styled.div`
@@ -165,30 +193,54 @@ export default function Home() {
 				exit={{ opacity: 0 }}
 				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
 			>
-				<AniTopRight
+				{/* <AniTopRight
 					src="/animations/animation-right-top.svg"
 					alt="Fake animation"
 					className="top-0 right-0 absolute hidden lg:block"
 					width="600"
-				/>
-				<AniBottomRight
+				/> */}
+				<AniTopRightContainer
+					className="top-0 right-0 absolute hidden lg:block"
+					style={{ width: 600 }}
+				>
+					<Lottie animationData={one_right} />
+				</AniTopRightContainer>
+				{/* <AniBottomRight
 					src="/animations/animation-right-bottom.svg"
 					alt="Fake animation"
 					className="bottom-0 right-0 absolute hidden lg:block"
 					width="250"
-				/>
-				<AniTopLeft
+				/> */}
+				<AniBottomRightContainer
+					className="bottom-0 right-0 absolute hidden lg:block"
+					style={{ width: 340 }}
+				>
+					<Lottie animationData={two_right} />
+				</AniBottomRightContainer>
+				{/* <AniTopLeft
 					src="/animations/animation-left-top.svg"
 					alt="Fake animation"
 					className="top-0 left-0 absolute hidden lg:block"
 					width="200"
-				/>
-				<AniBottomLeft
+				/> */}
+				<AniTopLeftContainer
+					className="top-0 left-0 absolute hidden lg:block"
+					style={{ width: 320 }}
+				>
+					<Lottie animationData={one_left} />
+				</AniTopLeftContainer>
+				{/* <AniBottomLeft
 					src="/animations/animation-left-bottom.svg"
 					alt="Fake animation"
 					className="bottom-0 left-0 absolute hidden lg:block"
 					width="100"
-				/>
+				/> */}
+				<AniBottomLeftContainer
+					className="bottom-0 left-0 absolute hidden lg:block"
+					style={{ width: 230 }}
+				>
+					<Lottie animationData={two_left} />
+				</AniBottomLeftContainer>
 				<NecesidadSection className="container mx-auto h-auto lg:h-screen flex flex-col items-center justify-start lg:justify-center relative z-50 mt-90x2 lg:mt-0">
 					<h1 className="text-4xl lg:text-5xl text-main font-bold w-full lg:w-7/12 xl:w-6/12">
 						Una necesidad actual
@@ -253,7 +305,8 @@ export default function Home() {
 						/>
 					</div>
 					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:block">
-						<img
+						<Lottie animationData={three_m} />
+						{/* <img
 							className="mb-10"
 							src="/images/about-one.svg"
 							alt="About 1"
@@ -263,23 +316,35 @@ export default function Home() {
 							src="/images/about-two.svg"
 							alt="About 2"
 						/>
-						<img src="/images/about-three.svg" alt="About 3" />
+						<img src="/images/about-three.svg" alt="About 3" /> */}
 					</div>
 				</article>
 			</section>
 			<section className="just-animations relative h-52 hidden lg:block">
-				<JaLeft
+				{/* <JaLeft
 					src="/animations/jaleft.svg"
 					alt="Fake animation"
 					className="top-1/2 left-0 absolute"
 					width="600"
-				/>
-				<JaRight
+				/> */}
+				<JaLeftContainer
+					className="top-1/2 left-0 absolute"
+					style={{ width: 600 }}
+				>
+					<Lottie animationData={four_left} />
+				</JaLeftContainer>
+				{/* <JaRight
 					src="/animations/jaright.svg"
 					alt="Fake animation"
 					className="top-1/2 right-0 absolute"
 					width="100"
-				/>
+				/> */}
+				<JaRightContainer
+					className="top-1/2 right-0 absolute"
+					style={{ width: 180 }}
+				>
+					<Lottie animationData={four_right} />
+				</JaRightContainer>
 			</section>
 			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
 				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
