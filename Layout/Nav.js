@@ -118,6 +118,8 @@ function Nav() {
 								</h3>
 								<div className="px-16">
 									<Formik
+										validateOnChange={false}
+										validateOnBlur={false}
 										initialValues={{
 											name: '',
 											orgName: '',
@@ -163,8 +165,9 @@ function Nav() {
 										}}
 										onSubmit={(
 											values,
-											{ setSubmitting }
+											{ setSubmitting, validate }
 										) => {
+											validate(values);
 											alert('enviando');
 											setTimeout(() => {
 												alert(
@@ -200,9 +203,9 @@ function Nav() {
 													type="text"
 													name="name"
 													onChange={handleChange}
-													onBlur={handleBlur}
+													// onBlur={handleBlur}
 													value={values.name}
-													placeholder="Nombre"
+													placeholder="Nombre *"
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
 												/>
 												{errors.orgName && (
@@ -214,9 +217,9 @@ function Nav() {
 													type="text"
 													name="orgName"
 													onChange={handleChange}
-													onBlur={handleBlur}
+													// onBlur={handleBlur}
 													value={values.orgName}
-													placeholder="Nombre de la organización"
+													placeholder="Nombre de la organización *"
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
 												/>
 												{errors.sector && (
@@ -224,7 +227,7 @@ function Nav() {
 														{errors.sector}
 													</p>
 												)}
-												<input
+												{/* <input
 													type="text"
 													name="sector"
 													onChange={handleChange}
@@ -232,21 +235,39 @@ function Nav() {
 													value={values.sector}
 													placeholder="Sector"
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
-												/>
-												{errors.sector && (
-													<p className="text-red-500 text-xs uppercase text-left w-full">
-														{errors.sector}
-													</p>
-												)}
-												<input
-													type="text"
+												/> */}
+												<select
 													name="sector"
 													onChange={handleChange}
 													onBlur={handleBlur}
 													value={values.sector}
-													placeholder="Servicios de interés"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
-												/>
+													style={{
+														background:
+															'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSA3Ljg0TDEyIDEyLjQybDQuNTktNC41OEwxOCA5LjI1bC02IDYtNi02eiIvPjwvc3ZnPg==)',
+														backgroundPosition:
+															'98% 70%',
+														backgroundRepeat:
+															'no-repeat',
+														WebkitAppearance: 'none'
+													}}
+													className={`w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 ${
+														values.sector !==
+														'Sector *'
+															? 'text-black'
+															: 'text-gray-400'
+													}`}
+												>
+													<option>Sector *</option>
+													<option value="Público">
+														Público
+													</option>
+													<option value="Privado">
+														Privado
+													</option>
+													<option value="Social">
+														Social
+													</option>
+												</select>
 												{errors.email && (
 													<p className="text-red-500 text-xs uppercase text-left w-full">
 														{errors.email}
@@ -256,11 +277,36 @@ function Nav() {
 													type="email"
 													name="email"
 													onChange={handleChange}
-													onBlur={handleBlur}
+													// onBlur={handleBlur}
 													value={values.email}
-													placeholder="Servicios de interés"
+													placeholder="Correo"
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
 												/>
+												{errors.services && (
+													<p className="text-red-500 text-xs uppercase text-left w-full">
+														{errors.services}
+													</p>
+												)}
+												{/* <input
+													type="text"
+													name="services"
+													onChange={handleChange}
+													onBlur={handleBlur}
+													value={values.services}
+													placeholder="Servicios de interés"
+													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+												/> */}
+												<textarea
+													name="services"
+													cols="30"
+													rows="10"
+													placeholder="Servicios de interés"
+													onChange={handleChange}
+													// onBlur={handleBlur}
+													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black max-h-20"
+												>
+													{values.services}
+												</textarea>
 												{errors.text && (
 													<p className="text-red-500 text-xs uppercase text-left w-full">
 														{errors.text}
@@ -273,7 +319,7 @@ function Nav() {
 													placeholder="Cuéntanos más"
 													className="w-full"
 													onChange={handleChange}
-													onBlur={handleBlur}
+													// onBlur={handleBlur}
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall placeholder-black"
 												>
 													{values.text}

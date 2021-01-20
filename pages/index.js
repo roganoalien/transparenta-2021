@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Lottie from 'lottie-react';
+import LottieHolder from '../components/LottieHolder';
+// import Lottie from 'lottie-react';
 
 // LOTTIES
 import one_right from '../animations/home/01_r.json';
@@ -193,80 +194,76 @@ export default function Home() {
 				exit={{ opacity: 0 }}
 				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
 			>
-				{/* <AniTopRight
-					src="/animations/animation-right-top.svg"
-					alt="Fake animation"
-					className="top-0 right-0 absolute hidden lg:block"
-					width="600"
-				/> */}
-				<AniTopRightContainer
-					className="top-0 right-0 absolute hidden lg:block"
-					style={{ width: 600 }}
-				>
-					<Lottie animationData={one_right} />
-				</AniTopRightContainer>
-				{/* <AniBottomRight
-					src="/animations/animation-right-bottom.svg"
-					alt="Fake animation"
-					className="bottom-0 right-0 absolute hidden lg:block"
-					width="250"
-				/> */}
-				<AniBottomRightContainer
-					className="bottom-0 right-0 absolute hidden lg:block"
-					style={{ width: 340 }}
-				>
-					<Lottie animationData={two_right} />
-				</AniBottomRightContainer>
-				{/* <AniTopLeft
-					src="/animations/animation-left-top.svg"
-					alt="Fake animation"
-					className="top-0 left-0 absolute hidden lg:block"
-					width="200"
-				/> */}
-				<AniTopLeftContainer
-					className="top-0 left-0 absolute hidden lg:block"
-					style={{ width: 320 }}
-				>
-					<Lottie animationData={one_left} />
-				</AniTopLeftContainer>
-				{/* <AniBottomLeft
-					src="/animations/animation-left-bottom.svg"
-					alt="Fake animation"
-					className="bottom-0 left-0 absolute hidden lg:block"
-					width="100"
-				/> */}
-				<AniBottomLeftContainer
-					className="bottom-0 left-0 absolute hidden lg:block"
-					style={{ width: 230 }}
-				>
-					<Lottie animationData={two_left} />
-				</AniBottomLeftContainer>
-				<NecesidadSection className="container mx-auto h-auto lg:h-screen flex flex-col items-center justify-start lg:justify-center relative z-50 mt-90x2 lg:mt-0">
-					<h1 className="text-4xl lg:text-5xl text-main font-bold w-full lg:w-7/12 xl:w-6/12">
-						Una necesidad actual
-					</h1>
-					<p className="text-black text-2xl lg:text-3xl mt-4 font-semibold lg:font-bold w-full lg:w-7/12 xl:w-6/12">
-						Comunica de manera innovadora e inteligente los datos
-						que más le importan a tu comunidad.{' '}
-					</p>
-					<div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
-						<img
-							src="/animations/animation-left-bottom.svg"
-							alt="Fake animation"
-							width="60px"
-							height="auto"
-						/>
-						<img
-							src="/animations/animation-right-bottom.svg"
-							alt="Fake animation"
-							width="200px"
-							height="auto"
-						/>
+				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
+					<div className="left-animation-container w-3/12 flex items-start justify-start">
+						{/* <AniTopLeftContainer
+						className="top-0 left-0 absolute hidden lg:block"
+						style={{ width: 320 }}
+					> */}
+						<div style={{ width: '100%' }}>
+							{/* <Lottie animationData={one_left} /> */}
+							<LottieHolder animationData={one_left} />
+						</div>
+						{/* </AniTopLeftContainer> */}
 					</div>
-				</NecesidadSection>
+					<div className="center-content w-7/12 h-auto flex flex-col items-start justify-start lg:justify-center relative z-50">
+						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
+							Una necesidad actual
+						</h1>
+						<p className="text-black text-2xl lg:text-3xl mt-4 font-semibold lg:font-bold w-full lg:w-9/12">
+							Comunica de manera innovadora e inteligente los
+							datos que más le importan a tu comunidad.{' '}
+						</p>
+						<div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
+							<img
+								src="/animations/animation-left-bottom.svg"
+								alt="Fake animation"
+								width="60px"
+								height="auto"
+							/>
+							<img
+								src="/animations/animation-right-bottom.svg"
+								alt="Fake animation"
+								width="200px"
+								height="auto"
+							/>
+						</div>
+					</div>
+					<div className="right-content-animation w-2/12 h-auto flex items-start justify-start relative">
+						<div
+							className="absolute top-0 right-0"
+							style={{
+								width: 550,
+								transform: 'translate(15%, -10%)'
+							}}
+						>
+							{/* <Lottie animationData={one_right} /> */}
+							<LottieHolder animationData={one_right} />
+						</div>
+					</div>
+					<div className="bottom-content w-full h-auto flex items-center justify-between -mt-4">
+						<div className="w-full lg:w-6/12 flex items-center justify-center">
+							<div style={{ width: 230 }}>
+								{/* <Lottie animationData={two_left} /> */}
+								<LottieHolder animationData={two_left} />
+							</div>
+						</div>
+						<div className="w-full lg:w-6/12 flex items-center justify-center">
+							<div style={{ width: 340 }}>
+								{/* <Lottie animationData={two_right} /> */}
+								<LottieHolder animationData={two_right} />
+							</div>
+						</div>
+					</div>
+				</div>
 			</motion.section>
-			<section className="about-section w-screen container mx-auto min-h-screen flex items-start justify-center pt-16 lg:pt-56 pb-4 lg:pb-20 px-35 lg:px-0">
-				<article className="section-container w-full  md:w-10/12 flex flex-wrap items-start justify-center">
+			<motion.section
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className="about-section w-screen container mx-auto h-auto flex items-start justify-center pt-16 px-35 lg:px-0"
+			>
+				<article className="section-container w-full flex flex-wrap items-start justify-center">
 					<div className="left-side w-full lg:w-6/12">
 						<h2 className="text-2xl lg:text-3xl font-bold text-main">
 							Lo que hacemos
@@ -305,7 +302,10 @@ export default function Home() {
 						/>
 					</div>
 					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:block">
-						<Lottie animationData={three_m} />
+						<div className="-mt-20">
+							{/* <Lottie animationData={three_m} /> */}
+							<LottieHolder animationData={three_m} />
+						</div>
 						{/* <img
 							className="mb-10"
 							src="/images/about-one.svg"
@@ -319,7 +319,7 @@ export default function Home() {
 						<img src="/images/about-three.svg" alt="About 3" /> */}
 					</div>
 				</article>
-			</section>
+			</motion.section>
 			<section className="just-animations relative h-52 hidden lg:block">
 				{/* <JaLeft
 					src="/animations/jaleft.svg"
@@ -331,7 +331,8 @@ export default function Home() {
 					className="top-1/2 left-0 absolute"
 					style={{ width: 600 }}
 				>
-					<Lottie animationData={four_left} />
+					{/* <Lottie animationData={four_left} /> */}
+					<LottieHolder animationData={four_left} />
 				</JaLeftContainer>
 				{/* <JaRight
 					src="/animations/jaright.svg"
@@ -343,7 +344,8 @@ export default function Home() {
 					className="top-1/2 right-0 absolute"
 					style={{ width: 180 }}
 				>
-					<Lottie animationData={four_right} />
+					{/* <Lottie animationData={four_right} /> */}
+					<LottieHolder animationData={four_right} />
 				</JaRightContainer>
 			</section>
 			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
@@ -419,7 +421,7 @@ export default function Home() {
 					</Swiper>
 				)}
 			</section>
-			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-0">
+			{/* <section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-0">
 				<article className="w-full md:w-10/12 lg:w-9/12 flex flex-wrap items-stretch justify-center">
 					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
 						<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
@@ -495,7 +497,7 @@ export default function Home() {
 						</FaceHolder>
 					</div>
 				</article>
-			</section>
+			</section> */}
 		</>
 	);
 }

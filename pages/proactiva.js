@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import LottieHolder from '../components/LottieHolder';
 import Lottie from 'lottie-react';
 
 // LOTTIES
@@ -67,7 +68,8 @@ export default function Proactiva() {
 					className="top-0 right-0 absolute hidden lg:block"
 					// width={{ width: 100 }}
 				>
-					<Lottie animationData={one_right} style={{ width: 480 }} />
+					{/* <Lottie animationData={one_right} style={{ width: 480 }} /> */}
+					<LottieHolder animationData={one_right} />
 				</AniTopRightContainer>
 				{/* <AniTopLeft
 					src="/animations/proactiva-anim-top-left.svg"
@@ -79,7 +81,8 @@ export default function Proactiva() {
 					className="top-0 left-0 absolute hidden lg:block"
 					style={{ width: 290 }}
 				>
-					<Lottie animationData={one_left} />
+					{/* <Lottie animationData={one_left} /> */}
+					<LottieHolder animationData={one_left} />
 				</AniTopLeftContainer>
 				<section className="header w-full lg:w-10/12 mb-10 lg:mb-20 mt-90x2 lg:mt-16 px-35 lg:px-0 z-30">
 					<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
@@ -90,7 +93,8 @@ export default function Proactiva() {
 					</p>
 				</section>
 				<section className="footer w-full lg:w-10/12 mt-0 lg:mt-10 mb-20 flex items-start justify-end">
-					<Lottie animationData={one_m} style={{ width: 856 }} />
+					{/* <Lottie animationData={one_m} style={{ width: 856 }} /> */}
+					<LottieHolder animationData={one_m} />
 					{/* <img
 						className="mr-10"
 						src="/images/activa-1.svg"
@@ -133,7 +137,8 @@ export default function Proactiva() {
 							className="top-1/2 right-0 absolute hidden lg:block"
 							style={{ width: 275 }}
 						>
-							<Lottie animationData={two} />
+							{/* <Lottie animationData={two} /> */}
+							<LottieHolder animationData={two} />
 						</AniMiddleContainer>
 						{/* <img
 							src="/animations/anim-res-proactiva-que.svg"
@@ -153,7 +158,8 @@ export default function Proactiva() {
 							className="top-0 right-0 absolute"
 							style={{ width: 320 }}
 						>
-							<Lottie animationData={three} />
+							{/* <Lottie animationData={three} /> */}
+							<LottieHolder animationData={three} />
 						</AniBottomContainer>
 					</article>
 					<article className="w-full lg:w-9/12">

@@ -1,5 +1,10 @@
 module.exports = {
-	purge: ['./pages/**/*.js', './components/**/*.js', './Layout/**/*.js'],
+	purge: [
+		'./pages/**/*.js',
+		'./components/**/*.js',
+		'./Layout/**/*.js',
+		'./globalState/**/*.js'
+	],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		fontFamily: {
