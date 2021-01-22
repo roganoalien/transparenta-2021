@@ -86,7 +86,7 @@ export default function Servicios() {
 							</div>
 						</article>
 					</section>
-					<section className="benefits w-full mt-1 flex items-stretch justify-center flex-wrap lg:-mt-20">
+					<section className="benefits w-full mt-1 flex items-stretch justify-center flex-wrap lg:-mt-32">
 						<article className="w-full lg:w-8/12 order-1 lg:order-2">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20">
 								Beneficios
@@ -137,7 +137,7 @@ export default function Servicios() {
 							</p>
 						</article>
 						<article className="w-full lg:w-4/12 flex flex-col items-center justify-center order-2 lg:order-1">
-							<div>
+							<div className="hidden lg:block">
 								<LottieHolder animationData={two} />
 							</div>
 							{/* <img
@@ -160,7 +160,7 @@ export default function Servicios() {
 							/>
 						</article>
 					</section>
-					<section className="price w-full mt-1 flex items-stretch justify-start flex-wrap">
+					<section className="price w-full mt-1 flex items-stretch justify-start flex-wrap mb-10">
 						<article className="w-full lg:w-10/12">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold mb-10">
 								Precio
@@ -302,7 +302,7 @@ export default function Servicios() {
 								className="-ml-32"
 								width="250"
 							/> */}
-							<div>
+							<div className="hidden lg:block">
 								<LottieHolder animationData={two} />
 							</div>
 							<img
