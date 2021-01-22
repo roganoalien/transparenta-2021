@@ -118,7 +118,7 @@ export default function Proactiva() {
 					/> */}
 					</section>
 					<section className="what w-full lg:w-10/12 mt-0 lg:mt-4 mb-0 lg:mb-10 flex items-center justify-center flex-wrap">
-						<article className="w-full lg:w-5/12">
+						<article className="w-full lg:w-8/12">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold">
 								¿Qué es?
 							</h2>
@@ -129,43 +129,40 @@ export default function Proactiva() {
 								confianza entre la organización y su comunidad.
 							</p>
 						</article>
-						<article className="w-full lg:w-7/12 relative flex lg:block items-center justify-center mt-10 lg:mt-0">
+						<article className="w-full lg:w-4/12 relative flex lg:block items-center justify-center mt-10 lg:mt-0 bg-pink-100">
 							{/* <AniMiddle
 							src="/animations/proactiva-anim-middle.svg"
 							alt="Fake animation"
 							className="top-1/2 right-0 absolute hidden lg:block"
 							width="200"
 						/> */}
-							<AniMiddleContainer
-								className="top-1/2 right-0 absolute hidden lg:block"
-								style={{ width: 275 }}
+							<div
+								className="hidden lg:block transform scale-75"
+								// style={{ width: 275 }}
 							>
 								{/* <Lottie animationData={two} /> */}
 								<LottieHolder animationData={two} />
-							</AniMiddleContainer>
+							</div>
 							{/* <img
 							src="/animations/anim-res-proactiva-que.svg"
 							alt="Fake Animation"
 						/> */}
 						</article>
 					</section>
-					<section className="benefits w-full lg:w-10/12 mt-0 lg:mt-10 mb-32 lg:mb-60 flex items-start justify-center">
-						<article className="w-full lg:w-3/12 relative hidden lg:block">
+					<section className="benefits w-full mt-0 lg:mt-10 mb-32 lg:mb-60 flex items-start justify-center">
+						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-center">
 							{/* <AniBottom
 							src="/animations/proactiva-anim-bottom.svg"
 							alt="Fake animation"
 							className="top-0 right-0 absolute"
 							width="200"
 						/> */}
-							<AniBottomContainer
-								className="top-0 right-0 absolute"
-								style={{ width: 320 }}
-							>
+							<div className="" style={{ width: 320 }}>
 								{/* <Lottie animationData={three} /> */}
 								<LottieHolder animationData={three} />
-							</AniBottomContainer>
+							</div>
 						</article>
-						<article className="w-full lg:w-9/12">
+						<article className="w-full lg:w-8/12">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold">
 								Beneficios
 							</h2>
