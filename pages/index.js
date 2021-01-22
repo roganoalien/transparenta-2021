@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import LottieHolder from '../components/LottieHolder';
+import { LottieHolder } from '../components/LottieHolder';
 // import Lottie from 'lottie-react';
 
 // LOTTIES
@@ -51,37 +51,37 @@ const data = [
 	}
 ];
 
-const NecesidadSection = styled.article`
-	height: calc(100vh - 106px);
-	@media (max-width: 1023px) {
-		height: auto;
-	}
-`;
+// const NecesidadSection = styled.article`
+// 	height: calc(100vh - 106px);
+// 	@media (max-width: 1023px) {
+// 		height: auto;
+// 	}
+// `;
 
 // const AniTopRight = styled.img`
 // 	transform: translateX(15%);
 // `;
-const AniTopRightContainer = styled.div`
-	transform: translateX(15%);
-`;
+// const AniTopRightContainer = styled.div`
+// 	transform: translateX(15%);
+// `;
 // const AniBottomRight = styled.img`
 // 	transform: translate(-50%, 50%);
 // `;
-const AniBottomRightContainer = styled.div`
-	transform: translate(-23%, 50%);
-`;
+// const AniBottomRightContainer = styled.div`
+// 	transform: translate(-23%, 50%);
+// `;
 // const AniTopLeft = styled.img`
 // 	transform: translate(80px, 80px);
 // `;
-const AniTopLeftContainer = styled.div`
-	transform: translate(10px, -10px);
-`;
+// const AniTopLeftContainer = styled.div`
+// 	transform: translate(10px, -10px);
+// `;
 // const AniBottomLeft = styled.img`
 // 	transform: translate(300%, 80px);
 // `;
-const AniBottomLeftContainer = styled.div`
-	transform: translate(105%, 160px);
-`;
+// const AniBottomLeftContainer = styled.div`
+// 	transform: translate(105%, 160px);
+// `;
 // const JaLeft = styled.img`
 // 	transform: translate(-2px, -50%);
 // `;
@@ -95,67 +95,67 @@ const JaRightContainer = styled.div`
 	transform: translate(-5%, -50%);
 `;
 
-const FaceHolder = styled.div`
-	background-size: cover !important;
-	background-repeat: no-repeat !important;
-	height: 250px;
-	width: 190px;
-	@media (max-width: 1023px) {
-		position: relative;
-	}
-`;
-const FaceImage = styled.img`
-	object-fit: cover;
-	height: 200px;
-	width: 190px;
-	z-index: -1;
-`;
-const FaceLines = styled.img`
-	height: 50px;
-	width: 190px;
-`;
-const FaceCircles = styled.img`
-	transform: translate(55%, -55%);
-	z-index: 10;
-	@media (max-width: 1023px) {
-		position: absolute;
-		right: 0;
-		top: 0;
-		transform: translate(50%, -50%);
-	}
-`;
-const PeopleBtnHolder = styled.div`
-	bottom: 0px;
-	right: 60px;
-	position: absolute;
-	@media (max-width: 1023px) {
-		bottom: -120px;
-		right: 50%;
-		transform: translate(50%, 0);
-	}
-`;
-const BtnShadow = styled.button`
-	background: #f2f2f2;
-	outline: none !important;
-	position: relative;
-	&:after {
-		content: '';
-		background: #484d51;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		transform: translate(6px, 6px);
-		transition: all 0.15s ease-in-out;
-		width: 100%;
-		z-index: -1;
-	}
-	&:hover {
-		&:after {
-			transform: translate(4px, 4px);
-		}
-	}
-`;
+// const FaceHolder = styled.div`
+// 	background-size: cover !important;
+// 	background-repeat: no-repeat !important;
+// 	height: 250px;
+// 	width: 190px;
+// 	@media (max-width: 1023px) {
+// 		position: relative;
+// 	}
+// `;
+// const FaceImage = styled.img`
+// 	object-fit: cover;
+// 	height: 200px;
+// 	width: 190px;
+// 	z-index: -1;
+// `;
+// const FaceLines = styled.img`
+// 	height: 50px;
+// 	width: 190px;
+// `;
+// const FaceCircles = styled.img`
+// 	transform: translate(55%, -55%);
+// 	z-index: 10;
+// 	@media (max-width: 1023px) {
+// 		position: absolute;
+// 		right: 0;
+// 		top: 0;
+// 		transform: translate(50%, -50%);
+// 	}
+// `;
+// const PeopleBtnHolder = styled.div`
+// 	bottom: 0px;
+// 	right: 60px;
+// 	position: absolute;
+// 	@media (max-width: 1023px) {
+// 		bottom: -120px;
+// 		right: 50%;
+// 		transform: translate(50%, 0);
+// 	}
+// `;
+// const BtnShadow = styled.button`
+// 	background: #f2f2f2;
+// 	outline: none !important;
+// 	position: relative;
+// 	&:after {
+// 		content: '';
+// 		background: #484d51;
+// 		height: 100%;
+// 		left: 0;
+// 		position: absolute;
+// 		top: 0;
+// 		transform: translate(6px, 6px);
+// 		transition: all 0.15s ease-in-out;
+// 		width: 100%;
+// 		z-index: -1;
+// 	}
+// 	&:hover {
+// 		&:after {
+// 			transform: translate(4px, 4px);
+// 		}
+// 	}
+// `;
 
 export default function Home() {
 	const [position, setPosition] = useState(0);
@@ -195,7 +195,7 @@ export default function Home() {
 				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
 			>
 				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
-					<div className="left-animation-container w-3/12 flex items-start justify-start">
+					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start">
 						{/* <AniTopLeftContainer
 						className="top-0 left-0 absolute hidden lg:block"
 						style={{ width: 320 }}
@@ -206,7 +206,7 @@ export default function Home() {
 						</div>
 						{/* </AniTopLeftContainer> */}
 					</div>
-					<div className="center-content w-7/12 h-auto flex flex-col items-start justify-start lg:justify-center relative z-50">
+					<div className="center-content w-full lg:w-9/12 xl:w-7/12 h-auto flex flex-col items-start justify-start lg:justify-center relative z-50">
 						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
 							Una necesidad actual
 						</h1>
@@ -214,7 +214,7 @@ export default function Home() {
 							Comunica de manera innovadora e inteligente los
 							datos que más le importan a tu comunidad.{' '}
 						</p>
-						<div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
+						{/* <div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
 							<img
 								src="/animations/animation-left-bottom.svg"
 								alt="Fake animation"
@@ -227,11 +227,11 @@ export default function Home() {
 								width="200px"
 								height="auto"
 							/>
-						</div>
+						</div> */}
 					</div>
-					<div className="right-content-animation w-2/12 h-auto flex items-start justify-start relative">
+					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative">
 						<div
-							className="absolute top-0 right-0"
+							className="absolute top-0 lg:-top-20 xl:top-0 right-0"
 							style={{
 								width: 550,
 								transform: 'translate(15%, -10%)'
@@ -241,15 +241,15 @@ export default function Home() {
 							<LottieHolder animationData={one_right} />
 						</div>
 					</div>
-					<div className="bottom-content w-full h-auto flex items-center justify-between -mt-4">
+					<div className="bottom-content w-full h-auto flex items-center justify-between mt-2 lg:-mt-10 xl:-mt-24">
 						<div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div style={{ width: 230 }}>
+							<div style={{ width: width < 1024 ? 120 : 230 }}>
 								{/* <Lottie animationData={two_left} /> */}
 								<LottieHolder animationData={two_left} />
 							</div>
 						</div>
 						<div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div style={{ width: 340 }}>
+							<div style={{ width: width < 1024 ? 180 : 340 }}>
 								{/* <Lottie animationData={two_right} /> */}
 								<LottieHolder animationData={two_right} />
 							</div>
@@ -261,9 +261,9 @@ export default function Home() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="about-section w-screen container mx-auto h-auto flex items-start justify-center pt-16 px-35 lg:px-0"
+				className="about-section w-screen h-auto flex items-start justify-center pt-8 lg:pt-16 px-35 lg:px-20"
 			>
-				<article className="section-container w-full flex flex-wrap items-start justify-center">
+				<article className="section-container container mx-auto flex flex-wrap items-start justify-center">
 					<div className="left-side w-full lg:w-6/12">
 						<h2 className="text-2xl lg:text-3xl font-bold text-main">
 							Lo que hacemos
@@ -301,7 +301,7 @@ export default function Home() {
 							className="block lg:hidden my-10"
 						/>
 					</div>
-					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:block">
+					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:flex items-center justify-end">
 						<div className="-mt-20">
 							{/* <Lottie animationData={three_m} /> */}
 							<LottieHolder animationData={three_m} />
@@ -320,7 +320,7 @@ export default function Home() {
 					</div>
 				</article>
 			</motion.section>
-			<section className="just-animations relative h-52 hidden lg:block">
+			<section className="just-animations relative h-auto hidden lg:block lg:mt-12">
 				{/* <JaLeft
 					src="/animations/jaleft.svg"
 					alt="Fake animation"
