@@ -31,8 +31,27 @@ a {
 }
 
 .the-product-holder {
-	height: 500px !important;
+	height: 530px !important;
 	overflow-y: visible !important;
+}
+@media (max-width: 1023px) {
+	.the-product-holder {
+		height: 465px !important;
+	}
+}
+@media (max-width: 600px) {
+	.the-product-holder {
+		height: 550px !important;
+	}
+}
+@media (max-width: 540px) {
+	.the-product-holder {
+		height: auto !important;
+	}
+	.the-product-holder .swiper-slide {
+		padding: 0;
+		margin-bottom: 1.5em;
+	}
 }
 
 .the-product-holder .swiper-pagination {
