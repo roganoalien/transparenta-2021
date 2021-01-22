@@ -301,8 +301,12 @@ function ResNav() {
 									}
 									return errors;
 								}}
-								onSubmit={(values, { setSubmitting }) => {
-									alert('enviando');
+								onSubmit={(
+									values,
+									{ setSubmitting, validate }
+								) => {
+									validate(values);
+									// alert('enviando');
 									setTimeout(() => {
 										alert(JSON.stringify(values, null, 2));
 										setSubmitting(false);
@@ -312,11 +316,11 @@ function ResNav() {
 								{({
 									values,
 									errors,
-									touched,
+									// touched,
 									handleChange,
 									handleBlur,
-									handleSubmit,
-									isSubmitting
+									handleSubmit
+									// isSubmitting
 								}) => (
 									<form
 										onSubmit={handleSubmit}
@@ -331,9 +335,9 @@ function ResNav() {
 											type="text"
 											name="name"
 											onChange={handleChange}
-											onBlur={handleBlur}
+											// onBlur={handleBlur}
 											value={values.name}
-											placeholder="Nombre"
+											placeholder="Nombre *"
 											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
 										/>
 										{errors.orgName && (
@@ -345,9 +349,9 @@ function ResNav() {
 											type="text"
 											name="orgName"
 											onChange={handleChange}
-											onBlur={handleBlur}
+											// onBlur={handleBlur}
 											value={values.orgName}
-											placeholder="Nombre de la organización"
+											placeholder="Nombre de la organización *"
 											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
 										/>
 										{errors.sector && (
@@ -355,7 +359,36 @@ function ResNav() {
 												{errors.sector}
 											</p>
 										)}
-										<input
+										<select
+											name="sector"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.sector}
+											style={{
+												background:
+													'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSA3Ljg0TDEyIDEyLjQybDQuNTktNC41OEwxOCA5LjI1bC02IDYtNi02eiIvPjwvc3ZnPg==)',
+												backgroundPosition: '98% 70%',
+												backgroundRepeat: 'no-repeat',
+												WebkitAppearance: 'none'
+											}}
+											className={`w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 ${
+												values.sector !== 'Sector *'
+													? 'text-black'
+													: 'text-gray-400'
+											}`}
+										>
+											<option>Sector *</option>
+											<option value="Público">
+												Público
+											</option>
+											<option value="Privado">
+												Privado
+											</option>
+											<option value="Social">
+												Social
+											</option>
+										</select>
+										{/* <input
 											type="text"
 											name="sector"
 											onChange={handleChange}
@@ -363,21 +396,7 @@ function ResNav() {
 											value={values.sector}
 											placeholder="Sector"
 											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
-										/>
-										{errors.sector && (
-											<p className="text-red-500 text-xs uppercase text-left w-full">
-												{errors.sector}
-											</p>
-										)}
-										<input
-											type="text"
-											name="sector"
-											onChange={handleChange}
-											onBlur={handleBlur}
-											value={values.sector}
-											placeholder="Servicios de interés"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
-										/>
+										/> */}
 										{errors.email && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
 												{errors.email}
@@ -387,11 +406,36 @@ function ResNav() {
 											type="email"
 											name="email"
 											onChange={handleChange}
+											// onBlur={handleBlur}
+											value={values.sector}
+											placeholder="Correo *"
+											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+										/>
+										{errors.services && (
+											<p className="text-red-500 text-xs uppercase text-left w-full">
+												{errors.services}
+											</p>
+										)}
+										{/* <input
+											type="email"
+											name="email"
+											onChange={handleChange}
 											onBlur={handleBlur}
 											value={values.email}
 											placeholder="Servicios de interés"
 											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
-										/>
+										/> */}
+										<textarea
+											name="services"
+											cols="30"
+											rows="10"
+											placeholder="Servicios de interés"
+											onChange={handleChange}
+											// onBlur={handleBlur}
+											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black max-h-20"
+										>
+											{values.services}
+										</textarea>
 										{errors.text && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
 												{errors.text}
@@ -404,13 +448,16 @@ function ResNav() {
 											placeholder="Cuéntanos más"
 											className="w-full"
 											onChange={handleChange}
-											onBlur={handleBlur}
+											// onBlur={handleBlur}
 											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall"
 										>
 											{values.text}
 										</textarea>
 										<div className="btn-holder flex items-center justify-center w-full mt-10">
-											<button className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline">
+											<button
+												type="submit"
+												className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline"
+											>
 												Enviar
 											</button>
 										</div>

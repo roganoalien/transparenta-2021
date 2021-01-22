@@ -168,7 +168,7 @@ function Nav() {
 											{ setSubmitting, validate }
 										) => {
 											validate(values);
-											alert('enviando');
+											// alert('enviando');
 											setTimeout(() => {
 												alert(
 													JSON.stringify(
@@ -184,11 +184,11 @@ function Nav() {
 										{({
 											values,
 											errors,
-											touched,
+											// touched,
 											handleChange,
 											handleBlur,
-											handleSubmit,
-											isSubmitting
+											handleSubmit
+											// isSubmitting
 										}) => (
 											<form
 												onSubmit={handleSubmit}
@@ -279,7 +279,7 @@ function Nav() {
 													onChange={handleChange}
 													// onBlur={handleBlur}
 													value={values.email}
-													placeholder="Correo"
+													placeholder="Correo *"
 													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
 												/>
 												{errors.services && (
@@ -325,7 +325,10 @@ function Nav() {
 													{values.text}
 												</textarea>
 												<div className="btn-holder flex items-center justify-center w-full mt-10">
-													<button className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline">
+													<button
+														type="submit"
+														className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline"
+													>
 														Enviar
 													</button>
 												</div>
