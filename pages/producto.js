@@ -434,10 +434,10 @@ export default function Producto() {
 										}
 										grabCursor={true}
 										longSwipes={false}
-										// autoplay={{
-										// 	delay: 3000,
-										// 	disableOnInteraction: false
-										// }}
+										autoplay={{
+											delay: 3000,
+											disableOnInteraction: false
+										}}
 										pagination={{ clickable: true }}
 									>
 										<SwiperSlide className="item w-full flex flex-col items-center justify-start px-4 self-stretch">
