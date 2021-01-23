@@ -92,7 +92,10 @@ const JaLeftContainer = styled.div`
 // 	transform: translate(-50%, -50%);
 // `;
 const JaRightContainer = styled.div`
-	transform: translate(-5%, -50%);
+	transform: translate(-40%, -50%);
+	@media (max-width: 1023px) {
+		transform: translate(-5%, -50%);
+	}
 `;
 
 // const FaceHolder = styled.div`
@@ -195,7 +198,7 @@ export default function Home() {
 				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
 			>
 				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
-					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start">
+					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start pointer-events-none">
 						{/* <AniTopLeftContainer
 						className="top-0 left-0 absolute hidden lg:block"
 						style={{ width: 320 }}
@@ -210,7 +213,7 @@ export default function Home() {
 						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
 							Una necesidad actual
 						</h1>
-						<p className="text-black text-2xl lg:text-3xl mt-4 font-semibold lg:font-bold w-full lg:w-9/12">
+						<p className="text-black text-2xl lg:text-3xl mt-4 lg:pt-4 lg:pl-10 font-semibold lg:font-bold w-full lg:w-9/12">
 							Comunica de manera innovadora e inteligente los
 							datos que más le importan a tu comunidad.{' '}
 						</p>
@@ -229,7 +232,7 @@ export default function Home() {
 							/>
 						</div> */}
 					</div>
-					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative">
+					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative pointer-events-none">
 						<div
 							className="absolute top-0 lg:-top-20 xl:top-0 right-0"
 							style={{
@@ -341,8 +344,8 @@ export default function Home() {
 					width="100"
 				/> */}
 				<JaRightContainer
-					className="top-1/2 right-0 absolute"
-					style={{ width: 180 }}
+					className="top-1/2 right-0 absolute "
+					style={{ width: width < 1024 ? 180 : 260 }}
 				>
 					{/* <Lottie animationData={four_right} /> */}
 					<LottieHolder animationData={four_right} />

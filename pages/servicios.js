@@ -30,7 +30,7 @@ export default function Servicios() {
 				className="flex flex-wrap items-center justify-center mt-90 lg:mt-5 px-35 lg:px-0"
 			>
 				<div className="container mx-auto flex flex-wrap items-center justify-center">
-					<section className="header w-full mt-16 flex items-start justify-center flex-wrap">
+					<section className="header w-full mt-4 flex items-start justify-center flex-wrap">
 						<article className="w-full lg:w-8/12">
 							<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
 								Consultoría
@@ -63,7 +63,7 @@ export default function Servicios() {
 							<div className="hidden lg:block">
 								<LottieHolder animationData={one_top} />
 							</div>
-							<div className="hidden lg:block">
+							<div className="hidden lg:block transform scale-75 -mt-10">
 								<LottieHolder animationData={one_bottom} />
 							</div>
 							{/* <AnimTopRight
@@ -161,12 +161,12 @@ export default function Servicios() {
 						</article>
 					</section>
 					<section className="price w-full mt-1 flex items-stretch justify-start flex-wrap mb-10">
-						<article className="w-full lg:w-10/12">
-							<h2 className="text-2xl lg:text-3xl text-main font-bold mb-10">
+						<article className="w-full flex items-center justify-center flex-wrap">
+							<h2 className="text-2xl lg:text-3xl text-main font-bold mt-16 mb-10 w-full">
 								Precio
 							</h2>
-							<div className="w-full lg:w-8/12 border-2 border-black py-8 flex flex-col items-center justify-center shadow-transparenta">
-								<p className="font-bold text-black text-lg">
+							<div className="w-full lg:w-6/12 border-2 border-black py-8 flex flex-col items-center justify-center shadow-transparenta">
+								<p className="font-bold text-black text-lg w-full text-center">
 									Consultoría
 								</p>
 								{/* <img
@@ -175,10 +175,10 @@ export default function Servicios() {
 									className="my-8"
 									width="250"
 								/> */}
-								<div className="max-w-md -mt-10">
+								<div className="max-w-md -mt-10 lg:w-full">
 									<LottieHolder animationData={three} />
 								</div>
-								<p className="text-black -mt-9">
+								<p className="text-black -mt-9 w-full text-center">
 									$ 49.99 / Month
 								</p>
 							</div>
@@ -189,7 +189,7 @@ export default function Servicios() {
 							<h2 className="text-4xl lg:text-5xl text-main font-bold w-full">
 								Desarrollos Especiales
 							</h2>
-							<p className="text-black w-full pr-0 lg:pr-20 mt-4 lg:mt-10 font-medium">
+							<p className="text-black w-full pr-0 lg:pr-20 mt-4 lg:mt-20 font-medium">
 								¿Qué son? <br />
 								Los Desarrollos especiales son un proceso
 								especializado que tienen como objetivo obtener
@@ -233,7 +233,7 @@ export default function Servicios() {
 							<div className="hidden lg:block">
 								<LottieHolder animationData={one_top} />
 							</div>
-							<div className="hidden lg:block">
+							<div className="hidden lg:block transform scale-75 -mt-10">
 								<LottieHolder animationData={one_bottom} />
 							</div>
 							<div className="max-w-md block lg:hidden my-10">

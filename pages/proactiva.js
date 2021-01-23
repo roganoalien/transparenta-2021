@@ -72,8 +72,8 @@ export default function Proactiva() {
 					width="200"
 				/> */}
 
-					<section className="header w-full lg:w-11/12 xl:w-10/12 mt-90x2 lg:mt-16 z-30">
-						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
+					<section className="header w-full lg:w-11/12 xl:w-10/12 mt-90x2 lg:mt-6 z-30">
+						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full lg:-ml-10">
 							Transparencia proactiva
 						</h1>
 						<p className="text-black text-2xl lg:text-3xl mt-4 font-semibold lg:font-bold w-full">
@@ -129,7 +129,7 @@ export default function Proactiva() {
 								confianza entre la organización y su comunidad.
 							</p>
 						</article>
-						<article className="w-full lg:w-4/12 relative flex lg:block items-center justify-center mt-10 lg:mt-0 bg-pink-100">
+						<article className="w-full lg:w-4/12 relative flex lg:block items-center justify-center mt-10 lg:mt-0">
 							{/* <AniMiddle
 							src="/animations/proactiva-anim-middle.svg"
 							alt="Fake animation"
@@ -149,7 +149,7 @@ export default function Proactiva() {
 						/> */}
 						</article>
 					</section>
-					<section className="benefits w-full mt-0 lg:mt-10 mb-32 lg:mb-60 flex items-start justify-center">
+					<section className="benefits w-full mt-0 lg:mt-10 mb-10 lg:mb-14 flex items-start justify-center">
 						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-center">
 							{/* <AniBottom
 							src="/animations/proactiva-anim-bottom.svg"
@@ -166,7 +166,7 @@ export default function Proactiva() {
 							<h2 className="text-2xl lg:text-3xl text-main font-bold">
 								Beneficios
 							</h2>
-							<ul className="text-black mt-8 w-full list-disc pl-5 pr-0 lg:pr-40">
+							<ul className="text-black mt-8 w-full list-disc pl-5 lg:pl-12 pr-0 lg:pr-40">
 								<li className="mb-1">
 									La Transparencia Proactiva es para todo tipo
 									de organización, ya sea pública, privada o

@@ -44,7 +44,7 @@ export default function Producto() {
 				className="flex flex-wrap items-center justify-center px-35 lg:px-0 mt-90x2 lg:mt-20"
 			>
 				<div className="container mx-auto flex flex-wrap items-center justify-center px-0 md:px-35 lg:px-18">
-					<section className="header w-full lg:mt-16 flex items-start justify-center flex-wrap">
+					<section className="header w-full lg:mt-0 flex items-start justify-center flex-wrap">
 						<article className="w-full lg:w-8/12">
 							<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
 								Licencia Transparenta
@@ -63,7 +63,7 @@ export default function Producto() {
 								operar.
 							</p>
 						</article>
-						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-content">
+						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-content pointer-events-none">
 							{/* <AnimTopRight src="/animations/producto-anim-top-right.svg" /> */}
 							<div className="mt-0 lg:-mt-28">
 								<LottieHolder animationData={one_right} />
