@@ -18,14 +18,17 @@ function Footer() {
 		setTransOpen(!transOpen);
 	};
 
-	const changeLanguage = (which) => {
-		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-		switch (which) {
-			case 'es':
-				return setSpanish();
-			default:
-				return setEnglish();
+	const changeLanguage = async (which) => {
+		if (which === 'es') {
+			await setSpanish();
+		} else {
+			await setEnglish();
 		}
+	};
+
+	const refresh = () => {
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+		// window.location.reload();
 	};
 
 	return (
@@ -118,8 +121,10 @@ function Footer() {
 						</h4>
 						<div className="btns-holder flex items-center justify-start">
 							<button
-								onClick={() => {
-									lang === 'es' ? null : changeLanguage('es');
+								onClick={async () => {
+									// lang === 'es' ? null : changeLanguage('es');
+									await changeLanguage('es');
+									refresh();
 								}}
 								className={`${
 									lang === 'es'
@@ -131,7 +136,16 @@ function Footer() {
 							</button>
 							<button
 								onClick={() => {
-									lang === 'en' ? null : changeLanguage('en');
+									// lang === 'en' ? null : changeLanguage('en');
+									window.scroll({
+										top: 0,
+										left: 0,
+										behavior: 'smooth'
+									});
+									// refresh();
+									setTimeout(function () {
+										changeLanguage('en');
+									}, 250);
 								}}
 								className={`${
 									lang === 'en'
