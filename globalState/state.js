@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { TransparentaProvider } from './states/transparenta-state';
+import { LanguageProvider } from './states/language-state';
 
 function ProviderComposer({ contexts, children }) {
 	return contexts.reduceRight(
@@ -28,7 +29,9 @@ function ProviderComposer({ contexts, children }) {
 function ContextProvider({ children }) {
 	return (
 		// Heres where i need to call my other providers
-		<ProviderComposer contexts={[<TransparentaProvider />]}>
+		<ProviderComposer
+			contexts={[<TransparentaProvider />, <LanguageProvider />]}
+		>
 			{children}
 		</ProviderComposer>
 	);

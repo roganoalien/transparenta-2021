@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { LottieHolder } from '../components/LottieHolder';
+import { LanguageContext } from '../globalState';
 // import Lottie from 'lottie-react';
 
 // LOTTIES
@@ -50,47 +51,9 @@ const data = [
 		name: 'Mary Jane'
 	}
 ];
-
-// const NecesidadSection = styled.article`
-// 	height: calc(100vh - 106px);
-// 	@media (max-width: 1023px) {
-// 		height: auto;
-// 	}
-// `;
-
-// const AniTopRight = styled.img`
-// 	transform: translateX(15%);
-// `;
-// const AniTopRightContainer = styled.div`
-// 	transform: translateX(15%);
-// `;
-// const AniBottomRight = styled.img`
-// 	transform: translate(-50%, 50%);
-// `;
-// const AniBottomRightContainer = styled.div`
-// 	transform: translate(-23%, 50%);
-// `;
-// const AniTopLeft = styled.img`
-// 	transform: translate(80px, 80px);
-// `;
-// const AniTopLeftContainer = styled.div`
-// 	transform: translate(10px, -10px);
-// `;
-// const AniBottomLeft = styled.img`
-// 	transform: translate(300%, 80px);
-// `;
-// const AniBottomLeftContainer = styled.div`
-// 	transform: translate(105%, 160px);
-// `;
-// const JaLeft = styled.img`
-// 	transform: translate(-2px, -50%);
-// `;
 const JaLeftContainer = styled.div`
 	transform: translate(-7%, -50%);
 `;
-// const JaRight = styled.img`
-// 	transform: translate(-50%, -50%);
-// `;
 const JaRightContainer = styled.div`
 	transform: translate(-40%, -50%);
 	@media (max-width: 1023px) {
@@ -160,16 +123,18 @@ const JaRightContainer = styled.div`
 // 	}
 // `;
 
-export default function Home() {
+export default function Home({ data, windowWidth }) {
 	const [position, setPosition] = useState(0);
-	const [width, setWidth] = useState(null);
+	// const [width, setWidth] = useState(null);
+	// const [es, setEs] = useState(null);
+	const { lang } = useContext(LanguageContext);
 
-	useEffect(() => {
-		setWidth(window.innerWidth);
-		const handleResize = () => setWidth(window.innerWidth);
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+	// useEffect(() => {
+	// 	setWidth(window.innerWidth);
+	// 	const handleResize = () => setWidth(window.innerWidth);
+	// 	window.addEventListener('resize', handleResize);
+	// 	return () => window.removeEventListener('resize', handleResize);
+	// }, []);
 
 	const changeClient = (up) => {
 		if (up) {
@@ -189,7 +154,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Transparenta</title>
+				<title>{data['title_' + lang]}</title>
 			</Head>
 			<motion.section
 				initial={{ opacity: 0 }}
@@ -199,38 +164,17 @@ export default function Home() {
 			>
 				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
 					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start pointer-events-none">
-						{/* <AniTopLeftContainer
-						className="top-0 left-0 absolute hidden lg:block"
-						style={{ width: 320 }}
-					> */}
 						<div style={{ width: '100%' }}>
-							{/* <Lottie animationData={one_left} /> */}
 							<LottieHolder animationData={one_left} />
 						</div>
-						{/* </AniTopLeftContainer> */}
 					</div>
 					<div className="center-content w-full lg:w-9/12 xl:w-7/12 h-auto flex flex-col items-start justify-start lg:justify-center relative z-50">
 						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
-							Una necesidad actual
+							{data['title_' + lang]}
 						</h1>
 						<p className="text-black text-2xl lg:text-3xl mt-4 lg:pt-4 lg:pl-10 font-semibold lg:font-bold w-full lg:w-9/12">
-							Comunica de manera innovadora e inteligente los
-							datos que más le importan a tu comunidad.{' '}
+							{data['subtitle_' + lang]}
 						</p>
-						{/* <div className="just-mobile lg:hidden w-full flex items-center justify-between mt-90">
-							<img
-								src="/animations/animation-left-bottom.svg"
-								alt="Fake animation"
-								width="60px"
-								height="auto"
-							/>
-							<img
-								src="/animations/animation-right-bottom.svg"
-								alt="Fake animation"
-								width="200px"
-								height="auto"
-							/>
-						</div> */}
 					</div>
 					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative pointer-events-none">
 						<div
@@ -240,20 +184,25 @@ export default function Home() {
 								transform: 'translate(15%, -10%)'
 							}}
 						>
-							{/* <Lottie animationData={one_right} /> */}
 							<LottieHolder animationData={one_right} />
 						</div>
 					</div>
 					<div className="bottom-content w-full h-auto flex items-center justify-between mt-2 lg:-mt-10 xl:-mt-24">
 						<div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div style={{ width: width < 1024 ? 120 : 230 }}>
-								{/* <Lottie animationData={two_left} /> */}
+							<div
+								style={{
+									width: windowWidth < 1024 ? 120 : 230
+								}}
+							>
 								<LottieHolder animationData={two_left} />
 							</div>
 						</div>
 						<div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div style={{ width: width < 1024 ? 180 : 340 }}>
-								{/* <Lottie animationData={two_right} /> */}
+							<div
+								style={{
+									width: windowWidth < 1024 ? 180 : 340
+								}}
+							>
 								<LottieHolder animationData={two_right} />
 							</div>
 						</div>
@@ -269,15 +218,10 @@ export default function Home() {
 				<article className="section-container container mx-auto flex flex-wrap items-start justify-center">
 					<div className="left-side w-full lg:w-6/12">
 						<h2 className="text-2xl lg:text-3xl font-bold text-main">
-							Lo que hacemos
+							{data['what_' + lang]}
 						</h2>
 						<p className="text-black mt-4 lg:mt-8 pr-0 lg:pr-10 font-medium">
-							Construimos plataformas de transparencia que buscan
-							abrir las líneas de comunicación entre
-							organizaciones de todo tipo y comunidad, a través de
-							herramientas sistematizadas de visualización y
-							consultorías de transparencia ajustadas a la
-							operación de las organizaciones.
+							{data['whatDescription_' + lang]}
 						</p>
 						<img
 							className="block lg:hidden my-10"
@@ -285,18 +229,10 @@ export default function Home() {
 							alt="About 1"
 						/>
 						<h2 className="text-2xl lg:text-3xl font-bold text-main mt-20">
-							¿Por qué Transparenta?
+							{data['why_' + lang]}
 						</h2>
 						<p className="text-black mt-4 lg:mt-8 pr-0 lg:pr-10 font-medium">
-							Generar un entorno de confianza alrededor del acceso
-							y divulgación de la información. Buscamos ayudar a
-							nuestros clientes a ofrecer mayor certeza y
-							seguridad a sus inversionistas, stakeholders,
-							beneficiarios, donadores, clientes o cualquier
-							persona involucrada con su organización,
-							identificando los datos más valiosos para estos
-							grupos y transparentándolos con el contexto
-							adecuado.
+							{data['whyDescription_' + lang]}
 						</p>
 						<img
 							src="/images/about-three.svg"
@@ -306,56 +242,30 @@ export default function Home() {
 					</div>
 					<div className="right-side w-full md:w-6/12 px-10 pt-16 hidden lg:flex items-center justify-end">
 						<div className="-mt-20">
-							{/* <Lottie animationData={three_m} /> */}
 							<LottieHolder animationData={three_m} />
 						</div>
-						{/* <img
-							className="mb-10"
-							src="/images/about-one.svg"
-							alt="About 1"
-						/>
-						<img
-							className="mb-10"
-							src="/images/about-two.svg"
-							alt="About 2"
-						/>
-						<img src="/images/about-three.svg" alt="About 3" /> */}
 					</div>
 				</article>
 			</motion.section>
 			<section className="just-animations relative h-auto hidden lg:block lg:mt-12">
-				{/* <JaLeft
-					src="/animations/jaleft.svg"
-					alt="Fake animation"
-					className="top-1/2 left-0 absolute"
-					width="600"
-				/> */}
 				<JaLeftContainer
 					className="top-1/2 left-0 absolute"
 					style={{ width: 600 }}
 				>
-					{/* <Lottie animationData={four_left} /> */}
 					<LottieHolder animationData={four_left} />
 				</JaLeftContainer>
-				{/* <JaRight
-					src="/animations/jaright.svg"
-					alt="Fake animation"
-					className="top-1/2 right-0 absolute"
-					width="100"
-				/> */}
 				<JaRightContainer
 					className="top-1/2 right-0 absolute "
-					style={{ width: width < 1024 ? 180 : 260 }}
+					style={{ width: windowWidth < 1024 ? 180 : 260 }}
 				>
-					{/* <Lottie animationData={four_right} /> */}
 					<LottieHolder animationData={four_right} />
 				</JaRightContainer>
 			</section>
 			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
 				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
-					Clientes
+					{lang === 'es' ? 'Clientes' : 'Clients'}
 				</h2>
-				{width > 1024 ? (
+				{windowWidth > 1024 ? (
 					<div className="the-clients flex items-center justify-center w-full">
 						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
 							<img
@@ -503,4 +413,20 @@ export default function Home() {
 			</section> */}
 		</>
 	);
+}
+
+export async function getServerSideProps(context) {
+	const data = await fetch(`${process.env.API_URL}/home`).then((res) =>
+		res.json()
+	);
+	if (!data) {
+		return {
+			props: { error: 404, status: 500 }
+		};
+	}
+	return {
+		props: {
+			data
+		}
+	};
 }

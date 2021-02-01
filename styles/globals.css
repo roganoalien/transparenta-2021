@@ -99,3 +99,53 @@ a {
 .transparenta-btn-toblack:hover:after {
 	transform: translate(8px, 8px);
 } */
+
+/* TAILWINDCSS CUSTOM MAKER  */
+.markdown-container {
+	@apply text-black mt-8 w-full list-disc pl-5 lg:pl-12 pr-0 lg:pr-40;
+}
+
+.markdown-container ul {
+	@apply list-disc;
+}
+.markdown-container p {
+	@apply my-2;
+}
+
+.markdown-container2 {
+	@apply text-black mt-8 w-full list-disc pl-5 pr-0 lg:pr-20;
+}
+.markdown-container2 ul {
+	@apply list-disc;
+}
+.markdown-container2 p {
+	@apply text-black my-4 w-full list-disc font-bold;
+}
+.markdown-container2 p:last-child {
+	@apply text-black mt-10 w-full list-disc italic font-normal;
+}
+
+.markdown-container3 {
+	@apply text-black mt-8 w-full pr-0 lg:pr-5 pl-5 lg:pl-20;
+}
+
+.markdown-container3 ul {
+	@apply list-disc;
+}
+
+.markdown-container-servicios {
+	@apply text-black w-full pr-0 lg:pr-20 font-medium lg:font-bold mt-4 lg:mt-10;
+}
+.markdown-container-servicios ul {
+	@apply list-disc;
+}
+.markdown-container-servicios p {
+	@apply my-2;
+}
+
+.simple-container p {
+	@apply my-2;
+}
+.simple-container p {
+	@apply list-disc;
+}

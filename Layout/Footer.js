@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Image from 'next/image';
-import { TransparentaContext } from '../globalState';
+import { TransparentaContext, LanguageContext } from '../globalState';
 import styled from 'styled-components';
 
 const Transparenta = styled.button`
@@ -12,9 +12,20 @@ const Transparenta = styled.button`
 
 function Footer() {
 	const { transOpen, setTransOpen } = useContext(TransparentaContext);
+	const { lang, setEnglish, setSpanish } = useContext(LanguageContext);
 
 	const handleTransparenta = () => {
 		setTransOpen(!transOpen);
+	};
+
+	const changeLanguage = (which) => {
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+		switch (which) {
+			case 'es':
+				return setSpanish();
+			default:
+				return setEnglish();
+		}
 	};
 
 	return (
@@ -106,10 +117,28 @@ function Footer() {
 							Idioma
 						</h4>
 						<div className="btns-holder flex items-center justify-start">
-							<button className="bg-white border-2 border-white text-main py-1 px-2 mr-4">
+							<button
+								onClick={() => {
+									lang === 'es' ? null : changeLanguage('es');
+								}}
+								className={`${
+									lang === 'es'
+										? 'bg-white text-main'
+										: 'bg-transparent hover:bg-white text-white hover:text-main transform scale-100 hover:scale-95'
+								} border-2 border-white py-1 px-2 mr-4`}
+							>
 								Español
 							</button>
-							<button className="bg-transparent hover:bg-white border-2 border-white text-white hover:text-main py-1 px-2">
+							<button
+								onClick={() => {
+									lang === 'en' ? null : changeLanguage('en');
+								}}
+								className={`${
+									lang === 'en'
+										? 'bg-white text-main'
+										: 'bg-transparent hover:bg-white text-white hover:text-main transform scale-100 hover:scale-95'
+								} border-2 border-white py-1 px-2 mr-4`}
+							>
 								English
 							</button>
 						</div>

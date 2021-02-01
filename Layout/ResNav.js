@@ -4,6 +4,7 @@ import ActiveLink from '../components/ActiveLink';
 import { TransparentaContext } from '../globalState';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Formik } from 'formik';
+import { LanguageContext } from '../globalState';
 
 const noScroll = require('no-scroll');
 
@@ -160,7 +161,11 @@ function ResNav() {
 										activeClassName="text-main"
 										href="/"
 									>
-										<a>Inicio</a>
+										{lang === 'es' ? (
+											<a>Inicio</a>
+										) : (
+											<a>Home</a>
+										)}
 									</ActiveLink>
 								</li>
 								<li
@@ -171,7 +176,11 @@ function ResNav() {
 										activeClassName="text-main"
 										href="/proactiva"
 									>
-										<a>Transparencia proactiva</a>
+										{lang === 'es' ? (
+											<a>Transparencia proactiva</a>
+										) : (
+											<a>Proactive transparency</a>
+										)}
 									</ActiveLink>
 								</li>
 								<li
@@ -182,7 +191,11 @@ function ResNav() {
 										activeClassName="text-main"
 										href="/producto"
 									>
-										<a>Producto</a>
+										{lang === 'es' ? (
+											<a>Producto</a>
+										) : (
+											<a>Product</a>
+										)}
 									</ActiveLink>
 								</li>
 								<li
@@ -193,7 +206,11 @@ function ResNav() {
 										activeClassName="text-main"
 										href="/servicios"
 									>
-										<a>Servicios</a>
+										{lang === 'es' ? (
+											<a>Servicios</a>
+										) : (
+											<a>Services</a>
+										)}
 									</ActiveLink>
 								</li>
 								<li

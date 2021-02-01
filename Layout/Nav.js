@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ActiveLink from '../components/ActiveLink';
 import { TransparentaContext } from '../globalState';
 import { AnimatePresence, motion } from 'framer-motion';
+import { LanguageContext } from '../globalState';
 import { Formik } from 'formik';
 
 const menuVariants = {
@@ -29,6 +30,7 @@ const menuVariants = {
 
 function Nav() {
 	const { transOpen, setTransOpen } = useContext(TransparentaContext);
+	const { lang } = useContext(LanguageContext);
 
 	const handleTransparenta = () => {
 		setTransOpen(!transOpen);
@@ -56,7 +58,11 @@ function Nav() {
 							activeClassName="text-main"
 							href="/proactiva"
 						>
-							<a>Transparencia proactiva</a>
+							{lang === 'es' ? (
+								<a>Transparencia proactiva</a>
+							) : (
+								<a>Proactive transparency</a>
+							)}
 						</ActiveLink>
 					</li>
 					<li className="font-bold uppercase mr-6 hover:text-main">
@@ -64,7 +70,7 @@ function Nav() {
 							activeClassName="text-main"
 							href="/producto"
 						>
-							<a>Producto</a>
+							{lang === 'es' ? <a>Producto</a> : <a>Product</a>}
 						</ActiveLink>
 					</li>
 					<li className="font-bold uppercase mr-6 hover:text-main">
@@ -72,14 +78,18 @@ function Nav() {
 							activeClassName="text-main"
 							href="/servicios"
 						>
-							<a>Servicios</a>
+							{lang === 'es' ? <a>Servicios</a> : <a>Services</a>}
 						</ActiveLink>
 					</li>
 					<li
 						onClick={handleTransparenta}
 						className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out"
 					>
-						Obtén Transparenta
+						{lang === 'es' ? (
+							<a>Obtén Transparenta</a>
+						) : (
+							<a>Get Transparent</a>
+						)}
 					</li>
 				</ul>
 			</nav>
