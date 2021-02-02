@@ -36,7 +36,7 @@ export default function Servicios({ data }) {
 				className="flex flex-wrap items-center justify-center mt-90 lg:mt-5 px-35 lg:px-0"
 			>
 				<div className="container mx-auto flex flex-wrap items-center justify-center">
-					<section className="header w-full mt-4 flex items-start justify-center flex-wrap">
+					<section className="header w-full mt-4 flex items-stretch justify-center flex-wrap h-auto">
 						<article className="w-full lg:w-8/12">
 							<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
 								{data['title_' + lang]}
@@ -47,19 +47,19 @@ export default function Servicios({ data }) {
 								</ReactMarkdown>
 							</div>
 						</article>
-						<article className="w-full lg:w-4/12 relative flex lg:block lg:mt-0 items-center justify-center">
+						<article className="w-full lg:w-4/12 relative flex lg:mt-0 items-center justify-center">
 							<div className="hidden lg:block">
 								<LottieHolder animationData={one_top} />
 							</div>
-							<div className="hidden lg:block transform scale-75 -mt-10">
+							{/* <div className="hidden lg:block transform scale-75 -mt-10">
 								<LottieHolder animationData={one_bottom} />
-							</div>
+							</div> */}
 							<div className="max-w-md block lg:hidden my-10">
 								<LottieHolder animationData={one_m} />
 							</div>
 						</article>
 					</section>
-					<section className="benefits w-full mt-1 flex items-stretch justify-center flex-wrap lg:-mt-32">
+					<section className="benefits w-full mt-1 flex items-stretch justify-center flex-wrap lg:mt-20">
 						<article className="w-full lg:w-8/12 order-1 lg:order-2">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20">
 								{data['benefitsOne_' + lang]}
@@ -115,7 +115,7 @@ export default function Servicios({ data }) {
 							</div>
 						</article>
 					</section>
-					<section className="header w-full mt-0 lg:mt-16 flex items-start justify-center flex-wrap">
+					<section className="header w-full mt-0 lg:mt-16 flex items-stretch justify-center flex-wrap">
 						<article className="w-full lg:w-8/12">
 							<h2 className="text-4xl lg:text-5xl text-main font-bold w-full">
 								{data['special_' + lang]}
@@ -126,19 +126,19 @@ export default function Servicios({ data }) {
 								</ReactMarkdown>
 							</div>
 						</article>
-						<article className="w-full lg:w-4/12 relative flex lg:block items-center justify-center">
+						<article className="w-full lg:w-4/12 relative flex items-center justify-center">
 							<div className="hidden lg:block">
 								<LottieHolder animationData={one_top} />
 							</div>
-							<div className="hidden lg:block transform scale-75 -mt-10">
+							{/* <div className="hidden lg:block transform scale-75 -mt-10">
 								<LottieHolder animationData={one_bottom} />
-							</div>
+							</div> */}
 							<div className="max-w-md block lg:hidden my-10">
 								<LottieHolder animationData={one_m} />
 							</div>
 						</article>
 					</section>
-					<section className="benefits w-full mt-0 lg:-mt-20 flex items-stretch justify-center flex-wrap">
+					<section className="benefits w-full mt-0 lg:mt-20 flex items-stretch justify-center flex-wrap">
 						<article className="w-full lg:w-8/12 order-2">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20">
 								{data['benefitsOne_' + lang]}

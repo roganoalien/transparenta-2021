@@ -9,10 +9,10 @@ import { LanguageContext } from '../globalState';
 // import Lottie from 'lottie-react';
 
 // LOTTIES
-import one_right from '../animations/proactiva/01_tr.json';
-import one_m from '../animations/proactiva/01_m.json';
-import one_left from '../animations/proactiva/01_tl.json';
-import two from '../animations/proactiva/02_r.json';
+// import one_right from '../animations/proactiva/01_tr.json';
+import one_m from '../animations/proactiva/01_m.json'; // proactiva middle
+// import one_left from '../animations/proactiva/01_tl.json';
+import two from '../animations/proactiva/02_r.json'; // triangulo
 import three from '../animations/proactiva/03_l.json';
 
 export default function Proactiva({ data }) {
@@ -46,18 +46,18 @@ export default function Proactiva({ data }) {
 							{data['subtitle_' + lang]}
 						</p>
 					</section>
-					<section className="middle-animations w-full flex items-center justify-between">
-						<div
+					{/* <section className="middle-animations w-full flex items-center justify-between"> */}
+					{/* <div
 							className="hidden lg:block transform -translate-x-1/4"
 							style={{ width: 290 }}
 						>
 							<LottieHolder animationData={one_left} />
-						</div>
-						<div className="hidden lg:block transform translate-x-1/4 -translate-y-1/2">
+						</div> */}
+					{/* <div className="hidden lg:block transform translate-x-1/4 -translate-y-1/2">
 							<LottieHolder animationData={one_right} />
-						</div>
-					</section>
-					<section className="footer w-full lg:w-10/12 mt-0 lg:-mt-44 flex items-start justify-end">
+						</div> */}
+					{/* </section> */}
+					<section className="footer w-full lg:w-10/12 mt-0 lg:mt-0 flex items-start justify-end">
 						<div className="w-full lg:w-auto max-w-3xl lg:max-w-3xl xl:max-w-4xl">
 							<LottieHolder animationData={one_m} />
 						</div>

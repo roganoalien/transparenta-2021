@@ -9,17 +9,17 @@ import { LanguageContext } from '../globalState';
 // import Lottie from 'lottie-react';
 
 // LOTTIES
-import one_right from '../animations/home/01_r.json';
-import one_left from '../animations/home/01_l.json';
-import two_left from '../animations/home/02_l.json';
-import two_right from '../animations/home/02_r.json';
-import three_m from '../animations/home/03_m.json';
-import four_left from '../animations/home/04_l.json';
-import four_right from '../animations/home/04_r.json';
+// import one_right from '../animations/home/01_r.json';
+import one_left from '../animations/home/01_l.json'; // una necesidad izquierda
+// import two_left from '../animations/home/02_l.json';
+import two_right from '../animations/home/02_r.json'; // necesidad rombo
+import three_m from '../animations/home/03_m.json'; // lo que hacemos
+import four_left from '../animations/home/04_l.json'; // barra
+// import four_right from '../animations/home/04_r.json';
 
 SwiperCore.use([Autoplay, Pagination]);
 
-const data = [
+const clientData = [
 	{
 		client: 'Fideicomiso Fuerza México',
 		description:
@@ -51,77 +51,77 @@ const data = [
 		name: 'Mary Jane'
 	}
 ];
-const JaLeftContainer = styled.div`
-	transform: translate(-7%, -50%);
-`;
-const JaRightContainer = styled.div`
-	transform: translate(-40%, -50%);
+// const JaLeftContainer = styled.div`
+// 	transform: translate(-7%, -50%);
+// `;
+// const JaRightContainer = styled.div`
+// 	transform: translate(-40%, -50%);
+// 	@media (max-width: 1023px) {
+// 		transform: translate(-5%, -50%);
+// 	}
+// `;
+
+const FaceHolder = styled.div`
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	height: 250px;
+	width: 190px;
 	@media (max-width: 1023px) {
-		transform: translate(-5%, -50%);
+		position: relative;
 	}
 `;
-
-// const FaceHolder = styled.div`
-// 	background-size: cover !important;
-// 	background-repeat: no-repeat !important;
-// 	height: 250px;
-// 	width: 190px;
-// 	@media (max-width: 1023px) {
-// 		position: relative;
-// 	}
-// `;
-// const FaceImage = styled.img`
-// 	object-fit: cover;
-// 	height: 200px;
-// 	width: 190px;
-// 	z-index: -1;
-// `;
-// const FaceLines = styled.img`
-// 	height: 50px;
-// 	width: 190px;
-// `;
-// const FaceCircles = styled.img`
-// 	transform: translate(55%, -55%);
-// 	z-index: 10;
-// 	@media (max-width: 1023px) {
-// 		position: absolute;
-// 		right: 0;
-// 		top: 0;
-// 		transform: translate(50%, -50%);
-// 	}
-// `;
-// const PeopleBtnHolder = styled.div`
-// 	bottom: 0px;
-// 	right: 60px;
-// 	position: absolute;
-// 	@media (max-width: 1023px) {
-// 		bottom: -120px;
-// 		right: 50%;
-// 		transform: translate(50%, 0);
-// 	}
-// `;
-// const BtnShadow = styled.button`
-// 	background: #f2f2f2;
-// 	outline: none !important;
-// 	position: relative;
-// 	&:after {
-// 		content: '';
-// 		background: #484d51;
-// 		height: 100%;
-// 		left: 0;
-// 		position: absolute;
-// 		top: 0;
-// 		transform: translate(6px, 6px);
-// 		transition: all 0.15s ease-in-out;
-// 		width: 100%;
-// 		z-index: -1;
-// 	}
-// 	&:hover {
-// 		&:after {
-// 			transform: translate(4px, 4px);
-// 		}
-// 	}
-// `;
+const FaceImage = styled.img`
+	object-fit: cover;
+	height: 200px;
+	width: 190px;
+	z-index: -1;
+`;
+const FaceLines = styled.img`
+	height: 50px;
+	width: 190px;
+`;
+const FaceCircles = styled.img`
+	transform: translate(55%, -55%);
+	z-index: 10;
+	@media (max-width: 1023px) {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translate(50%, -50%);
+	}
+`;
+const PeopleBtnHolder = styled.div`
+	bottom: 0px;
+	right: 60px;
+	position: absolute;
+	@media (max-width: 1023px) {
+		bottom: -120px;
+		right: 50%;
+		transform: translate(50%, 0);
+	}
+`;
+const BtnShadow = styled.button`
+	background: #f2f2f2;
+	outline: none !important;
+	position: relative;
+	&:after {
+		content: '';
+		background: #484d51;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		transform: translate(6px, 6px);
+		transition: all 0.15s ease-in-out;
+		width: 100%;
+		z-index: -1;
+	}
+	&:hover {
+		&:after {
+			transform: translate(4px, 4px);
+		}
+	}
+`;
 
 export default function Home({ data, windowWidth }) {
 	const [position, setPosition] = useState(0);
@@ -138,7 +138,7 @@ export default function Home({ data, windowWidth }) {
 
 	const changeClient = (up) => {
 		if (up) {
-			if (position + 1 < data.length) {
+			if (position + 1 < clientData.length) {
 				setPosition(position + 1);
 			} else {
 				setPosition(0);
@@ -147,7 +147,7 @@ export default function Home({ data, windowWidth }) {
 			if (position !== 0) {
 				setPosition(position - 1);
 			} else {
-				setPosition(data.length - 1);
+				setPosition(clientData.length - 1);
 			}
 		}
 	};
@@ -160,7 +160,7 @@ export default function Home({ data, windowWidth }) {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30"
+				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30 mb-20"
 			>
 				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
 					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start pointer-events-none">
@@ -177,7 +177,7 @@ export default function Home({ data, windowWidth }) {
 						</p>
 					</div>
 					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative pointer-events-none">
-						<div
+						{/* <div
 							className="absolute top-0 lg:-top-20 xl:top-0 right-0"
 							style={{
 								width: 550,
@@ -185,10 +185,18 @@ export default function Home({ data, windowWidth }) {
 							}}
 						>
 							<LottieHolder animationData={one_right} />
+						</div> */}
+						<div
+							className="absolute bottom-0 lg:-bottom-32 xl:-bottom-10 -right-10"
+							style={{
+								width: windowWidth < 1024 ? 180 : 340
+							}}
+						>
+							<LottieHolder animationData={two_right} />
 						</div>
 					</div>
-					<div className="bottom-content w-full h-auto flex items-center justify-between mt-2 lg:-mt-10 xl:-mt-24">
-						<div className="w-full lg:w-6/12 flex items-center justify-center">
+					{/* <div className="bottom-content w-full h-auto flex items-center justify-between mt-2 lg:-mt-10 xl:-mt-24"> */}
+					{/* <div className="w-full lg:w-6/12 flex items-center justify-center">
 							<div
 								style={{
 									width: windowWidth < 1024 ? 120 : 230
@@ -196,8 +204,8 @@ export default function Home({ data, windowWidth }) {
 							>
 								<LottieHolder animationData={two_left} />
 							</div>
-						</div>
-						<div className="w-full lg:w-6/12 flex items-center justify-center">
+						</div> */}
+					{/* <div className="w-full lg:w-6/12 flex items-center justify-center">
 							<div
 								style={{
 									width: windowWidth < 1024 ? 180 : 340
@@ -205,8 +213,8 @@ export default function Home({ data, windowWidth }) {
 							>
 								<LottieHolder animationData={two_right} />
 							</div>
-						</div>
-					</div>
+						</div> */}
+					{/* </div> */}
 				</div>
 			</motion.section>
 			<motion.section
@@ -215,7 +223,7 @@ export default function Home({ data, windowWidth }) {
 				exit={{ opacity: 0 }}
 				className="about-section w-screen h-auto flex items-start justify-center pt-8 lg:pt-16 px-35 lg:px-20"
 			>
-				<article className="section-container container mx-auto flex flex-wrap items-start justify-center">
+				<article className="section-container container mx-auto flex flex-wrap items-stretch justify-center">
 					<div className="left-side w-full lg:w-6/12">
 						<h2 className="text-2xl lg:text-3xl font-bold text-main">
 							{data['what_' + lang]}
@@ -247,21 +255,27 @@ export default function Home({ data, windowWidth }) {
 					</div>
 				</article>
 			</motion.section>
-			<section className="just-animations relative h-auto hidden lg:block lg:mt-12">
-				<JaLeftContainer
+			<section className="just-animations relative h-auto hidden lg:flex lg:mt-12 items-center justify-center">
+				{/* <JaLeftContainer
 					className="top-1/2 left-0 absolute"
-					style={{ width: 600 }}
+					style={{ width: 300 }}
 				>
 					<LottieHolder animationData={four_left} />
-				</JaLeftContainer>
-				<JaRightContainer
+				</JaLeftContainer> */}
+				<div
+					// className="top-1/2 left-0 absolute"
+					style={{ width: 400 }}
+				>
+					<LottieHolder animationData={four_left} />
+				</div>
+				{/* <JaRightContainer
 					className="top-1/2 right-0 absolute "
 					style={{ width: windowWidth < 1024 ? 180 : 260 }}
 				>
 					<LottieHolder animationData={four_right} />
-				</JaRightContainer>
+				</JaRightContainer> */}
 			</section>
-			<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
+			{/*<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
 				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
 					{lang === 'es' ? 'Clientes' : 'Clients'}
 				</h2>
@@ -333,18 +347,21 @@ export default function Home({ data, windowWidth }) {
 						</SwiperSlide>
 					</Swiper>
 				)}
-			</section>
-			{/* <section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-0">
-				<article className="w-full md:w-10/12 lg:w-9/12 flex flex-wrap items-stretch justify-center">
+			</section> */}
+			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-5 mt-14">
+				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
+					{lang === 'es' ? 'Clientes' : 'Clients'}
+				</h2>
+				<article className="w-full flex flex-wrap items-stretch justify-center mt-10">
 					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
 						<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
-							{data[position].name}
+							{clientData[position].client}
 						</h3>
-						<p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
-							{data[position].client}
-						</p>
+						{/* <p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
+							{clientData[position].client}
+						</p> */}
 						<p className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16">
-							"{data[position].description}"
+							"{clientData[position].description}"
 						</p>
 						<PeopleBtnHolder className="switchClients flex items-center justify-center flex-wrap">
 							<BtnShadow
@@ -368,10 +385,10 @@ export default function Home({ data, windowWidth }) {
 								/>
 							</BtnShadow>
 							<div className="w-full flex lg:hidden items-center justify-center mt-5">
-								{data.map((item, index) => (
+								{clientData.map((item, index) => (
 									<div
 										className={`border-2 border-black h-4 w-4 ${
-											index === data.length - 1
+											index === clientData.length - 1
 												? 'mr-0'
 												: 'mr-4'
 										} ${
@@ -385,7 +402,7 @@ export default function Home({ data, windowWidth }) {
 							</div>
 						</PeopleBtnHolder>
 					</div>
-					<div className="w-full md:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center lg:block mb-10 lg:mb-0">
+					<div className="w-full md:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center lg:block mb-10 lg:mb-0 mt-0 lg:-mt-12">
 						<FaceHolder className="relative">
 							<FaceCircles
 								src="/animations/client-circle.svg"
@@ -395,7 +412,7 @@ export default function Home({ data, windowWidth }) {
 							/>
 							<FaceImage
 								className="object-cover left-0 top-0 absolute border-2 border-black"
-								src={data[position].img}
+								src={clientData[position].img}
 								alt="Nombre persona"
 								width="190"
 								height="auto"
@@ -410,7 +427,7 @@ export default function Home({ data, windowWidth }) {
 						</FaceHolder>
 					</div>
 				</article>
-			</section> */}
+			</section>
 		</>
 	);
 }
