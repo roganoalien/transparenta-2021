@@ -149,3 +149,17 @@ a {
 .simple-container p {
 	@apply list-disc;
 }
+
+#nprogress .bar {
+	background: #89a4a9 !important;
+	height: 6px !important;
+}
+
+#nprogress .peg {
+	box-shadow: 0 0 10px #89a4a9, 0 0 5px #89a4a9 !important;
+}
+
+#nprogress .spinner-icon {
+	border-top-color: #89a4a9 !important;
+	border-left-color: #89a4a9 !important;
+}

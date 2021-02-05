@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="194px" height="194px" viewBox="0 0 194 194" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>client-circle</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="client-circle" transform="translate(2.000000, 2.000000)" stroke="#484D51" stroke-width="4">
+            <circle id="Oval" cx="94.8955" cy="94.921625" r="94.8955"></circle>
+            <path d="M168.975906,154.252094 C189.621488,128.487855 195.382318,93.8407828 184.184812,62.7819375 C170.63056,25.1266287 134.917773,0.015418618 94.8972812,8.10018719e-13 L94.8972812,94.921625 L168.975906,154.252094 Z" id="Path" fill="#89A4A9" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

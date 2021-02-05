@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { LottieHolder } from '../components/LottieHolder';
@@ -353,16 +353,18 @@ export default function Home({ data, windowWidth }) {
 					{lang === 'es' ? 'Clientes' : 'Clients'}
 				</h2>
 				<article className="w-full flex flex-wrap items-stretch justify-center mt-10">
-					<div className="w-full md:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
-						<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
-							{clientData[position].client}
-						</h3>
-						{/* <p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
+					<div className="w-full lg:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
+						<AnimatePresence>
+							<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
+								{clientData[position].client}
+							</h3>
+							{/* <p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
 							{clientData[position].client}
 						</p> */}
-						<p className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16">
-							"{clientData[position].description}"
-						</p>
+							<p className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16">
+								"{clientData[position].description}"
+							</p>
+						</AnimatePresence>
 						<PeopleBtnHolder className="switchClients flex items-center justify-center flex-wrap">
 							<BtnShadow
 								onClick={() => changeClient(false)}
@@ -402,28 +404,31 @@ export default function Home({ data, windowWidth }) {
 							</div>
 						</PeopleBtnHolder>
 					</div>
-					<div className="w-full md:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center lg:block mb-10 lg:mb-0 mt-0 lg:-mt-12">
+					<div className="w-full lg:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center mb-10 lg:mb-0 mt-0 lg:-mt-12">
 						<FaceHolder className="relative">
-							<FaceCircles
+							<img
+								className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/2 z-20"
 								src="/animations/client-circle.svg"
-								alt="Face Circle"
+								alt="Client Circle"
 								width="190"
 								height="auto"
 							/>
-							<FaceImage
-								className="object-cover left-0 top-0 absolute border-2 border-black"
-								src={clientData[position].img}
-								alt="Nombre persona"
+							<img
+								className="relative z-10"
+								src="/animations/client-holder.svg"
+								alt="Client Holder"
 								width="190"
-								height="auto"
+								height="250"
 							/>
-							<FaceLines
-								className="absolute left-0 bottom-0 border-l-2 border-r-2 border-b-2 border-black object-cover"
-								src="/animations/client-lines.svg"
-								alt="Lines"
-								width="190"
-								height="auto"
-							/>
+							<AnimatePresence>
+								<img
+									className="absolute left-0 top-0 object-cover"
+									style={{ height: 184 }}
+									src={clientData[position].img}
+									alt={clientData[position].name}
+									width="190"
+								/>
+							</AnimatePresence>
 						</FaceHolder>
 					</div>
 				</article>
@@ -432,7 +437,7 @@ export default function Home({ data, windowWidth }) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
 	const data = await fetch(`${process.env.API_URL}/home`).then((res) =>
 		res.json()
 	);
