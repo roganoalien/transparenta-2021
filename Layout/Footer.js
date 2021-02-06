@@ -66,10 +66,13 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href={`tel:+52${footer?.phone}`}
+									href={`tel:+52${footer?.tel.replace(
+										' ',
+										''
+									)}`}
 									className="font-light hover:underline"
 								>
-									{footer?.phone ? footer.phone : 'null'}
+									{footer?.tel ? footer.tel : 'null'}
 								</a>
 							</li>
 							<li className="font-light">{footer?.address}</li>
@@ -128,7 +131,6 @@ function Footer() {
 						<div className="btns-holder flex items-center justify-start">
 							<button
 								onClick={async () => {
-									// lang === 'es' ? null : changeLanguage('es');
 									await changeLanguage('es');
 									refresh();
 								}}
@@ -142,13 +144,11 @@ function Footer() {
 							</button>
 							<button
 								onClick={() => {
-									// lang === 'en' ? null : changeLanguage('en');
 									window.scroll({
 										top: 0,
 										left: 0,
 										behavior: 'smooth'
 									});
-									// refresh();
 									setTimeout(function () {
 										changeLanguage('en');
 									}, 250);

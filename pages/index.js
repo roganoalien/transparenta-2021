@@ -90,41 +90,44 @@ const FaceCircles = styled.img`
 		transform: translate(50%, -50%);
 	}
 `;
-const PeopleBtnHolder = styled.div`
-	bottom: 0px;
-	right: 60px;
-	position: absolute;
-	@media (max-width: 1023px) {
-		bottom: -120px;
-		right: 50%;
-		transform: translate(50%, 0);
-	}
-`;
-const BtnShadow = styled.button`
-	background: #f2f2f2;
-	outline: none !important;
-	position: relative;
-	&:after {
-		content: '';
-		background: #484d51;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		transform: translate(6px, 6px);
-		transition: all 0.15s ease-in-out;
-		width: 100%;
-		z-index: -1;
-	}
-	&:hover {
-		&:after {
-			transform: translate(4px, 4px);
-		}
-	}
-`;
+// const PeopleBtnHolder = styled.div`
+// 	bottom: 0px;
+// 	right: 60px;
+// 	position: absolute;
+// 	@media (max-width: 1023px) {
+// 		bottom: -120px;
+// 		right: 50%;
+// 		transform: translate(50%, 0);
+// 	}
+// `;
+// const BtnShadow = styled.button`
+// 	background: #f2f2f2;
+// 	outline: none !important;
+// 	position: relative;
+// 	&:after {
+// 		content: '';
+// 		background: #484d51;
+// 		height: 100%;
+// 		left: 0;
+// 		position: absolute;
+// 		top: 0;
+// 		transform: translate(6px, 6px);
+// 		transition: all 0.15s ease-in-out;
+// 		width: 100%;
+// 		z-index: -1;
+// 	}
+// 	&:hover {
+// 		&:after {
+// 			transform: translate(4px, 4px);
+// 		}
+// 	}
+// `;
 
 export default function Home({ data, windowWidth }) {
 	const [position, setPosition] = useState(0);
+	const [transitioning, setTransitioning] = useState(false);
+	const clients = data.clients;
+	console.log('CLIENTS', clients);
 	// const [width, setWidth] = useState(null);
 	// const [es, setEs] = useState(null);
 	const { lang } = useContext(LanguageContext);
@@ -137,19 +140,27 @@ export default function Home({ data, windowWidth }) {
 	// }, []);
 
 	const changeClient = (up) => {
-		if (up) {
-			if (position + 1 < clientData.length) {
-				setPosition(position + 1);
+		setTransitioning(true);
+		setTimeout(function () {
+			if (up) {
+				// if (position + 1 < clientData.length) {
+				if (position + 1 < clients.length) {
+					setPosition(position + 1);
+				} else {
+					setPosition(0);
+				}
 			} else {
-				setPosition(0);
+				if (position !== 0) {
+					setPosition(position - 1);
+				} else {
+					// setPosition(clientData.length - 1);
+					setPosition(clients.length - 1);
+				}
 			}
-		} else {
-			if (position !== 0) {
-				setPosition(position - 1);
-			} else {
-				setPosition(clientData.length - 1);
-			}
-		}
+			setTimeout(function () {
+				setTransitioning(false);
+			}, 100);
+		}, 500);
 	};
 	return (
 		<>
@@ -355,42 +366,57 @@ export default function Home({ data, windowWidth }) {
 				<article className="w-full flex flex-wrap items-stretch justify-center mt-10">
 					<div className="w-full lg:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
 						<AnimatePresence>
-							<h3 className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full">
-								{clientData[position].client}
-							</h3>
+							<motion.h3
+								animate={{
+									opacity: transitioning ? 0 : 1,
+									y: transitioning ? '10%' : 0
+								}}
+								className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full"
+							>
+								{clients[position].name}
+							</motion.h3>
 							{/* <p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
-							{clientData[position].client}
-						</p> */}
-							<p className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16">
-								"{clientData[position].description}"
-							</p>
+								{server}
+							</p> */}
+							<motion.p
+								animate={{
+									opacity: transitioning ? 0 : 1,
+									y: transitioning ? '10%' : 0
+								}}
+								transition={{
+									delay: 0.15
+								}}
+								className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16"
+							>
+								"{clients[position][`testimony_${lang}`]}"
+							</motion.p>
 						</AnimatePresence>
-						<PeopleBtnHolder className="switchClients flex items-center justify-center flex-wrap">
-							<BtnShadow
+						<div className="switchClients flex items-center justify-center flex-wrap absolute bottom-0 right-0">
+							<div
 								onClick={() => changeClient(false)}
-								className="border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 bg-white hover:bg-main"
+								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
 							>
 								<img
 									src="/arrow-l.svg"
 									alt="Arrow Left"
 									width="8"
 								/>
-							</BtnShadow>
-							<BtnShadow
+							</div>
+							<div
 								onClick={() => changeClient(true)}
-								className="border-2 border-black py-3 lg:py-1 px-4 lg:px-2 bg-white hover:bg-main transition duration-150 ease-in-out"
+								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
 							>
 								<img
 									src="/arrow-r.svg"
 									alt="Arrow Right"
 									width="8"
 								/>
-							</BtnShadow>
+							</div>
 							<div className="w-full flex lg:hidden items-center justify-center mt-5">
-								{clientData.map((item, index) => (
+								{clients.map((item, index) => (
 									<div
 										className={`border-2 border-black h-4 w-4 ${
-											index === clientData.length - 1
+											index === clients.length - 1
 												? 'mr-0'
 												: 'mr-4'
 										} ${
@@ -402,7 +428,7 @@ export default function Home({ data, windowWidth }) {
 									></div>
 								))}
 							</div>
-						</PeopleBtnHolder>
+						</div>
 					</div>
 					<div className="w-full lg:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center mb-10 lg:mb-0 mt-0 lg:-mt-12">
 						<FaceHolder className="relative">
@@ -420,15 +446,25 @@ export default function Home({ data, windowWidth }) {
 								width="190"
 								height="250"
 							/>
-							<AnimatePresence>
-								<img
-									className="absolute left-0 top-0 object-cover"
-									style={{ height: 184 }}
-									src={clientData[position].img}
-									alt={clientData[position].name}
-									width="190"
-								/>
-							</AnimatePresence>
+							<div
+								className="overflow-hidden absolute left-0 top-0 bg-white flex items-center justify-center"
+								style={{ height: 184, width: 190 }}
+							>
+								<AnimatePresence>
+									<motion.img
+										className="object-contain w-10/12 h-full"
+										animate={{
+											opacity: transitioning ? 0 : 1
+										}}
+										src={
+											process.env.API_URL +
+											clients[position].image.formats
+												.thumbnail.url
+										}
+										alt={clients[position].name}
+									/>
+								</AnimatePresence>
+							</div>
 						</FaceHolder>
 					</div>
 				</article>
