@@ -113,9 +113,9 @@ function Nav() {
 								height="20"
 								fill="none"
 								stroke="#484d51"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="3"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="3"
 								viewBox="0 0 32 32"
 							>
 								<path d="M2 30 L30 2 M30 30 L2 2" />

@@ -19,38 +19,38 @@ import four_left from '../animations/home/04_l.json'; // barra
 
 SwiperCore.use([Autoplay, Pagination]);
 
-const clientData = [
-	{
-		client: 'Fideicomiso Fuerza México',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio a magni dolorum voluptates repellendus blanditiis molestias incidunt aut, corrupti, porro possimus ut alias accusamus sit molestiae at, expedita sapiente dicta!',
-		img:
-			'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
-		name: 'Ximena Suárez'
-	},
-	{
-		client: 'Río Arronte',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam soluta assumenda facilis voluptates ex esse quae.',
-		img: 'https://randomuser.me/api/portraits/men/36.jpg',
-		name: 'Rodrigo García'
-	},
-	{
-		client: 'ALEATICA',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam.',
-		img: 'https://randomuser.me/api/portraits/men/1.jpg',
-		name: 'John Doe'
-	},
-	{
-		client: 'Desarrollador Confiable',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-		img:
-			'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg',
-		name: 'Mary Jane'
-	}
-];
+// const clientData = [
+// 	{
+// 		client: 'Fideicomiso Fuerza México',
+// 		description:
+// 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio a magni dolorum voluptates repellendus blanditiis molestias incidunt aut, corrupti, porro possimus ut alias accusamus sit molestiae at, expedita sapiente dicta!',
+// 		img:
+// 			'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
+// 		name: 'Ximena Suárez'
+// 	},
+// 	{
+// 		client: 'Río Arronte',
+// 		description:
+// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam soluta assumenda facilis voluptates ex esse quae.',
+// 		img: 'https://randomuser.me/api/portraits/men/36.jpg',
+// 		name: 'Rodrigo García'
+// 	},
+// 	{
+// 		client: 'ALEATICA',
+// 		description:
+// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam.',
+// 		img: 'https://randomuser.me/api/portraits/men/1.jpg',
+// 		name: 'John Doe'
+// 	},
+// 	{
+// 		client: 'Desarrollador Confiable',
+// 		description:
+// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+// 		img:
+// 			'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg',
+// 		name: 'Mary Jane'
+// 	}
+// ];
 // const JaLeftContainer = styled.div`
 // 	transform: translate(-7%, -50%);
 // `;
@@ -61,35 +61,35 @@ const clientData = [
 // 	}
 // `;
 
-const FaceHolder = styled.div`
-	background-size: cover !important;
-	background-repeat: no-repeat !important;
-	height: 250px;
-	width: 190px;
-	@media (max-width: 1023px) {
-		position: relative;
-	}
-`;
-const FaceImage = styled.img`
-	object-fit: cover;
-	height: 200px;
-	width: 190px;
-	z-index: -1;
-`;
-const FaceLines = styled.img`
-	height: 50px;
-	width: 190px;
-`;
-const FaceCircles = styled.img`
-	transform: translate(55%, -55%);
-	z-index: 10;
-	@media (max-width: 1023px) {
-		position: absolute;
-		right: 0;
-		top: 0;
-		transform: translate(50%, -50%);
-	}
-`;
+// const FaceHolder = styled.div`
+// 	background-size: cover !important;
+// 	background-repeat: no-repeat !important;
+// 	height: 250px;
+// 	width: 190px;
+// 	@media (max-width: 1023px) {
+// 		position: relative;
+// 	}
+// `;
+// const FaceImage = styled.img`
+// 	object-fit: cover;
+// 	height: 200px;
+// 	width: 190px;
+// 	z-index: -1;
+// `;
+// const FaceLines = styled.img`
+// 	height: 50px;
+// 	width: 190px;
+// `;
+// const FaceCircles = styled.img`
+// 	transform: translate(55%, -55%);
+// 	z-index: 10;
+// 	@media (max-width: 1023px) {
+// 		position: absolute;
+// 		right: 0;
+// 		top: 0;
+// 		transform: translate(50%, -50%);
+// 	}
+// `;
 // const PeopleBtnHolder = styled.div`
 // 	bottom: 0px;
 // 	right: 60px;
@@ -168,6 +168,7 @@ export default function Home({ data, windowWidth }) {
 				<title>{data['title_' + lang]}</title>
 			</Head>
 			<motion.section
+				key="page-index"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
@@ -229,6 +230,7 @@ export default function Home({ data, windowWidth }) {
 				</div>
 			</motion.section>
 			<motion.section
+				key="page-index-about"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
@@ -367,6 +369,7 @@ export default function Home({ data, windowWidth }) {
 					<div className="w-full lg:w-6/12 flex flex-col items-start justify-start relative order-2 lg:order-1">
 						<AnimatePresence>
 							<motion.h3
+								key="people-index-h3"
 								animate={{
 									opacity: transitioning ? 0 : 1,
 									y: transitioning ? '10%' : 0
@@ -379,6 +382,7 @@ export default function Home({ data, windowWidth }) {
 								{server}
 							</p> */}
 							<motion.p
+								key="people-index-p"
 								animate={{
 									opacity: transitioning ? 0 : 1,
 									y: transitioning ? '10%' : 0
@@ -431,7 +435,10 @@ export default function Home({ data, windowWidth }) {
 						</div>
 					</div>
 					<div className="w-full lg:w-6/12 pl-0 lg:pl-10 pt-32 lg:pt-14 order-1 lg:order-2 flex justify-center items-center mb-10 lg:mb-0 mt-0 lg:-mt-12">
-						<FaceHolder className="relative">
+						<div
+							style={{ height: 250, width: 190 }}
+							className="relative"
+						>
 							<img
 								className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/2 z-20"
 								src="/animations/client-circle.svg"
@@ -452,6 +459,7 @@ export default function Home({ data, windowWidth }) {
 							>
 								<AnimatePresence>
 									<motion.img
+										key="people-index-img"
 										className="object-contain w-10/12 h-full"
 										animate={{
 											opacity: transitioning ? 0 : 1
@@ -465,7 +473,7 @@ export default function Home({ data, windowWidth }) {
 									/>
 								</AnimatePresence>
 							</div>
-						</FaceHolder>
+						</div>
 					</div>
 				</article>
 			</section>

@@ -11,10 +11,10 @@ import gfm from 'remark-gfm';
 const _ = require('lodash');
 
 // LOTTIES
-import one_right from '../animations/producto/01_r.json';
-import two_m from '../animations/producto/02_m.json';
-import three from '../animations/producto/03_r.json';
-import four from '../animations/producto/04_l.json';
+import one_right from '../animations/producto/producto.json';
+import two_m from '../animations/producto/barra.json';
+import three from '../animations/producto/modulos.json';
+import four from '../animations/producto/beneficios.json';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -67,7 +67,7 @@ export default function Producto({ data, windowWidth }) {
 								<LottieHolder animationData={one_right} />
 							</div>
 						</article>
-						<article className="w-full flex items-center justify-center mb-5">
+						<article className="w-full flex items-center justify-center mt-2 mb-5">
 							<div className="max-w-md">
 								<LottieHolder animationData={two_m} />
 							</div>
