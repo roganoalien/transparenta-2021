@@ -1,10 +1,9 @@
 import { useState, useContext } from 'react';
 import Image from 'next/image';
 import ActiveLink from '../components/ActiveLink';
-import { TransparentaContext } from '../globalState';
+import { TransparentaContext, LanguageContext } from '../globalState';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Formik } from 'formik';
-import { LanguageContext } from '../globalState';
 
 const noScroll = require('no-scroll');
 
@@ -53,6 +52,7 @@ const menuVariants = {
 function ResNav() {
 	const { transOpen, setTransOpen } = useContext(TransparentaContext);
 	const [open, setOpen] = useState(false);
+	const { lang } = useContext(LanguageContext);
 	// const [contact, setContact] = useState(false);
 
 	const handleMenu = (isInside) => {

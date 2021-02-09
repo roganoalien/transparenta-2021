@@ -15,8 +15,8 @@ const MainLayout = ({ children }) => {
 
 	return (
 		<>
-			{width > 992 && <Nav />}
-			{width < 993 && <ResNav />}
+			{width > 1027 && <Nav />}
+			{width < 1028 && <ResNav />}
 			{children}
 			<Footer />
 		</>

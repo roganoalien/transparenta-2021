@@ -395,7 +395,7 @@ export default function Home({ data, windowWidth }) {
 								"{clients[position][`testimony_${lang}`]}"
 							</motion.p>
 						</AnimatePresence>
-						<div className="switchClients flex items-center justify-center flex-wrap absolute bottom-0 right-0">
+						<div className="switchClients flex items-center justify-center flex-wrap absolute -bottom-32 right-1/2 transform translate-x-1/2">
 							<div
 								onClick={() => changeClient(false)}
 								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"

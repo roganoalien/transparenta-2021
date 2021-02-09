@@ -222,12 +222,12 @@ export default function Servicios({ data, error, message }) {
 }
 
 export async function getServerSideProps(context) {
-	// const data = await fetch(`${process.env.API_URL}/services`).then((res) =>
-	// 	res.json()
-	// );
-	const data = await fetch(`http://localhost:1337/services`).then((res) =>
+	const data = await fetch(`${process.env.API_URL}/services`).then((res) =>
 		res.json()
 	);
+	// const data = await fetch(`http://localhost:1337/services`).then((res) =>
+	// 	res.json()
+	// );
 	if (data.statusCode === 500) {
 		return {
 			props: {
