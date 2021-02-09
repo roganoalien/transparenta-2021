@@ -1,18 +1,27 @@
 import { useContext, useEffect, useState } from 'react';
+// import { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TransparentaContext, LanguageContext } from '../globalState';
-// import styled from 'styled-components';
 
-// const Transparenta = styled.button`
-// 	box-shadow: 15px 15px 0 0 rgba(72, 77, 81, 1);
-// 	&:hover {
-// 		box-shadow: 0 0 0 0 rgba(72, 77, 81, 1);
-// 	}
-// `;
+const tempFooter = {
+	id: 1,
+	email: 'hola@transparenta.mx',
+	phone: null,
+	address: 'Moliere 310, Polanco II, 11550, CDMX',
+	instagram: 'transparenta',
+	twitter: 'transparenta',
+	facebook: 'transparenta',
+	contactSend_one: 'contacto@transparenta.mx',
+	contactSend_two: 'jessica.lopez@transparenta.mx',
+	created_at: '2021-01-31T21:10:08.000Z',
+	updated_at: '2021-02-06T10:37:03.000Z',
+	tel: '55 4466 5577'
+};
 
-function Footer() {
+export default function Footer() {
 	const { transOpen, setTransOpen } = useContext(TransparentaContext);
 	const { lang, setEnglish, setSpanish } = useContext(LanguageContext);
+	// const [footer, setFooter] = useState(null);
 	const [footer, setFooter] = useState(null);
 
 	const handleTransparenta = () => {
@@ -23,7 +32,11 @@ function Footer() {
 		const data = await fetch(`${process.env.API_URL}/footer`)
 			.then((res) => res.json())
 			.catch((err) => console.log(err));
-		setFooter(data);
+		if (!!data) {
+			setFooter(tempFooter);
+		} else {
+			setFooter(data);
+		}
 	}, []);
 
 	const changeLanguage = async (which) => {
@@ -38,7 +51,6 @@ function Footer() {
 		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 		// window.location.reload();
 	};
-
 	return (
 		<>
 			<section className="container mx-auto transparenta-btn flex items-center justify-center mb-20 lg:mb-36">
@@ -168,5 +180,3 @@ function Footer() {
 		</>
 	);
 }
-
-export default Footer;

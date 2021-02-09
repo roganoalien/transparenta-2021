@@ -22,7 +22,13 @@ export function LanguageProvider({ children }) {
 	};
 
 	return (
-		<LanguageContext.Provider value={{ lang, setSpanish, setEnglish }}>
+		<LanguageContext.Provider
+			value={{
+				lang,
+				setSpanish,
+				setEnglish
+			}}
+		>
 			{children}
 		</LanguageContext.Provider>
 	);

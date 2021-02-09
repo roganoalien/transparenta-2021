@@ -1,142 +1,36 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { LottieHolder } from '../components/LottieHolder';
 import { LanguageContext } from '../globalState';
-// import Lottie from 'lottie-react';
 
 // LOTTIES
-// import one_right from '../animations/home/01_r.json';
 import one_left from '../animations/home/01_l.json'; // una necesidad izquierda
-// import two_left from '../animations/home/02_l.json';
 import two_right from '../animations/home/02_r.json'; // necesidad rombo
 import three_m from '../animations/home/03_m.json'; // lo que hacemos
 import four_left from '../animations/home/04_l.json'; // barra
-// import four_right from '../animations/home/04_r.json';
 
 SwiperCore.use([Autoplay, Pagination]);
 
-// const clientData = [
-// 	{
-// 		client: 'Fideicomiso Fuerza México',
-// 		description:
-// 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio a magni dolorum voluptates repellendus blanditiis molestias incidunt aut, corrupti, porro possimus ut alias accusamus sit molestiae at, expedita sapiente dicta!',
-// 		img:
-// 			'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
-// 		name: 'Ximena Suárez'
-// 	},
-// 	{
-// 		client: 'Río Arronte',
-// 		description:
-// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam soluta assumenda facilis voluptates ex esse quae.',
-// 		img: 'https://randomuser.me/api/portraits/men/36.jpg',
-// 		name: 'Rodrigo García'
-// 	},
-// 	{
-// 		client: 'ALEATICA',
-// 		description:
-// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam blanditiis, aut quisquam laboriosam.',
-// 		img: 'https://randomuser.me/api/portraits/men/1.jpg',
-// 		name: 'John Doe'
-// 	},
-// 	{
-// 		client: 'Desarrollador Confiable',
-// 		description:
-// 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-// 		img:
-// 			'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg',
-// 		name: 'Mary Jane'
-// 	}
-// ];
-// const JaLeftContainer = styled.div`
-// 	transform: translate(-7%, -50%);
-// `;
-// const JaRightContainer = styled.div`
-// 	transform: translate(-40%, -50%);
-// 	@media (max-width: 1023px) {
-// 		transform: translate(-5%, -50%);
-// 	}
-// `;
-
-// const FaceHolder = styled.div`
-// 	background-size: cover !important;
-// 	background-repeat: no-repeat !important;
-// 	height: 250px;
-// 	width: 190px;
-// 	@media (max-width: 1023px) {
-// 		position: relative;
-// 	}
-// `;
-// const FaceImage = styled.img`
-// 	object-fit: cover;
-// 	height: 200px;
-// 	width: 190px;
-// 	z-index: -1;
-// `;
-// const FaceLines = styled.img`
-// 	height: 50px;
-// 	width: 190px;
-// `;
-// const FaceCircles = styled.img`
-// 	transform: translate(55%, -55%);
-// 	z-index: 10;
-// 	@media (max-width: 1023px) {
-// 		position: absolute;
-// 		right: 0;
-// 		top: 0;
-// 		transform: translate(50%, -50%);
-// 	}
-// `;
-// const PeopleBtnHolder = styled.div`
-// 	bottom: 0px;
-// 	right: 60px;
-// 	position: absolute;
-// 	@media (max-width: 1023px) {
-// 		bottom: -120px;
-// 		right: 50%;
-// 		transform: translate(50%, 0);
-// 	}
-// `;
-// const BtnShadow = styled.button`
-// 	background: #f2f2f2;
-// 	outline: none !important;
-// 	position: relative;
-// 	&:after {
-// 		content: '';
-// 		background: #484d51;
-// 		height: 100%;
-// 		left: 0;
-// 		position: absolute;
-// 		top: 0;
-// 		transform: translate(6px, 6px);
-// 		transition: all 0.15s ease-in-out;
-// 		width: 100%;
-// 		z-index: -1;
-// 	}
-// 	&:hover {
-// 		&:after {
-// 			transform: translate(4px, 4px);
-// 		}
-// 	}
-// `;
+const tempImages = [
+	'aleatica.png',
+	'posadas.png',
+	'fideicomisos.png',
+	'desarrollador.png'
+];
 
 export default function Home({ data, windowWidth }) {
 	const [position, setPosition] = useState(0);
 	const [transitioning, setTransitioning] = useState(false);
 	const clients = data.clients;
-	console.log('CLIENTS', clients);
-	// const [width, setWidth] = useState(null);
-	// const [es, setEs] = useState(null);
 	const { lang } = useContext(LanguageContext);
 
 	// useEffect(() => {
-	// 	setWidth(window.innerWidth);
-	// 	const handleResize = () => setWidth(window.innerWidth);
-	// 	window.addEventListener('resize', handleResize);
-	// 	return () => window.removeEventListener('resize', handleResize);
+	// setWidth(window.innerWidth);
+	// const handleResize = () => setWidth(window.innerWidth);
+	// window.addEventListener('resize', handleResize);
+	// return () => window.removeEventListener('resize', handleResize);
 	// }, []);
 
 	const changeClient = (up) => {
@@ -207,26 +101,6 @@ export default function Home({ data, windowWidth }) {
 							<LottieHolder animationData={two_right} />
 						</div>
 					</div>
-					{/* <div className="bottom-content w-full h-auto flex items-center justify-between mt-2 lg:-mt-10 xl:-mt-24"> */}
-					{/* <div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div
-								style={{
-									width: windowWidth < 1024 ? 120 : 230
-								}}
-							>
-								<LottieHolder animationData={two_left} />
-							</div>
-						</div> */}
-					{/* <div className="w-full lg:w-6/12 flex items-center justify-center">
-							<div
-								style={{
-									width: windowWidth < 1024 ? 180 : 340
-								}}
-							>
-								<LottieHolder animationData={two_right} />
-							</div>
-						</div> */}
-					{/* </div> */}
 				</div>
 			</motion.section>
 			<motion.section
@@ -269,98 +143,10 @@ export default function Home({ data, windowWidth }) {
 				</article>
 			</motion.section>
 			<section className="just-animations relative h-auto hidden lg:flex lg:mt-12 items-center justify-center">
-				{/* <JaLeftContainer
-					className="top-1/2 left-0 absolute"
-					style={{ width: 300 }}
-				>
-					<LottieHolder animationData={four_left} />
-				</JaLeftContainer> */}
-				<div
-					// className="top-1/2 left-0 absolute"
-					style={{ width: 400 }}
-				>
+				<div style={{ width: 400 }}>
 					<LottieHolder animationData={four_left} />
 				</div>
-				{/* <JaRightContainer
-					className="top-1/2 right-0 absolute "
-					style={{ width: windowWidth < 1024 ? 180 : 260 }}
-				>
-					<LottieHolder animationData={four_right} />
-				</JaRightContainer> */}
 			</section>
-			{/*<section className="clients w-screen container mx-auto flex flex-wrap items-center justify-center pt-0 lg:pt-20 pb-0 lg:pb-10 px-35 lg:px-0">
-				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
-					{lang === 'es' ? 'Clientes' : 'Clients'}
-				</h2>
-				{windowWidth > 1024 ? (
-					<div className="the-clients flex items-center justify-center w-full">
-						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-							<img
-								src="/clients/cliente-1.png"
-								alt="Cliente 01"
-							/>
-						</div>
-						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-							<img
-								src="/clients/cliente-2.png"
-								alt="Cliente 02"
-							/>
-						</div>
-						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-							<img
-								src="/clients/cliente-3.png"
-								alt="Cliente 03"
-							/>
-						</div>
-						<div className="w-full sm:w-1/2 lg:w-1/4 p-8">
-							<img
-								src="/clients/cliente-4.png"
-								alt="Cliente 04"
-							/>
-						</div>
-					</div>
-				) : (
-					// <div className="w-full flex items-center justify-content"></div>
-					<Swiper
-						className="w-full -mt-10"
-						spaceBetween={0}
-						slidesPerView={1}
-						centeredSlides={true}
-						grabCursor={true}
-						longSwipes={false}
-						autoplay={{
-							delay: 3000,
-							disableOnInteraction: false
-						}}
-						pagination={{ clickable: true }}
-					>
-						<SwiperSlide className="flex items-start justify-center">
-							<img
-								src="/clients/cliente-1.png"
-								alt="Cliente 01"
-							/>
-						</SwiperSlide>
-						<SwiperSlide className="flex items-start justify-center">
-							<img
-								src="/clients/cliente-2.png"
-								alt="Cliente 02"
-							/>
-						</SwiperSlide>
-						<SwiperSlide className="flex items-start justify-center">
-							<img
-								src="/clients/cliente-3.png"
-								alt="Cliente 03"
-							/>
-						</SwiperSlide>
-						<SwiperSlide className="flex items-start justify-center">
-							<img
-								src="/clients/cliente-4.png"
-								alt="Cliente 04"
-							/>
-						</SwiperSlide>
-					</Swiper>
-				)}
-			</section> */}
 			<section className="people w-screen container mx-auto flex items-center justify-center flex-wrap pb-40 px-35 lg:px-5 mt-14">
 				<h2 className="text-2xl lg:text-3xl font-bold text-main w-full">
 					{lang === 'es' ? 'Clientes' : 'Clients'}
@@ -378,9 +164,6 @@ export default function Home({ data, windowWidth }) {
 							>
 								{clients[position].name}
 							</motion.h3>
-							{/* <p className="text-main font-bold text-xl lg:text-sm text-center lg:text-left w-full">
-								{server}
-							</p> */}
 							<motion.p
 								key="people-index-p"
 								animate={{
@@ -395,7 +178,7 @@ export default function Home({ data, windowWidth }) {
 								"{clients[position][`testimony_${lang}`]}"
 							</motion.p>
 						</AnimatePresence>
-						<div className="switchClients flex items-center justify-center flex-wrap absolute -bottom-32 right-1/2 transform translate-x-1/2">
+						<div className="switchClients flex items-center justify-center flex-wrap absolute -bottom-32 lg:bottom-0 right-1/2 lg:right-0 transform translate-x-1/2 lg:translate-x-0">
 							<div
 								onClick={() => changeClient(false)}
 								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
@@ -464,11 +247,12 @@ export default function Home({ data, windowWidth }) {
 										animate={{
 											opacity: transitioning ? 0 : 1
 										}}
-										src={
-											process.env.API_URL +
-											clients[position].image.formats
-												.thumbnail.url
-										}
+										// src={
+										// 	process.env.API_URL +
+										// 	clients[position].image.formats
+										// 		.thumbnail.url
+										// }
+										src={`/tempClients/${tempImages[position]}`}
 										alt={clients[position].name}
 									/>
 								</AnimatePresence>
@@ -485,6 +269,9 @@ export async function getServerSideProps() {
 	const data = await fetch(`${process.env.API_URL}/home`).then((res) =>
 		res.json()
 	);
+	// const footer = await fetch(`${process.env.API_URL}/footer`).then((res) =>
+	// 	res.json()
+	// );
 	if (!data) {
 		return {
 			props: { error: 404, status: 500 }
@@ -493,6 +280,7 @@ export async function getServerSideProps() {
 	return {
 		props: {
 			data
+			// footer
 		}
 	};
 }
