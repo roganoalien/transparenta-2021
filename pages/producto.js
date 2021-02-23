@@ -15,6 +15,7 @@ import one_right from '../animations/producto/producto.json';
 import two_m from '../animations/producto/barra.json';
 import three from '../animations/producto/modulos.json';
 import four from '../animations/producto/beneficios.json';
+import greenLine from '../animations/producto/02_m.json';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -22,7 +23,7 @@ const AnimTopRight = styled.img`
 	transform: translate(0, -25%);
 `;
 
-export default function Producto({ data, windowWidth }) {
+export default function Producto({ data, windowWidth, imageURL }) {
 	// const [width, setWidth] = useState(null);
 	const { lang } = useContext(LanguageContext);
 	const functionalities = _.sortBy(data.functionalities, function (o) {
@@ -71,8 +72,9 @@ export default function Producto({ data, windowWidth }) {
 							</div>
 						</article>
 						<article className="w-full flex items-center justify-center mt-2 mb-5">
-							<div className="max-w-lg">
-								<LottieHolder animationData={two_m} />
+							<div className="max-w-md">
+								{/* <LottieHolder animationData={two_m} /> */}
+								<LottieHolder animationData={greenLine} />
 							</div>
 						</article>
 					</section>
@@ -201,13 +203,20 @@ export default function Producto({ data, windowWidth }) {
 												<p className="w-full font-bold text-lg lg:text-xl text-center mb-2">
 													{item['title_' + lang]}
 												</p>
-												<div className="px-8">
-													<LottieHolder
+												<img
+													className="px-8"
+													src={
+														imageURL +
+														item.image.url
+													}
+													alt={item['title_' + lang]}
+												/>
+												{/* <LottieHolder
 														animationData={
 															item.animation
 														}
-													/>
-												</div>
+													/> */}
+												{/* </img> */}
 												<p className="w-full text-lg lg:text-xl text-center mt-2">
 													{item['price_' + lang]}
 												</p>
@@ -249,18 +258,27 @@ export default function Producto({ data, windowWidth }) {
 													<p className="w-full font-bold text-lg text-center mb-8">
 														{item['title_' + lang]}
 													</p>
-													<div
+													<img
+														src={
+															imageURL +
+															item.image.url
+														}
+														alt={
+															item[
+																'title_' + lang
+															]
+														}
 														className="w-full"
 														style={{
 															maxWidth: 181
 														}}
-													>
-														<LottieHolder
+													/>
+													{/* <LottieHolder
 															animationData={
 																item.animation
 															}
-														/>
-													</div>
+														/> */}
+													{/* </div> */}
 													<p className="w-full text-lg text-center mt-8">
 														{item['price_' + lang]}
 													</p>
@@ -289,7 +307,8 @@ export async function getServerSideProps(context) {
 	}
 	return {
 		props: {
-			data
+			data,
+			imageURL: process.env.API_URL
 		}
 	};
 }

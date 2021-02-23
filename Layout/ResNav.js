@@ -88,7 +88,7 @@ function ResNav() {
 					/>
 				</div>
 				<button
-					className="bg-gray-100 outline-none"
+					className="bg-gray-100 outline-none focus:outline-none"
 					onClick={() =>
 						open
 							? handleMenu(false)

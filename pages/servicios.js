@@ -123,7 +123,7 @@ export default function Servicios({ data, error, message }) {
 									<img
 										src="/servicios_precio_estatico.svg"
 										alt="Servicios Precios"
-										className="w-8/12 lg:w-full mt-6 mb-14"
+										className="w-8/12 lg:w-10/12 xl:w-full mt-6 mb-14 max-w-md"
 									/>
 									<p className="text-black -mt-9 w-full text-center text-lg lg:text-xl xl:text-2xl">
 										{data['priceContentPrice_' + lang]}

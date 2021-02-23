@@ -32,7 +32,9 @@ export default function Footer() {
 		const data = await fetch(`${process.env.API_URL}/footer`)
 			.then((res) => res.json())
 			.catch((err) => console.log(err));
-		if (!!data) {
+		console.log(data);
+		// setFooter(data);
+		if (data === undefined || data === null) {
 			setFooter(tempFooter);
 		} else {
 			setFooter(data);
@@ -67,28 +69,44 @@ export default function Footer() {
 						<h4 className="font-bold text-white text-lg text-left">
 							{lang === 'es' ? 'Contacto' : 'Contact'}
 						</h4>
-						<ul className="text-white mt-3">
-							<li>
-								<a
-									href={`mailto:${footer?.email}`}
-									className="font-light hover:underline"
-								>
-									{footer?.email}
-								</a>
-							</li>
-							<li>
-								<a
-									href={`tel:+52${footer?.tel.replace(
-										' ',
-										''
-									)}`}
-									className="font-light hover:underline"
-								>
-									{footer?.tel ? footer.tel : 'null'}
-								</a>
-							</li>
-							<li className="font-light">{footer?.address}</li>
-						</ul>
+						{!footer?.has_file ? (
+							<>
+								<ul className="text-white mt-3">
+									<li>
+										<a
+											href={`mailto:${footer?.email}`}
+											className="font-light hover:underline"
+										>
+											{footer?.email}
+										</a>
+									</li>
+									<li>
+										<a
+											href={`tel:+52${footer?.tel.replace(
+												' ',
+												''
+											)}`}
+											className="font-light hover:underline"
+										>
+											{footer?.tel ? footer.tel : 'null'}
+										</a>
+									</li>
+									<li className="font-light">
+										{footer?.address}
+									</li>
+								</ul>
+							</>
+						) : (
+							<a
+								target="_blank"
+								href={process.env.API_URL + footer?.file?.url}
+								className="bg-white hover:bg-transparent text-main hover:text-white border-3 border-white py-1 px-2 mr-4 font-medium mt-3 block transition duration-150"
+							>
+								{lang === 'es'
+									? footer?.filteBtnText_es
+									: footer?.filteBtnText_en}
+							</a>
+						)}
 					</div>
 				</div>
 				<ul className="w-full lg:w-1/3 flex items-center justify-start lg:justify-center self-stretch mb-10 lg:mb-0">
