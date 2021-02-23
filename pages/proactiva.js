@@ -57,8 +57,9 @@ export default function Proactiva({ data }) {
 							<LottieHolder animationData={one_right} />
 						</div> */}
 					{/* </section> */}
-					<section className="footer w-full lg:w-10/12 mt-0 lg:mt-0 flex items-start justify-end">
-						<div className="w-full lg:w-auto max-w-3xl lg:max-w-3xl xl:max-w-4xl">
+					<section className="footer w-full lg:w-10/12 mt-6 lg:mt-0 flex items-start justify-end mb-6 lg:mb-0">
+						{/* <div className="w-full lg:w-auto max-w-3xl lg:max-w-3xl xl:max-w-4xl"> */}
+						<div className="w-full">
 							<LottieHolder animationData={one_m} />
 						</div>
 					</section>
@@ -79,9 +80,9 @@ export default function Proactiva({ data }) {
 					</section>
 					<section className="benefits w-full mt-0 lg:mt-10 mb-10 lg:mb-14 flex items-start justify-center">
 						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-center">
-							<div className="" style={{ width: 320 }}>
-								<LottieHolder animationData={three} />
-							</div>
+							{/* <div className="" style={{ width: 320 }}> */}
+							<LottieHolder animationData={three} />
+							{/* </div> */}
 						</article>
 						<article className="w-full lg:w-8/12">
 							<h2 className="text-2xl lg:text-3xl text-main font-bold">

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="392.935" height="263.098" viewBox="0 0 392.935 263.098">
+    <defs>
+        <style>
+            .cls-2,.cls-3{stroke:#484d51;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;opacity:.7}.cls-2{fill:#89a4a9}.cls-3{fill:#f2f2f2}
+        </style>
+    </defs>
+    <g id="Group_87" transform="translate(-536.22 -3199.972)">
+        <path id="Rectangle_142" fill="#484d51" stroke="#484d51" stroke-linecap="round" stroke-linejoin="round" stroke-width="4px" d="M0 0H275.2V163.945H0z" opacity="0.7" transform="translate(584.898 3248.65)"/>
+        <path id="Rectangle_143" d="M0 0H119.87V119.87H0z" class="cls-2" transform="translate(538.22 3201.972)"/>
+        <path id="Rectangle_144" d="M0 0H119.87V119.87H0z" class="cls-2" transform="translate(653.685 3341.199)"/>
+        <path id="Rectangle_145" d="M0 0H73.192V73.192H0z" class="cls-3" transform="translate(584.898 3248.65)"/>
+        <path id="Rectangle_146" d="M0 0H119.87V119.87H0z" class="cls-2" transform="translate(807.285 3265.677)"/>
+        <path id="Rectangle_147" d="M0 0H52.813V119.87H0z" class="cls-3" transform="translate(807.285 3265.677)"/>
+        <path id="Rectangle_148" d="M0 0H119.87V71.259H0z" class="cls-3" transform="translate(653.685 3341.336)"/>
+    </g>
+</svg>

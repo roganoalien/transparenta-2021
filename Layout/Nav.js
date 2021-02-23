@@ -216,7 +216,7 @@ function Nav() {
 													// onBlur={handleBlur}
 													value={values.name}
 													placeholder="Nombre *"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main"
 												/>
 												{errors.orgName && (
 													<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -230,7 +230,7 @@ function Nav() {
 													// onBlur={handleBlur}
 													value={values.orgName}
 													placeholder="Nombre de la organización *"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main"
 												/>
 												{errors.sector && (
 													<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -244,7 +244,7 @@ function Nav() {
 													onBlur={handleBlur}
 													value={values.sector}
 													placeholder="Sector"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main"
 												/> */}
 												<select
 													name="sector"
@@ -260,7 +260,7 @@ function Nav() {
 															'no-repeat',
 														WebkitAppearance: 'none'
 													}}
-													className={`w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 ${
+													className={`w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 outline-none focus:border-main ${
 														values.sector !==
 														'Sector *'
 															? 'text-black'
@@ -290,7 +290,7 @@ function Nav() {
 													// onBlur={handleBlur}
 													value={values.email}
 													placeholder="Correo *"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main"
 												/>
 												{errors.services && (
 													<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -304,7 +304,7 @@ function Nav() {
 													onBlur={handleBlur}
 													value={values.services}
 													placeholder="Servicios de interés"
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main"
 												/> */}
 												<textarea
 													name="services"
@@ -313,7 +313,7 @@ function Nav() {
 													placeholder="Servicios de interés"
 													onChange={handleChange}
 													// onBlur={handleBlur}
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black max-h-20"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-8 placeholder-black outline-none ring-0 focus:border-main max-h-20 focus:ring-0 focus:outline-none focus:border-main"
 												>
 													{values.services}
 												</textarea>
@@ -330,13 +330,16 @@ function Nav() {
 													className="w-full"
 													onChange={handleChange}
 													// onBlur={handleBlur}
-													className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall placeholder-black"
+													className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall placeholder-black focus:ring-0 focus:outline-none focus:border-main"
 												>
 													{values.text}
 												</textarea>
 												<div className="btn-holder flex items-center justify-center w-full mt-10">
 													<button
 														type="submit"
+														style={{
+															maxWidth: 250
+														}}
 														className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline"
 													>
 														Enviar

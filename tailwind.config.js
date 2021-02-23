@@ -11,6 +11,9 @@ module.exports = {
 			sans: ['Montserrat', 'Arial', 'sans-serif']
 		},
 		extend: {
+			borderWidth: {
+				3: '3px'
+			},
 			boxShadow: {
 				transparenta: '15px 15px 0 0 rgba(72, 77, 81, 1)',
 				transparentaSmall: '8px 8px 0 0 rgba(72, 77, 81, 1)',
@@ -29,6 +32,9 @@ module.exports = {
 			margin: {
 				90: '50px',
 				'90x2': '100px'
+			},
+			maxWidth: {
+				xxs: '250px'
 			},
 			padding: {
 				'20px': '20px',

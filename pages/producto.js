@@ -63,12 +63,15 @@ export default function Producto({ data, windowWidth }) {
 							</div>
 						</article>
 						<article className="w-full lg:w-4/12 relative hidden lg:flex items-center justify-content pointer-events-none">
-							<div className="mt-0 lg:-mt-28">
-								<LottieHolder animationData={one_right} />
+							<div className="mt-0 lg:-mt-24 relative">
+								<LottieHolder
+									addClass="lg:transform lg:scale-110 xl:scale-100"
+									animationData={one_right}
+								/>
 							</div>
 						</article>
 						<article className="w-full flex items-center justify-center mt-2 mb-5">
-							<div className="max-w-md">
+							<div className="max-w-lg">
 								<LottieHolder animationData={two_m} />
 							</div>
 						</article>
@@ -124,14 +127,14 @@ export default function Producto({ data, windowWidth }) {
 											key={item['title_' + lang]}
 											className="item w-full sm:w-1/2 lg:w-1/3 flex flex-col items-center justify-start lg:px-5 xl:px-0"
 										>
-											<div className="holder border-2 border-black px-8 py-12 shadow-transparenta">
+											<div className="holder border-3 border-black px-8 py-12 shadow-transparenta">
 												<img
 													src="/animations/producto-anim-func.svg"
 													alt="Funcionalidad1"
 													width="300"
 												/>
 											</div>
-											<p className="font-bold px-2 mt-10">
+											<p className="font-bold px-6 xl:px-16 mt-10 text-center text-sm">
 												{item['description_' + lang]}
 											</p>
 										</div>
@@ -164,14 +167,14 @@ export default function Producto({ data, windowWidth }) {
 											key={item['title_' + lang]}
 											className="flex flex-col items-center justify-start w-full sm:max-w-sm lg:w-auto px-20 sm:px-5 lg:px-0"
 										>
-											<div className="holder border-2 border-black px-8 py-12 shadow-transparenta mx-10">
+											<div className="holder border-3 border-black px-8 py-12 shadow-transparenta mx-10">
 												<img
 													src="/animations/producto-anim-func.svg"
 													alt="Funcionalidad1"
 													width="300"
 												/>
 											</div>
-											<p className="font-bold mt-10 text-center">
+											<p className="font-normal mt-10 px-14 text-center">
 												{item['description_' + lang]}
 											</p>
 										</SwiperSlide>
@@ -194,8 +197,8 @@ export default function Producto({ data, windowWidth }) {
 											key={item['title_' + lang]}
 											className="item w-full sm:w-1/2 lg:w-1/4 flex flex-col items-center justify-start px-4 self-stretch"
 										>
-											<div className="holder border-2 border-black py-6 shadow-transparenta flex flex-col items-center justify-center w-full">
-												<p className="w-full font-bold text-lg text-center mb-8">
+											<div className="holder border-3 border-black py-6 shadow-transparenta flex flex-col items-center justify-center w-full">
+												<p className="w-full font-bold text-lg lg:text-xl text-center mb-2">
 													{item['title_' + lang]}
 												</p>
 												<div className="px-8">
@@ -205,7 +208,7 @@ export default function Producto({ data, windowWidth }) {
 														}
 													/>
 												</div>
-												<p className="w-full text-lg text-center mt-8">
+												<p className="w-full text-lg lg:text-xl text-center mt-2">
 													{item['price_' + lang]}
 												</p>
 											</div>
@@ -242,7 +245,7 @@ export default function Producto({ data, windowWidth }) {
 												key={item['title_' + lang]}
 												className="item w-full flex flex-col items-center justify-start px-4 self-stretch"
 											>
-												<div className="holder border-2 border-black py-6 shadow-transparenta flex flex-col items-center justify-center w-full mx-12">
+												<div className="holder border-3 border-black py-6 shadow-transparenta flex flex-col items-center justify-center w-full mx-12 max-w-xxs sm:max-w-full">
 													<p className="w-full font-bold text-lg text-center mb-8">
 														{item['title_' + lang]}
 													</p>

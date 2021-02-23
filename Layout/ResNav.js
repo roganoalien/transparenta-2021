@@ -77,7 +77,7 @@ function ResNav() {
 
 	return (
 		<>
-			<nav className="w-full flex items-center justify-between px-35 py-half z-50 fixed left-0 top-0 bg-white">
+			<nav className="w-full flex items-center justify-between px-35 py-20px z-50 fixed left-0 top-0 bg-white">
 				<div className="mainLogo flex items-center justify-center w-auto">
 					<Image
 						src="/transparenta-logo.svg"
@@ -152,7 +152,7 @@ function ResNav() {
 							variants={menuVariants}
 							className="mobile-menu z-40 h-screen w-screen fixed left-0 top-0 bg-white pointer-events-none flex items-center justify-center flex-col border-bottom-2 border-main"
 						>
-							<ul className="pointer-events-auto">
+							<ul className="pointer-events-auto flex flex-col items-center justify-center">
 								<li
 									className="font-bold uppercase hover:text-main text-center mb-6 text-xl"
 									onClick={() => handleMenu(true)}
@@ -214,20 +214,25 @@ function ResNav() {
 									</ActiveLink>
 								</li>
 								<li
-									className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out text-center"
+									// style={{ maxWidth: 250 }}
+									className="font-bold uppercase py-4 px-5 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out text-center"
 									onClick={() => {
 										handleMenu(false);
 										handleContact();
 									}}
 								>
-									Obtén Transparenta
+									{lang === 'es' ? (
+										<a>Obtén Transparenta</a>
+									) : (
+										<a>Get Transparent</a>
+									)}
 								</li>
 							</ul>
 							<ul className="social absolute left-1/2 bottom-5 transform -translate-x-1/2 flex items-center justify-center w-full">
 								<li className="mr-4">
 									<a
 										href="#instagram"
-										className="border-2 border-black flex items-center p-2 hover:opacity-50"
+										className="border-3 border-black flex items-center p-2 hover:opacity-50"
 									>
 										<Image
 											src="/instagram-black.svg"
@@ -241,7 +246,7 @@ function ResNav() {
 								<li className="mr-4">
 									<a
 										href="#twitter"
-										className="border-2 border-black flex items-center p-2 hover:opacity-50"
+										className="border-3 border-black flex items-center p-2 hover:opacity-50"
 									>
 										<Image
 											src="/twitter-black.svg"
@@ -255,7 +260,7 @@ function ResNav() {
 								<li>
 									<a
 										href="#facebook"
-										className="border-2 border-black flex items-center p-2 hover:opacity-50"
+										className="border-3 border-black flex items-center p-2 hover:opacity-50"
 									>
 										<Image
 											src="/facebook-black.svg"
@@ -355,7 +360,7 @@ function ResNav() {
 											// onBlur={handleBlur}
 											value={values.name}
 											placeholder="Nombre *"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black outline-none ring-0 focus:border-main"
 										/>
 										{errors.orgName && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -369,7 +374,7 @@ function ResNav() {
 											// onBlur={handleBlur}
 											value={values.orgName}
 											placeholder="Nombre de la organización *"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black outline-none ring-0 focus:border-main"
 										/>
 										{errors.sector && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -388,7 +393,7 @@ function ResNav() {
 												backgroundRepeat: 'no-repeat',
 												WebkitAppearance: 'none'
 											}}
-											className={`w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 ${
+											className={`w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 outline-none focus:border-main placeholder-black ring-0 ${
 												values.sector !== 'Sector *'
 													? 'text-black'
 													: 'text-gray-400'
@@ -412,7 +417,7 @@ function ResNav() {
 											onBlur={handleBlur}
 											value={values.sector}
 											placeholder="Sector"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6"
 										/> */}
 										{errors.email && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -426,7 +431,7 @@ function ResNav() {
 											// onBlur={handleBlur}
 											value={values.sector}
 											placeholder="Correo *"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black outline-none ring-0 focus:border-main"
 										/>
 										{errors.services && (
 											<p className="text-red-500 text-xs uppercase text-left w-full">
@@ -440,7 +445,7 @@ function ResNav() {
 											onBlur={handleBlur}
 											value={values.email}
 											placeholder="Servicios de interés"
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6"
 										/> */}
 										<textarea
 											name="services"
@@ -449,7 +454,7 @@ function ResNav() {
 											placeholder="Servicios de interés"
 											onChange={handleChange}
 											// onBlur={handleBlur}
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black max-h-20"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall mb-6 placeholder-black max-h-20 outline-none ring-0 focus:border-main"
 										>
 											{values.services}
 										</textarea>
@@ -466,14 +471,14 @@ function ResNav() {
 											className="w-full"
 											onChange={handleChange}
 											// onBlur={handleBlur}
-											className="w-full bg-transparent text-black border-2 border-black py-1 px-2 shadow-transparentaSmall"
+											className="w-full bg-transparent text-black border-3 border-black py-1 px-2 shadow-transparentaSmall placeholder-black outline-none ring-0 focus:border-main"
 										>
 											{values.text}
 										</textarea>
 										<div className="btn-holder flex items-center justify-center w-full mt-10">
 											<button
 												type="submit"
-												className="bg-black py-3 w-full text-center text-white font-bold after-shadow-outline"
+												className="bg-black py-3 w-11/12 text-center text-white font-bold after-shadow-outline"
 											>
 												Enviar
 											</button>

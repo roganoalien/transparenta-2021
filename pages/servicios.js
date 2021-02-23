@@ -42,7 +42,7 @@ export default function Servicios({ data, error, message }) {
 					exit={{ opacity: 0 }}
 					className="flex flex-wrap items-center justify-center mt-90 lg:mt-5 px-35 lg:px-0"
 				>
-					<div className="container mx-auto flex flex-wrap items-center justify-center">
+					<div className="container mx-auto flex flex-wrap items-center justify-center px-0 md:px-35 lg:px-18">
 						<section className="header w-full mt-4 flex items-stretch justify-center flex-wrap h-auto">
 							<article className="w-full lg:w-8/12">
 								<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
@@ -114,14 +114,19 @@ export default function Servicios({ data, error, message }) {
 									{data['price_' + lang]}
 								</h2>
 								<div className="w-full lg:w-6/12 border-2 border-black py-8 flex flex-col items-center justify-center shadow-transparenta">
-									<p className="font-bold text-black text-lg w-full text-center">
-										Consultoría
+									<p className="font-bold text-black text-lg lg:text-xl xl:text-2xl w-full text-center">
+										{data['priceContentTitle_' + lang]}
 									</p>
-									<div className="max-w-md -mt-10 lg:w-full">
+									{/* <div className="max-w-md -mt-10 lg:w-full">
 										<LottieHolder animationData={three} />
-									</div>
-									<p className="text-black -mt-9 w-full text-center">
-										$ 49.99 / Month
+									</div> */}
+									<img
+										src="/servicios_precio_estatico.svg"
+										alt="Servicios Precios"
+										className="w-8/12 lg:w-full mt-6 mb-14"
+									/>
+									<p className="text-black -mt-9 w-full text-center text-lg lg:text-xl xl:text-2xl">
+										{data['priceContentPrice_' + lang]}
 									</p>
 								</div>
 							</article>
@@ -139,7 +144,8 @@ export default function Servicios({ data, error, message }) {
 							</article>
 							<article className="w-full lg:w-4/12 relative flex items-center justify-center">
 								<div className="hidden lg:block">
-									<LottieHolder animationData={one_top} />
+									{/* <LottieHolder animationData={one_top} /> */}
+									<LottieHolder animationData={three} />
 								</div>
 								{/* <div className="hidden lg:block transform scale-75 -mt-10">
 								<LottieHolder animationData={one_bottom} />

@@ -56,6 +56,16 @@ export default function Home({ data, windowWidth }) {
 			}, 100);
 		}, 500);
 	};
+
+	const changeClientResponsive = (index) => {
+		setTransitioning(true);
+		setTimeout(function () {
+			setPosition(index);
+			setTimeout(function () {
+				setTransitioning(false);
+			}, 100);
+		}, 500);
+	};
 	return (
 		<>
 			<Head>
@@ -66,13 +76,13 @@ export default function Home({ data, windowWidth }) {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30 mb-20"
+				className="necesidad-section w-screen relative px-35 mt-90 lg:px-0 z-30 mb-0 lg:mb-20"
 			>
 				<div className="container mx-auto flex items-stretch justify-start flex-wrap mt-90x2 lg:mt-0">
 					<div className="left-animation-container w-full lg:w-2/12 xl:w-3/12 hidden lg:flex items-start justify-start pointer-events-none">
-						<div style={{ width: '100%' }}>
-							<LottieHolder animationData={one_left} />
-						</div>
+						{/* <div style={{ width: '100%' }}> */}
+						<LottieHolder animationData={one_left} />
+						{/* </div> */}
 					</div>
 					<div className="center-content w-full lg:w-9/12 xl:w-7/12 h-auto flex flex-col items-start justify-start lg:justify-center relative z-50">
 						<h1 className="text-4xl lg:text-5xl text-main font-bold w-full">
@@ -81,6 +91,10 @@ export default function Home({ data, windowWidth }) {
 						<p className="text-black text-2xl lg:text-3xl mt-4 lg:pt-4 lg:pl-10 font-semibold lg:font-bold w-full lg:w-9/12">
 							{data['subtitle_' + lang]}
 						</p>
+						<div className="flex items-center justify-between lg:hidden w-full px-10 mt-10 mb-2">
+							<img src="/home_res_left.svg" alt="Left Bar" />
+							<img src="/home_res_right.svg" alt="Right Icon" />
+						</div>
 					</div>
 					<div className="right-content-animation w-full lg:w-1/12 xl:w-2/12 h-auto hidden lg:flex items-start justify-start relative pointer-events-none">
 						{/* <div
@@ -160,7 +174,7 @@ export default function Home({ data, windowWidth }) {
 									opacity: transitioning ? 0 : 1,
 									y: transitioning ? '10%' : 0
 								}}
-								className="text-black font-bold text-2xl lg:text-xl text-center lg:text-left w-full"
+								className="text-black font-bold text-2xl lg:text-2xl text-center lg:text-left w-full"
 							>
 								{clients[position].name}
 							</motion.h3>
@@ -173,36 +187,43 @@ export default function Home({ data, windowWidth }) {
 								transition={{
 									delay: 0.15
 								}}
-								className="text-black mt-5 italic text-lg lg:text-base pr-0 lg:pr-16"
+								className="text-black mt-4 italic text-lg lg:text-base pr-0 text-center lg:text-center"
 							>
 								"{clients[position][`testimony_${lang}`]}"
 							</motion.p>
 						</AnimatePresence>
-						<div className="switchClients flex items-center justify-center flex-wrap absolute -bottom-32 lg:bottom-0 right-1/2 lg:right-0 transform translate-x-1/2 lg:translate-x-0">
+						<div className="switchClients flex items-center justify-center flex-wrap absolute -bottom-20 lg:bottom-0 right-1/2 lg:right-0 transform translate-x-1/2 lg:translate-x-0">
 							<div
 								onClick={() => changeClient(false)}
-								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
+								// className="bg-white border-3 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
+								className="bg-white border-3 border-black mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer hidden lg:flex items-center justify-center"
+								style={{ width: 32, height: 32 }}
 							>
 								<img
 									src="/arrow-l.svg"
 									alt="Arrow Left"
-									width="8"
+									width="10"
 								/>
 							</div>
 							<div
 								onClick={() => changeClient(true)}
-								className="bg-white border-2 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
+								// className="bg-white border-3 border-black py-3 lg:py-1 px-4 lg:px-2 mr-4 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer"
+								className="bg-white border-3 border-black mr-6 hover:bg-main shadow-btnRight hover:shadow-btnRightPressed transition-shadow duration-150 cursor-pointer hidden lg:flex items-center justify-center"
+								style={{ width: 32, height: 32 }}
 							>
 								<img
 									src="/arrow-r.svg"
 									alt="Arrow Right"
-									width="8"
+									width="10"
 								/>
 							</div>
-							<div className="w-full flex lg:hidden items-center justify-center mt-5">
+							<div className="w-full flex lg:hidden items-center justify-center mt-0 ">
 								{clients.map((item, index) => (
 									<div
-										className={`border-2 border-black h-4 w-4 ${
+										onClick={() =>
+											changeClientResponsive(index)
+										}
+										className={`border-4 border-black h-4 w-4 ${
 											index === clients.length - 1
 												? 'mr-0'
 												: 'mr-4'

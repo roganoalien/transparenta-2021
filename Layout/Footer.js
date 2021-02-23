@@ -56,7 +56,7 @@ export default function Footer() {
 			<section className="container mx-auto transparenta-btn flex items-center justify-center mb-20 lg:mb-36">
 				<button
 					onClick={handleTransparenta}
-					className="text-black text-2xl lg:text-4xl font-bold border-2 border-black py-2 lg:py-4 px-10 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none"
+					className="text-black text-2xl lg:text-4xl font-bold border-3 border-black py-2 lg:py-3 px-6 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none"
 				>
 					{lang === 'es' ? 'Obtén Transparenta' : 'Get Transparent'}
 				</button>
@@ -95,7 +95,7 @@ export default function Footer() {
 					<li className="mr-4">
 						<a
 							href={`https://instagram.com/${footer?.instagram}`}
-							className="border-2 border-white flex items-center p-2 hover:opacity-50"
+							className="border-3 border-white flex items-center p-2 hover:opacity-50"
 						>
 							<Image
 								src="/instagram.svg"
@@ -109,7 +109,7 @@ export default function Footer() {
 					<li className="mr-4">
 						<a
 							href={`https://twitter.com/${footer?.instagram}`}
-							className="border-2 border-white flex items-center p-2 hover:opacity-50"
+							className="border-3 border-white flex items-center p-2 hover:opacity-50"
 						>
 							<Image
 								src="/twitter.svg"
@@ -123,7 +123,7 @@ export default function Footer() {
 					<li>
 						<a
 							href={`https://facebook.com/${footer?.instagram}`}
-							className="border-2 border-white flex items-center p-2 hover:opacity-50"
+							className="border-3 border-white flex items-center p-2 hover:opacity-50"
 						>
 							<Image
 								src="/facebook.svg"
@@ -150,7 +150,7 @@ export default function Footer() {
 									lang === 'es'
 										? 'bg-white text-main'
 										: 'bg-transparent hover:bg-white text-white hover:text-main transform scale-100 hover:scale-95'
-								} border-2 border-white py-1 px-2 mr-4`}
+								} border-3 border-white py-1 px-2 mr-4`}
 							>
 								{lang === 'es' ? 'Español' : 'Spanish'}
 							</button>
@@ -169,7 +169,7 @@ export default function Footer() {
 									lang === 'en'
 										? 'bg-white text-main'
 										: 'bg-transparent hover:bg-white text-white hover:text-main transform scale-100 hover:scale-95'
-								} border-2 border-white py-1 px-2 mr-4`}
+								} border-3 border-white py-1 px-2 mr-4`}
 							>
 								{lang === 'es' ? 'Inglés' : 'English'}
 							</button>

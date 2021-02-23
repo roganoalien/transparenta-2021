@@ -5,67 +5,70 @@
         <polygon id="path-1" points="0 0 190 0 190 66 0 66"></polygon>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group">
-            <g id="client-lines" transform="translate(0.000000, 184.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <g id="Rectangle_28"></g>
-                <g id="Group_11" mask="url(#mask-2)" stroke-linecap="round" stroke-linejoin="round">
-                    <g transform="translate(-490.000000, -667.000000)" id="Group_10">
-                        <line x1="1547.24585" y1="1343.36143" x2="368.42213" y2="167.127606" id="Line_100" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1536.0824" y1="1354.50036" x2="357.258675" y2="178.266535" id="Line_101" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1524.91894" y1="1365.63929" x2="346.095221" y2="189.405463" id="Line_102" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1513.75603" y1="1376.77821" x2="334.932307" y2="200.544392" id="Line_103" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1502.59257" y1="1387.91714" x2="323.768852" y2="211.68332" id="Line_104" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1491.42912" y1="1399.05607" x2="312.605397" y2="222.822249" id="Line_105" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1480.26566" y1="1410.195" x2="301.441943" y2="233.961177" id="Line_106" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1469.10221" y1="1421.33339" x2="290.278488" y2="245.099566" id="Line_107" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1457.93875" y1="1432.47232" x2="279.115033" y2="256.238494" id="Line_108" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1446.7753" y1="1443.61124" x2="267.951578" y2="267.377423" id="Line_109" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1435.61184" y1="1454.75017" x2="256.788124" y2="278.516351" id="Line_110" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1424.44893" y1="1465.8891" x2="245.62521" y2="289.65528" id="Line_111" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1413.28547" y1="1477.02803" x2="234.461755" y2="300.794208" id="Line_112" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1402.12202" y1="1488.16696" x2="223.2983" y2="311.933136" id="Line_113" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1390.95857" y1="1499.30589" x2="212.134845" y2="323.072065" id="Line_114" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1379.79511" y1="1510.44428" x2="200.971391" y2="334.210454" id="Line_115" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1368.63166" y1="1521.5832" x2="189.807936" y2="345.349382" id="Line_116" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1357.46874" y1="1532.72213" x2="178.645022" y2="356.48831" id="Line_117" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1346.30475" y1="1543.86106" x2="167.481026" y2="367.627239" id="Line_118" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1335.14183" y1="1554.99999" x2="156.318113" y2="378.766167" id="Line_119" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1323.97838" y1="1566.13892" x2="145.154658" y2="389.905096" id="Line_120" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1312.81492" y1="1577.27785" x2="133.991203" y2="401.044024" id="Line_121" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1301.65147" y1="1588.41623" x2="122.827748" y2="412.182413" id="Line_122" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1290.48801" y1="1599.55516" x2="111.664294" y2="423.321341" id="Line_123" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1279.32456" y1="1610.69409" x2="100.500839" y2="434.46027" id="Line_124" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1268.1611" y1="1621.83302" x2="89.3373841" y2="445.599198" id="Line_125" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1256.99765" y1="1632.97195" x2="78.1739294" y2="456.738127" id="Line_126" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1245.83419" y1="1644.11088" x2="67.0104746" y2="467.877055" id="Line_127" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1234.67128" y1="1655.24981" x2="55.8475607" y2="479.015984" id="Line_128" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1223.50783" y1="1666.38873" x2="44.684106" y2="490.154912" id="Line_129" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1212.34437" y1="1677.52712" x2="33.5206512" y2="501.293301" id="Line_130" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1201.18092" y1="1688.66605" x2="22.3571965" y2="512.432229" id="Line_131" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1190.01746" y1="1699.80498" x2="11.1937417" y2="523.571158" id="Line_132" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1178.85401" y1="1710.94391" x2="0.0302869757" y2="534.710086" id="Line_133" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1558.4093" y1="1332.22304" x2="379.585585" y2="155.989218" id="Line_134" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1569.57276" y1="1321.08411" x2="390.74904" y2="144.850289" id="Line_135" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1580.73621" y1="1309.94518" x2="401.912494" y2="133.711361" id="Line_136" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1591.89967" y1="1298.80625" x2="413.075949" y2="122.572432" id="Line_137" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1603.06312" y1="1287.66733" x2="424.239404" y2="111.433504" id="Line_138" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1614.22604" y1="1276.5284" x2="435.402318" y2="100.294576" id="Line_139" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1625.38949" y1="1265.38947" x2="446.565773" y2="89.1556471" id="Line_140" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1636.55295" y1="1254.25054" x2="457.729227" y2="78.0167187" id="Line_141" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1647.7164" y1="1243.11215" x2="468.892682" y2="66.8783299" id="Line_142" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1658.87986" y1="1231.97322" x2="480.056137" y2="55.7394015" id="Line_143" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1670.04331" y1="1220.8343" x2="491.219592" y2="44.6004731" id="Line_144" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1681.20677" y1="1209.69537" x2="502.383046" y2="33.4615447" id="Line_145" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1692.37022" y1="1198.55644" x2="513.546501" y2="22.3226162" id="Line_146" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1703.53313" y1="1187.41751" x2="524.709415" y2="11.1836878" id="Line_147" stroke="#484D51" stroke-width="4"></line>
-                        <line x1="1714.69659" y1="1176.27858" x2="535.87287" y2="0.0447593717" id="Line_148" stroke="#484D51" stroke-width="4"></line>
+        <g id="Group" transform="translate(0.000000, 1.000000)">
+            <g id="client-holder">
+                <g id="Group_11-Clipped" transform="translate(0.000000, 183.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <g id="Group_11" mask="url(#mask-2)">
+                        <g transform="translate(-490.000000, -667.000000)" id="Group_10">
+                            <line x1="1547.24585" y1="1343.36143" x2="368.42213" y2="167.127606" id="Line_100" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1536.0824" y1="1354.50036" x2="357.258675" y2="178.266535" id="Line_101" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1524.91894" y1="1365.63929" x2="346.095221" y2="189.405463" id="Line_102" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1513.75603" y1="1376.77821" x2="334.932307" y2="200.544392" id="Line_103" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1502.59257" y1="1387.91714" x2="323.768852" y2="211.68332" id="Line_104" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1491.42912" y1="1399.05607" x2="312.605397" y2="222.822249" id="Line_105" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1480.26566" y1="1410.195" x2="301.441943" y2="233.961177" id="Line_106" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1469.10221" y1="1421.33339" x2="290.278488" y2="245.099566" id="Line_107" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1457.93875" y1="1432.47232" x2="279.115033" y2="256.238494" id="Line_108" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1446.7753" y1="1443.61124" x2="267.951578" y2="267.377423" id="Line_109" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1435.61184" y1="1454.75017" x2="256.788124" y2="278.516351" id="Line_110" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1424.44893" y1="1465.8891" x2="245.62521" y2="289.65528" id="Line_111" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1413.28547" y1="1477.02803" x2="234.461755" y2="300.794208" id="Line_112" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1402.12202" y1="1488.16696" x2="223.2983" y2="311.933136" id="Line_113" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1390.95857" y1="1499.30589" x2="212.134845" y2="323.072065" id="Line_114" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1379.79511" y1="1510.44428" x2="200.971391" y2="334.210454" id="Line_115" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1368.63166" y1="1521.5832" x2="189.807936" y2="345.349382" id="Line_116" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1357.46874" y1="1532.72213" x2="178.645022" y2="356.48831" id="Line_117" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1346.30475" y1="1543.86106" x2="167.481026" y2="367.627239" id="Line_118" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1335.14183" y1="1554.99999" x2="156.318113" y2="378.766167" id="Line_119" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1323.97838" y1="1566.13892" x2="145.154658" y2="389.905096" id="Line_120" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1312.81492" y1="1577.27785" x2="133.991203" y2="401.044024" id="Line_121" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1301.65147" y1="1588.41623" x2="122.827748" y2="412.182413" id="Line_122" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1290.48801" y1="1599.55516" x2="111.664294" y2="423.321341" id="Line_123" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1279.32456" y1="1610.69409" x2="100.500839" y2="434.46027" id="Line_124" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1268.1611" y1="1621.83302" x2="89.3373841" y2="445.599198" id="Line_125" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1256.99765" y1="1632.97195" x2="78.1739294" y2="456.738127" id="Line_126" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1245.83419" y1="1644.11088" x2="67.0104746" y2="467.877055" id="Line_127" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1234.67128" y1="1655.24981" x2="55.8475607" y2="479.015984" id="Line_128" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1223.50783" y1="1666.38873" x2="44.684106" y2="490.154912" id="Line_129" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1212.34437" y1="1677.52712" x2="33.5206512" y2="501.293301" id="Line_130" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1201.18092" y1="1688.66605" x2="22.3571965" y2="512.432229" id="Line_131" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1190.01746" y1="1699.80498" x2="11.1937417" y2="523.571158" id="Line_132" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1178.85401" y1="1710.94391" x2="0.0302869757" y2="534.710086" id="Line_133" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1558.4093" y1="1332.22304" x2="379.585585" y2="155.989218" id="Line_134" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1569.57276" y1="1321.08411" x2="390.74904" y2="144.850289" id="Line_135" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1580.73621" y1="1309.94518" x2="401.912494" y2="133.711361" id="Line_136" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1591.89967" y1="1298.80625" x2="413.075949" y2="122.572432" id="Line_137" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1603.06312" y1="1287.66733" x2="424.239404" y2="111.433504" id="Line_138" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1614.22604" y1="1276.5284" x2="435.402318" y2="100.294576" id="Line_139" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1625.38949" y1="1265.38947" x2="446.565773" y2="89.1556471" id="Line_140" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1636.55295" y1="1254.25054" x2="457.729227" y2="78.0167187" id="Line_141" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1647.7164" y1="1243.11215" x2="468.892682" y2="66.8783299" id="Line_142" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1658.87986" y1="1231.97322" x2="480.056137" y2="55.7394015" id="Line_143" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1670.04331" y1="1220.8343" x2="491.219592" y2="44.6004731" id="Line_144" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1681.20677" y1="1209.69537" x2="502.383046" y2="33.4615447" id="Line_145" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1692.37022" y1="1198.55644" x2="513.546501" y2="22.3226162" id="Line_146" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1703.53313" y1="1187.41751" x2="524.709415" y2="11.1836878" id="Line_147" stroke="#484D51" stroke-width="4"></line>
+                            <line x1="1714.69659" y1="1176.27858" x2="535.87287" y2="0.0447593717" id="Line_148" stroke="#484D51" stroke-width="4"></line>
+                        </g>
                     </g>
                 </g>
+                <rect id="Rectangle" stroke="#484D51" stroke-width="3" x="1.5" y="0.5" width="187" height="247"></rect>
             </g>
-            <rect id="Rectangle" stroke="#484D51" stroke-width="3" x="1.5" y="1.5" width="187" height="247"></rect>
+            <rect id="Rectangle" fill="#484D51" transform="translate(95.500000, 184.000000) rotate(-270.000000) translate(-95.500000, -184.000000) " x="94" y="91" width="3" height="186"></rect>
         </g>
     </g>
 </svg>

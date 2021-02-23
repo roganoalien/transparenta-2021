@@ -3,7 +3,7 @@ import handleViewport from 'react-in-viewport';
 // import Lottie from 'lottie-react';
 import Lottie from 'react-lottie';
 
-function TheLottie({ animationData, inViewport, forwardedRef }) {
+function TheLottie({ animationData, inViewport, forwardedRef, addClass }) {
 	// const [paused, setPaused] = useState(true);
 	// const elem = useRef();
 
@@ -41,7 +41,7 @@ function TheLottie({ animationData, inViewport, forwardedRef }) {
 
 	return (
 		<div
-			className="holder-lottie-item pointer-events-none"
+			className={`holder-lottie-item pointer-events-none ${addClass}`}
 			// ref={elem}
 			ref={forwardedRef}
 		>
