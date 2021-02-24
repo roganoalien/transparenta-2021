@@ -187,7 +187,7 @@ export default function Home({ data, windowWidth }) {
 								transition={{
 									delay: 0.15
 								}}
-								className="text-black mt-4 italic text-lg lg:text-base pr-0 text-center lg:text-center"
+								className="text-black mt-4 italic text-lg lg:text-base pr-0 text-center lg:text-left"
 							>
 								"{clients[position][`testimony_${lang}`]}"
 							</motion.p>
