@@ -106,7 +106,7 @@ export default function Footer() {
 							<a
 								target="_blank"
 								href={process.env.API_URL + footer?.file?.url}
-								className="bg-white hover:bg-transparent text-main hover:text-white border-3 border-white py-1 px-2 mr-4 font-medium mt-3 block transition duration-150"
+								className="bg-white hover:bg-transparent text-main hover:text-white border-3 border-white py-1 px-2 mr-4 font-medium mt-3 block transition duration-150 text-center max-w-xxxs"
 							>
 								{lang === 'es'
 									? footer?.filteBtnText_es
