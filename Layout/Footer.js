@@ -18,7 +18,7 @@ const tempFooter = {
 	tel: '55 4466 5577',
 	has_file: true,
 	file: {
-		url: '/aviso_de_privacidad.pdf'
+		url: '/uploads/aviso_de_privacidad.pdf'
 	},
 	filteBtnText_es: 'Aviso de Privacidad',
 	filteBtnText_en: 'Privacy Notice'
