@@ -15,7 +15,13 @@ const tempFooter = {
 	contactSend_two: 'jessica.lopez@transparenta.mx',
 	created_at: '2021-01-31T21:10:08.000Z',
 	updated_at: '2021-02-06T10:37:03.000Z',
-	tel: '55 4466 5577'
+	tel: '55 4466 5577',
+	has_file: true,
+	file: {
+		url: '/aviso_de_privacidad.pdf'
+	},
+	filteBtnText_es: 'Aviso de Privacidad',
+	filteBtnText_en: 'Privacy Notice'
 };
 
 export default function Footer() {

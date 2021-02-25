@@ -9,13 +9,15 @@ import { LanguageContext } from '../globalState';
 
 //LOTTIES
 import one_top from '../animations/servicios/consultoria.json';
-import one_bottom from '../animations/servicios/01_b.json';
+// import one_bottom from '../animations/servicios/01_b.json';
 import one_m from '../animations/producto/02_m.json';
 import two from '../animations/servicios/beneficios-1.json';
 import two_b from '../animations/servicios/resultados-1.json';
 import three from '../animations/servicios/especiales.json';
 import benefits_2 from '../animations/servicios/beneficios-2.json';
 import results_2 from '../animations/servicios/resultados-2.json';
+import benefits_01 from '../animations/remake/servicios_benefits_01.json';
+import benefits_02 from '../animations/remake/servicios_benefits_02.json';
 
 // const AnimTopRight = styled.img`
 // 	transform: translate(0, -25%);
@@ -97,8 +99,9 @@ export default function Servicios({ data, error, message }) {
 									className="hidden lg:block"
 									style={{ maxWidth: 250 }}
 								>
-									<LottieHolder animationData={two} />
-									<LottieHolder animationData={two_b} />
+									{/* <LottieHolder animationData={two} />
+									<LottieHolder animationData={two_b} /> */}
+									<LottieHolder animationData={benefits_01} />
 								</div>
 								<img
 									src="/animations/servicios-resultados-fake.svg"
@@ -186,8 +189,9 @@ export default function Servicios({ data, error, message }) {
 									className="hidden lg:block"
 									style={{ maxWidth: 250 }}
 								>
-									<LottieHolder animationData={benefits_2} />
-									<LottieHolder animationData={results_2} />
+									{/* <LottieHolder animationData={benefits_2} />
+									<LottieHolder animationData={results_2} /> */}
+									<LottieHolder animationData={benefits_02} />
 								</div>
 								<img
 									src="/animations/servicios-resultados-fake.svg"
