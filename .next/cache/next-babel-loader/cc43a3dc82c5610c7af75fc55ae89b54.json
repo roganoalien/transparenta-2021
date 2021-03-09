@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function Producto() {}","map":{"version":3,"sources":["/Users/roganoalien/git_projects/transparenta-2021/pages/producto.js"],"names":["Producto"],"mappings":"AAAA,eAAe,SAASA,QAAT,GAAoB,CAAE","sourcesContent":["export default function Producto() {}\n"]},"metadata":{},"sourceType":"module"}
