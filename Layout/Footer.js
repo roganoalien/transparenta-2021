@@ -8,11 +8,11 @@ const tempFooter = {
 	email: 'hola@transparenta.mx',
 	phone: null,
 	address: 'Moliere 310, Polanco II, 11550, CDMX',
-	instagram: 'transparenta',
-	twitter: 'transparenta',
-	facebook: 'transparenta',
-	contactSend_one: 'contacto@transparenta.mx',
-	contactSend_two: 'jessica.lopez@transparenta.mx',
+	instagram: '#',
+	twitter: '#',
+	facebook: '#',
+	contactSend_one: 'contacto@visibia.mx',
+	contactSend_two: 'eugenio.gomez@transparenta.mx',
 	created_at: '2021-01-31T21:10:08.000Z',
 	updated_at: '2021-02-06T10:37:03.000Z',
 	tel: '55 4466 5577',
@@ -66,7 +66,7 @@ export default function Footer() {
 					onClick={handleTransparenta}
 					className="text-black text-2xl lg:text-4xl font-bold border-3 border-black py-2 lg:py-3 px-6 transition duration-200 transform scale-100 hover:scale-95 shadow-transparenta hover:shadow-none"
 				>
-					{lang === 'es' ? 'Obtén Transparenta' : 'Get Transparent'}
+					{lang === 'es' ? 'Obtén Visibia' : 'Get Visibia'}
 				</button>
 			</section>
 			<footer className="w-full flex items-start justify-center flex-wrap bg-main py-12 px-10 lg:px-20">

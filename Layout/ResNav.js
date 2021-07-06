@@ -222,9 +222,9 @@ function ResNav() {
 									}}
 								>
 									{lang === 'es' ? (
-										<a>Obtén Transparenta</a>
+										<a>Obtén Visibia</a>
 									) : (
-										<a>Get Transparent</a>
+										<a>Get Visibia</a>
 									)}
 								</li>
 							</ul>
