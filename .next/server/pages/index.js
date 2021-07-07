@@ -886,7 +886,7 @@ function Home({
   }, void 0, true);
 }
 async function getServerSideProps() {
-  const data = await fetch(`${"http://52.6.136.253:1337"}/home`).then(res => res.json()); // const footer = await fetch(`${process.env.API_URL}/footer`).then((res) =>
+  const data = await fetch(`${"https://admin.visibia.mx"}/home`).then(res => res.json()); // const footer = await fetch(`${process.env.API_URL}/footer`).then((res) =>
   // 	res.json()
   // );
 
