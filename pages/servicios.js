@@ -161,11 +161,11 @@ export default function Servicios({ data, error, message }) {
 						<section className="benefits w-full mt-0 lg:mt-20 flex items-stretch justify-center flex-wrap">
 							<article className="w-full lg:w-8/12 order-2">
 								<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20">
-									{data['benefitsOne_' + lang]}
+									{data['benefitsTwo_' + lang]}
 								</h2>
 								<div className="simple-container text-black pl-0 lg:pl-20 mt-10 font-medium">
 									<ReactMarkdown plugins={[gfm]}>
-										{data['benefitsOneDescription_' + lang]}
+										{data['benefitsTwoDescription_' + lang]}
 									</ReactMarkdown>
 								</div>
 								<div className="w-full flex items-center justify-center">
@@ -176,11 +176,11 @@ export default function Servicios({ data, error, message }) {
 									/>
 								</div>
 								<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20 mt-10 lg:mt-18">
-									{data['resultsOne_' + lang]}
+									{data['resultsTwo_' + lang]}
 								</h2>
 								<div className="simple-container text-black pl-0 lg:pl-20 mt-4 lg:mt-10 font-medium">
 									<ReactMarkdown plugins={[gfm]}>
-										{data['resultsOneDescription_' + lang]}
+										{data['resultsTwoDescription_' + lang]}
 									</ReactMarkdown>
 								</div>
 							</article>
