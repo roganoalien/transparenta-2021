@@ -43,11 +43,12 @@ function Nav() {
 					<Link href="/">
 						<a>
 							<Image
-								src="/transparenta-logo.svg"
+								//src="/transparenta-logo.svg"
+								src="/visibia.png"
 								alt="Transparenta Logo"
 								layout="intrinsic"
-								width="350px"
-								height="28.16px"
+								width="200px"
+								height="31px"
 							/>
 						</a>
 					</Link>
@@ -86,9 +87,9 @@ function Nav() {
 						className="font-bold uppercase py-2 px-4 bg-black text-white hover:bg-main hover:text-black cursor-pointer transparenta-btn-toblack shadow-none hover:shadow-transparentaSmall transition duration-200 ease-in-out"
 					>
 						{lang === 'es' ? (
-							<a>Obtén Transparenta</a>
+							<a>Obtén Visibia</a>
 						) : (
-							<a>Get Transparent</a>
+							<a>Get Visibia</a>
 						)}
 					</li>
 				</ul>

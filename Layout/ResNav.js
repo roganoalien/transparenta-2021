@@ -80,10 +80,10 @@ function ResNav() {
 			<nav className="w-full flex items-center justify-between px-35 py-20px z-50 fixed left-0 top-0 bg-white">
 				<div className="mainLogo flex items-center justify-center w-auto">
 					<Image
-						src="/transparenta-logo.svg"
+						src="/visibia.png"
 						alt="Transparenta Logo"
 						layout="intrinsic"
-						width="200"
+						width="110"
 						height="17px"
 					/>
 				</div>
@@ -222,9 +222,9 @@ function ResNav() {
 									}}
 								>
 									{lang === 'es' ? (
-										<a>Obtén Transparenta</a>
+										<a>Obtén Visibia</a>
 									) : (
-										<a>Get Transparent</a>
+										<a>Get Visibia</a>
 									)}
 								</li>
 							</ul>
