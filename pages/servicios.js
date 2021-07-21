@@ -111,7 +111,7 @@ export default function Servicios({ data, error, message }) {
 								/>
 							</article>
 						</section>
-						<section className="price w-full mt-1 flex items-stretch justify-start flex-wrap mb-10">
+						{/* <section className="price w-full mt-1 flex items-stretch justify-start flex-wrap mb-10">
 							<article className="w-full flex items-center justify-center flex-wrap">
 								<h2 className="text-2xl lg:text-3xl text-main font-bold mt-16 mb-10 w-full">
 									{data['price_' + lang]}
@@ -120,9 +120,9 @@ export default function Servicios({ data, error, message }) {
 									<p className="font-bold text-black text-lg lg:text-xl xl:text-2xl w-full text-center">
 										{data['priceContentTitle_' + lang]}
 									</p>
-									{/* <div className="max-w-md -mt-10 lg:w-full">
+									<div className="max-w-md -mt-10 lg:w-full">
 										<LottieHolder animationData={three} />
-									</div> */}
+									</div>
 									<img
 										src="/servicios_precio_estatico.svg"
 										alt="Servicios Precios"
@@ -133,7 +133,7 @@ export default function Servicios({ data, error, message }) {
 									</p>
 								</div>
 							</article>
-						</section>
+						</section> */}
 						<section className="header w-full mt-0 lg:mt-16 flex items-stretch justify-center flex-wrap">
 							<article className="w-full lg:w-8/12">
 								<h2 className="text-4xl lg:text-5xl text-main font-bold w-full">
@@ -174,14 +174,6 @@ export default function Servicios({ data, error, message }) {
 										alt="Anim"
 										className="block lg:hidden mt-10"
 									/>
-								</div>
-								<h2 className="text-2xl lg:text-3xl text-main font-bold pl-0 lg:pl-20 mt-10 lg:mt-18">
-									{data['resultsTwo_' + lang]}
-								</h2>
-								<div className="simple-container text-black pl-0 lg:pl-20 mt-4 lg:mt-10 font-medium">
-									<ReactMarkdown plugins={[gfm]}>
-										{data['resultsTwoDescription_' + lang]}
-									</ReactMarkdown>
 								</div>
 							</article>
 							<article className="w-full lg:w-4/12 flex flex-col items-center justify-center order-2 lg:order-1 mb-10 lg:mb-20">

@@ -163,3 +163,7 @@ a {
 	border-top-color: #89a4a9 !important;
 	border-left-color: #89a4a9 !important;
 }
+
+.simple-container ul {
+	list-style: initial;
+}

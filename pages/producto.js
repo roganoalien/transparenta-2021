@@ -113,7 +113,7 @@ export default function Producto({ data, windowWidth, imageURL }) {
 						</article>
 					</section>
 					<section className="funcionalidad w-full mb-5 lg:mb-0 mt-5 lg:mt-16 flex items-start justify-center flex-wrap">
-						<header className="w-full flex items-center justify-between flex-wrap">
+						<header className="w-full flex items-center justify-center flex-wrap">
 							<h2 className="w-auto text-3xl lg:text-4xl text-main font-bold">
 								{data['functionality_' + lang]}
 							</h2>
@@ -186,7 +186,7 @@ export default function Producto({ data, windowWidth, imageURL }) {
 						</article>
 					</section>
 					<section className="licencias w-full mb-10 lg:mb-40 mt-0 lg:mt-16 flex items-start justify-center flex-wrap">
-						<header className="w-full flex items-center justify-between">
+						<header className="w-full flex items-center justify-center">
 							<h2 className="w-auto text-3xl lg:text-4xl text-main font-bold">
 								{data['licenses_' + lang]}
 							</h2>
